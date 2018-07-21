@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Image Sprites</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/21.08-CSS Dropdowns.css" />
+<style></style>
+</head>
+
+<!-- The 3 examples below are not working as intended -->
+
+<body>
+<h3 class="Chapters">CSS Image Sprites</h3>
+<p>An image sprite is a collection of images put into a single image. A web
+  page with many images can take a long time to load and generates multiple
+  server requests. Using image sprites will reduce the number of server
+  requests and save bandwidth.</p>
+<p><b>Image Sprites - Simple Example</b></p>
+<p>Instead of using three separate images, we use this single image
+  ("img_navsprites.gif"). With CSS, we can show just the part of the image we
+  need. In the following example the CSS specifies which part of the
+  "img_navsprites.gif" image to show:</p>
+  <img class="home" src="../../images/img_trans.gif"><br><br>
+  <img class="next" src="../../images/img_trans.gif"><br><br>
+
+  <div class="space">
+
+  </div>
+<p><b>Example explained:</b></p>
+<ul>
+  <li><mark>&ltimg id="home" src="img_trans.gif"&gt</mark> - Only defines a
+    small transparent image because the src attribute cannot be empty. The
+    displayed image will be the background image we specify in CSS</li>
+  <li><mark>width: 46px; height: 44px;</mark> - Defines the portion of the
+    image we want to use</li>
+  <li><mark>background: url(img_navsprites.gif) 0 0;</mark> - Defines the
+    background image and its position (left 0px, top 0px)</li>
+</ul>
+<p>This is the easiest way to use image sprites, now we want to expand it by
+  using links and hover effects.</p>
+<p><b>Image Sprites - Create a Navigation List</b></p>
+<p>We want to use the sprite image ("img_navsprites.gif") to create a
+  navigation list. We will use an HTML list, because it can be a link and also
+  supports a background image:</p>
+  <ul id="navlist">
+    <li id="home"><a href="default.asp"></a></li>
+    <li id="prev"><a href="css_intro.asp"></a></li>
+    <li id="next"><a href="css_syntax.asp"></a></li>
+  </ul>
+<p><b>Example explained:</b></p>
+<ul>
+  <li>#navlist {position:relative;} - position is set to relative to allow
+    absolute positioning inside it</li>
+  <li>#navlist li {margin:0;padding:0;list-style:none;position:absolute;top:0;}
+     - margin and padding are set to 0, list-style is removed, and all list
+     items are absolute positioned</li>
+  <li>#navlist li, #navlist a {height:44px;display:block;} - the height of all
+    the images are 44px</li>
+</ul>
+<p>Now start to position and style for each specific part:</p>
+<ul>
+  <li>#home {left:0px;width:46px;} - Positioned all the way to the left, and
+    the width of the image is 46px</li>
+  <li>#home {background:url(img_navsprites.gif) 0 0;} - Defines the background
+    image and its position (left 0px, top 0px)</li>
+  <li>#prev {left:63px;width:43px;} - Positioned 63px to the right (#home
+    width 46px + some extra space between items), and the width is 43px.</li>
+  <li>#prev {background:url('img_navsprites.gif') -47px 0;} - Defines the
+    background image 47px to the right (#home width 46px + 1px line
+    divider)</li>
+  <li>#next {left:129px;width:43px;}- Positioned 129px to the right (start of
+    #prev is 63px + #prev width 43px + extra space), and the width is
+    43px.</li>
+  <li>#next {background:url('img_navsprites.gif') -91px 0;} - Defines the
+    background image 91px to the right (#home width 46px + 1px line divider +
+    #prev width 43px + 1px line divider )</li>
+</ul>
+<p><b>Image Sprites - Hover Effect</b></p>
+<p>Now we want to add a hover effect to our navigation list. The
+  <mark>:hover</mark> selector can be used on all elements, not only on
+  links. Our new image ("img_navsprites_hover.gif") contains three navigation
+  images and three images to use for hover effects. Because this is one single
+  image, and not six separate files, there will be no loading delay when a
+  user hovers over the image. We only add three lines of code to add the hover
+  effect:</p>
+  <ul id="navlist">
+    <li id="home"><a href="default.asp"></a></li>
+    <li id="prev"><a href="css_intro.asp"></a></li>
+    <li id="next"><a href="css_syntax.asp"></a></li>
+  </ul>
+<p>Example explained: #home a:hover {background: transparent
+  url('img_navsprites_hover.gif') 0 -45px;} - For all three hover images we
+  specify the same background position, only 45px further down</p>
