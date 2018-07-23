@@ -1,0 +1,94 @@
+/* needed? */
+body {
+    padding: 5px;
+}
+
+mark {
+    color: red;
+}
+
+.note {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+.volume {
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
+
+.Chapters {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+
+a[target] {
+    background-color: yellow;
+}
+
+a[target=_blank] {
+    background-color: pink;
+}
+
+[title~=flower] {
+    border: 5px solid yellow;
+}
+
+[class|=top] {
+    background: yellow;
+}
+
+[class^="next"] {
+    background: yellow;
+}
+
+[class$="test"] {
+    background: yellow;
+}
+
+[class*="be"] {
+    background: yellow;
+}
+
+input[type="text"] {
+    width: 150px;
+    display: block;
+    margin-bottom: 10px;
+    background-color: yellow;
+}
+
+input[type="button"] {
+    width: 120px;
+    margin-left: 35px;
+    display: block;
+}
+
+[title~=red] {
+    border: 3px solid red;
+}
+
+[title^="pink"] {
+    border: 3px solid pink;
+}
+
+[title$=flower] {
+    border: 3px solid red;
+}
+
+[title*="flow"] {
+    border: 3px solid red;
+}
+
+div.example {
+    background-color: lightyellow;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+p.colorbackground {
+    background-color: lightgray;
+}

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Attribute Selectors</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/23.08-CSS Attribute Selectors.css" />
+<style></style>
+</head>
+
+<body>
+<h3 class="Chapters">CSS Attribute Selectors</h3>
+<p>It is possible to style HTML elements that have specific attributes or
+  attribute values. The <mark>[attribute]</mark> selector is used to select
+  elements with a specified attribute. The following example selects all
+  &lta&gt elements with a target attribute:</p>
+  <p>The links with a target attribute gets a yellow background:</p>
+
+  <a href="https://www.w3schools.com">w3schools.com</a>
+  <a href="http://www.disney.com" target="_top">disney.com</a>
+  <a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+  <div class="note">
+    <p><b>Note:</b> For [<i>attribute</i>] to work in IE8 and earlier, a
+      DOCTYPE must be declared.</p>
+  </div>
+
+<p><b>CSS [attribute="value"] Selector</b></p>
+<p>The <mark>[attribute="value"]</mark> selector is used to select elements
+  with a specified attribute and value. The following example selects all
+  &lta&gt elements with a target="_blank" attribute:</p>
+  <p>The link with target="_blank" gets a yellow background:</p>
+
+<a href="https://www.w3schools.com">w3schools.com</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+<div class="note">
+  <p><b>Note:</b> For [<i>attribute</i>] to work in IE8 and earlier, a
+    DOCTYPE must be declared.</p>
+</div>
+
+<p><b>CSS [attribute~="value"] Selector</b></p>
+<p>The <mark>[attribute~="value"]</mark> selector is used to select elements
+  with an attribute value containing a specified word. The following example
+  selects all elements with a title attribute that contains a space-separated
+  list of words, one of which is "flower":</p>
+  <p>All images with the title attribute containing the word "flower" get a
+    yellow border.</p>
+
+  <img src="../../images/klematis.jpg" title="klematis flower" width="150"
+  height="113">
+  <img src="../../images/img_flwr.gif" title="flower" width="224" height="162">
+  <img src="../../images/img_tree.gif" title="tree" width="200" height="358">
+
+  <div class="note">
+    <p><b>Note:</b> For [<i>attribute</i>~=<i>value</i>] to work in IE8 and
+      earlier, a DOCTYPE must be declared.</p>
+  </div>
+
+<p>The example above will match elements with title="flower", title="summer
+  flower", and title="flower new", but not title="my-flower" or
+  title="flowers".</p>
+
+<p><b>CSS [attribute|="value"] Selector</b></p>
+<p>The <mark>[attribute|="value"]</mark> selector is used to select elements
+  with the specified attribute starting with the specified value. The
+  following example selects all elements with a class attribute value that
+  begins with "top":</p>
+
+  <div class="note">
+    <p><b>Note:</b> The value has to be a whole word, either alone, like
+      class="top", or followed by a hyphen( - ), like class="top-text"!</p>
+  </div>
+
+  <h3 class="top-header">Welcome</h3>
+  <p class="top-text">Hello world!</p>
+  <p class="topcontent">Are you learning CSS?</p>
+
+  <div class="note">
+    <p><b>Note:</b> For [<i>attribute</i>|=<i>value</i>] to work in IE8 and
+      earlier, a DOCTYPE must be declared.</p>
+  </div>
+
+<p><b>CSS [attribute^="value"] Selector</b></p>
+<p>The <mark>[attribute^="value"]</mark> selector is used to select elements
+  whose attribute value begins with a specified value. The following example
+  selects all elements with a class attribute value that begins with "top":</p>
+
+  <div class="note">
+    <p><b>Note:</b> The value does not have to be a whole word!</p>
+  </div>
+
+  <h3 class="next-header">Welcome</h3>
+  <p class="next-text">Hello world!</p>
+  <p class="nextcontent">Are you learning CSS?</p>
+
+<div class="note">
+  <p><b>Note:</b> For [<i>attribute</i>^=<i>value</i>] to work in IE8 and
+    earlier, a DOCTYPE must be declared.</p>
+</div>
+
+<p><b>CSS [attribute$="value"] Selector</b></p>
+<p>The <mark>[attribute$="value"]</mark> selector is used to select elements
+  whose attribute value ends with a specified value. The following example
+  selects all elements with a class attribute value that ends with "test":</p>
+
+  <div class="note">
+    <p><b>Note:</b> The value does not have to be a whole word!</p>
+  </div>
+
+  <div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+<div class="my-test">The third div element.</div>
+<p class="mytest">This is some text in a paragraph.</p>
+
+<p><b>CSS [attribute*="value"] Selector</b></p>
+<p>The <mark>[attribute*="value"]</mark> selector is used to select elements
+  whose attribute value contains a specified value. The following example
+  selects all elements with a class attribute value that contains "te":</p>
+
+  <div class="note">
+    <p><b>Note:</b> The value does not have to be a whole word!</p>
+  </div>
+
+  <div class="first_best">The first div element.</div>
+  <div class="second">The second div element.</div>
+  <div class="my-best">The third div element.</div>
+  <p class="mybest">This is some text in a paragraph.</p>
+
+<p><b>Styling Forms</b></p>
+<p>The attribute selectors can be useful for styling forms without class or
+  ID:</p>
+  <form name="input" action="" method="get">
+    Firstname:<input type="text" name="Name" value="Peter" size="20">
+    Lastname:<input type="text" name="Name" value="Griffin" size="20">
+    <input type="button" value="Example Button">
+  </form>
+
+  <div class="note">
+    <p><b>Tip:</b>Visit our <a
+      href="https://www.w3schools.com/css/css_form.asp">CSS Forms
+      Tutorial</a> for more examples on how to style forms with CSS.</p>
+  </div>
+
+<p class="colorbackground"><b>Exercise 1:</b> Set the background-color to
+  "yellow" for elements with a "target" attribute.</p>
+
+  <a href="https://www.w3schools.com">w3schools.com</a>
+<a href="http://www.disney.com" target="_top">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+<p class="colorbackground"><b>Exercise 2:</b> Set the background-color to
+  "pink" for elements with an attribute like: target="_blank"</p>
+
+  <a href="https://www.w3schools.com">w3schools.com</a>
+<a href="http://www.disney.com" target="_blank">disney.com</a>
+<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a>
+
+<p class="colorbackground"><b>Exercise 3:</b> Set a border with the color
+  "red", around elements with a "title" attribute containing the word
+  "red".</p>
+
+<img src="../../images/klematis_small.jpg" title="two red flowers" width="107"
+height="90">
+<img src="../../images/klematis2_small.jpg" title="purple flower" width="107"
+height="80">
+<img src="../../images/klematis3_small.jpg" title="red flower" width="116"
+height="90">
+<img src="../../images/klematis4_small.jpg" title="two white flowers"
+width="120" height="90">
+
+<p class="colorbackground"><b>Exercise 4:</b> Set a border with the color
+  "pink", around elements with a "title" attribute starting with "pink".</p>
+
+  <img src="../../images/klematis_small.jpg" title="two pink flowers"
+  width="107" height="90">
+  <img src="../../images/klematis2_small.jpg" title="purple flower" width="107"
+  height="80">
+  <img src="../../images/klematis3_small.jpg" title="pink flower" width="116"
+  height="90">
+  <img src="../../images/klematis4_small.jpg" title="two white flowers"
+  width="120" height="90">
+
+<p class="colorbackground"><b>Exercise 5:</b> Set a border with the color
+  "red", around elements with a "title" attribute ending with the word
+  "flower" (not flower<b>s</b>).</p>
+
+  <img src="../../images/klematis_small.jpg" title="two red flowers" width="107"
+  height="90">
+  <img src="../../images/klematis2_small.jpg" title="purple flower" width="107"
+  height="80">
+  <img src="../../images/klematis3_small.jpg" title="red flower" width="116"
+  height="90">
+  <img src="../../images/klematis4_small.jpg" title="two white flowers"
+  width="120" height="90">
+
+<p class="colorbackground"><b>Exercise 6:</b> Set a border with the color
+"red", around elements with a "title" attribute containing the value "flow".</p>
+
+<img src="../../images/klematis_small.jpg" title="two pink flowers"
+width="107" height="90">
+<img src="../../images/klematis2_small.jpg" title="purple flower" width="107"
+height="80">
+<img src="../../images/klematis3_small.jpg" title="pink flower" width="116"
+height="90">
+<img src="../../images/klematis4_small.jpg" title="two white flowers"
+width="120" height="90">
+
+<div class="example"><p>Use our
+  <a href="https://www.w3schools.com/cssref/trysel.asp">CSS Selector
+    Tester</a> to demonstrate the different selectors. For a complete
+    reference of all the CSS selectors, please go to our
+    <a href="https://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors
+      Reference</a>.</p>
+</div>
+
+</body>
+</html>
