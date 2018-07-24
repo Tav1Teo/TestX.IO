@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Forms</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/24.08-CSS Forms.css" />
+<style></style>
+</head>
+
+<body>
+<h3 class="Chapters">CSS Forms</h3>
+<p>The look of an HTML form can be greatly improved with CSS:</p>
+<div class="div1">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname"
+    placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname"
+    placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<p><b>Styling Input Fields</b></p>
+<p>Use the <mark>width</mark> property to determine the width of the input
+  field:</p>
+  <form>
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname">
+</form>
+<p>The example above applies to all &ltinput&gt elements. If you only want to
+  style a specific input type, you can use attribute selectors:</p>
+  <ul>
+    <li><mark>input[type=text]</mark> - will only select text fields</li>
+    <li><mark>input[type=password]</mark> - will only select password
+      fields</li>
+    <li><mark>input[type=number]</mark> - will only select number fields</li>
+    <li>etc...</li>
+  </ul>
+
+<p><b>Padded Inputs</b></p>
+<p>Use the <mark>padding</mark> property to add space inside the text
+  field.</p>
+  <div class="note"><b>Tip:</b> When you have many inputs after each other,
+    you might also want to add some <mark>margin</mark>, to add more space
+    outside of them:
+  </div>
+  <form>
+    <label for="fname">First Name</label>
+    <input class="input2" type="text" id="fname" name="fname">
+    <label for="lname">Last Name</label>
+    <input class="input2" type="text" id="lname" name="lname">
+  </form>
+
+  <div class="example">Note that we have the <mark>box-sizing</mark> property
+    to <mark>border-box</mark>. This makes sure that the padding and
+    eventually borders are included in the total width and height of the
+    elements. Read more about the <mark>box-sizing</mark> property in our
+    <a href="https://www.w3schools.com/css/css3_box-sizing.asp">
+    CSS Box Sizing</a> chapter.
+  </div>
+
+<p><b>Bordered Inputs</b></p>
+<p>Use the <mark>border</mark> property to change the border size and color
+  and use the <mark>border-radius</mark> property to add rounded corners:</p>
+  <form class="form1">
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname">
+</form>
+<p>If you only want a bottom border, use the <mark>border-bottom</mark>
+  property:</p>
+  <form class="form2">
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname">
+</form>
+
+<p><b>Colored Inputs</b></p>
+<p>Use the <mark>background-color</mark> property to add a background color to
+  the input and the <mark>color</mark> property to change the text color:</p>
+  <form class="form3">
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname" value="John">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname" value="Doe">
+</form>
+
+<p><b>Focused Inputs</b></p>
+<p>By default, some browsers will add a blue outline around the input when it
+  gets focus (clicked on). You can remove this behavior by adding
+  <mark>outline: none;</mark> to the input. Use the <mark>:focus</mark>
+  selector to do something with the input field when it gets focus. In this
+  example, we use the :focus selector to add a background color to the text
+  field when it gets focused (clicked on):</p>
+  <form class="form4">
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname" value="John">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname" value="Doe">
+</form>
+<p>In this example, we use the :focus selector to add a black border color to
+  the text field when it gets focused (clicked on). Note that we have added
+  the CSS transition property to animate the border color (takes 0.5 seconds
+  to change the color on focus).</p>
+  <form class="form5">
+  <label for="fname">First Name</label>
+  <input type="text" id="fname" name="fname" value="John">
+  <label for="lname">Last Name</label>
+  <input type="text" id="lname" name="lname" value="Doe">
+</form>
+
+<p><b>Input with icon/image</b></p>
+<p>If you want an icon inside the input, use the <mark>background-image</mark>
+  property and position it with the <mark>background-position</mark> property.
+  Also notice that we add a large left padding to reserve the space of the
+  icon:</p>
+  <form class="form6">
+  <input type="text" name="search" placeholder="Search..">
+</form>
+
+<!-- Search icon not working above and below -->
+
+<p><b>Animated Search Input</b></p>
+<p>In this example we use the CSS <mark>transition</mark> property to animate
+  the width of the search input when it gets focus. You will learn more about
+  the <mark>transition</mark> property later, in our
+  <a href="https://www.w3schools.com/css/css3_transitions.asp">
+    CSS Transitions</a> chapter.</p>
+    <form class="form7">
+    <input type="text" name="search" placeholder="Search..">
+  </form>
+
+<p><b>Styling Textareas</b></p>
+
+  <div class="example"><strong>Tip:</strong>  Use the resize property to
+    prevent textareas from being resized (disable the "grabber" in the bottom
+    right corner):
+  </div>
+
+  <form>
+  <textarea class="textarea1">Some text...</textarea>
+</form>
+
+<p><b>Styling Select Menus</b></p>
+<form>
+  <select class="select2" id="country" name="country">
+    <option value="au">Australia</option>
+    <option value="ca">Canada</option>
+    <option value="usa">USA</option>
+  </select>
+</form>
+
+<p><b>Styling Input Buttons</b></p>
+<p>Styled input buttons.</p>
+
+<div class="input1">
+<input class="input1" type="button" value="Button">
+<input class="input1" type="reset" value="Reset">
+<input class="input1" type="submit" value="Submit">
+</div>
+
+<p>For more information about how to style buttons with CSS, read our
+  <a href="https://www.w3schools.com/css/css3_buttons.asp">
+    CSS Buttons Tutorial</a>.</p>
+
+<p><b>Responsive Form</b></p>
+<p>Resize the browser window to see the effect. When the screen is less than
+  600px wide, make the two columns stack on top of each other instead of next
+  to each other.</p>
+
+  <div class="example"><b>Advanced:</b> The following example use
+    <a href="https://www.w3schools.com/css/css3_mediaqueries.asp">
+      media queries</a> to create a responsive form. You will learn more about
+      this in a later chapter.
+  </div>
+
+  <div class="container">
+  <form action="/action_page.php">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
