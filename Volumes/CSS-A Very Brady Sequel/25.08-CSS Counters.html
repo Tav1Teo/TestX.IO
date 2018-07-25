@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Counters</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/25.08-CSS Counters.css" />
+<style></style>
+</head>
+
+<body>
+<h3 class="Chapters">CSS Counters</h3>
+<p>CSS counters are "variables" maintained by CSS whose values can be
+  incremented by CSS rules (to track how many times they are used). Counters
+  let you adjust the appearance of content based on its placement in the
+  document.</p>
+
+<p><b>Automatic Numbering With Counters</b></p>
+<p>CSS counters are like "variables". The variable values can be incremented
+  by CSS rules (which will track how many times they are used). To work with
+  CSS counters we will use the following properties:</p>
+  <ul>
+    <li><mark>counter-reset</mark> - Creates or resets a counter</li>
+    <li><mark>counter-increment</mark> - Increments a counter value</li>
+    <li><mark>content</mark> - Inserts generated content</li>
+    <li><mark>counter()</mark> or <mark>counters()</mark> function - Adds the
+      value of a counter to an element</li>
+  </ul>
+<p>To use a CSS counter, it must first be created with
+  <mark>counter-reset</mark> The following example creates a counter for the
+  page (in the body selector), then increments the counter value for each
+  &lth2&gt element and adds "Section &lt<em>value of the counter</em>&gt:" to
+  the beginning of each &lth2&gt element:</p>
+  <h1>Using CSS Counters:</h1>
+  <h2>HTML Tutorial</h2>
+  <h2>CSS Tutorial</h2>
+  <h2>JavaScript Tutorial</h2>
+
+  <div class="example"><p><b>Note:</b> IE8 supports these properties only if a
+    !DOCTYPE is specified.</p>
+  </div>
+
+<p><b>Nesting Counters</b></p>
+<p>The following example creates one counter for the page (section) and one
+  counter for each &lth1&gt element (subsection). The "section" counter will
+  be counted for each &lth1&gt element with "Section &lt<em>value of the
+    section counter</em>&gt.", and the "subsection" counter will be counted
+    for each &lth2&gt element with "&lt<em>value of the section
+      counter</em>&gt.&lt<em>value of the subsection counter</em>&gt":</p>
+      <h1>HTML tutorials:</h1>
+      <h2>HTML Tutorial</h2>
+      <h2>CSS Tutorial</h2>
+
+      <h1>Scripting tutorials:</h1>
+      <h2>JavaScript</h2>
+      <h2>VBScript</h2>
+
+      <h1>XML tutorials:</h1>
+      <h2>XML</h2>
+      <h2>XSL</h2>
+
+  <div class="example"><p><b>Note:</b> IE8 supports these properties only if a
+    !DOCTYPE is specified.</p>
+  </div>
+
+<p>A counter can also be useful to make outlined lists because a new instance
+  of a counter is automatically created in child elements. Here we use the
+  <mark>counters()</mark> function to insert a string between different levels
+  of nested counters:</p>
+  <ol>
+    <li>item</li>
+    <li>item
+      <ol>
+        <li>item</li>
+        <li>item</li>
+        <li>item
+          <ol>
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+          </ol>
+        </li>
+        <li>item</li>
+      </ol>
+    </li>
+    <li>item</li>
+    <li>item</li>
+  </ol>
+
+  <ol>
+    <li>item</li>
+    <li>item</li>
+  </ol>
+
+  <div class="example"><p><b>Note:</b> IE8 supports these properties only if a
+    !DOCTYPE is specified.</p>
+  </div>
+
+<p><b>CSS Counter Properties</b></p>
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>content</td>
+    <td>Used with the ::before and ::after pseudo-elements, to insert
+      generated content</td>
+  </tr>
+  <tr>
+    <td>counter-increment</td>
+    <td>Increments one or more counter values</td>
+  </tr>
+  <tr>
+    <td>counter-reset</td>
+    <td>Creates or resets one or more counters</td>
+  </tr>
+</table>
+
+</body>
+</html>
