@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Website Layout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/26.07-CSS Website Layout.css" />
+<style></style>
+</head>
+
+<body>
+<h3 class="Chapters">CSS Website Layout</h3>
+<p>A website is often divided into headers, menus, content and a footer.
+There are tons of different layout designs to choose from. However, this
+structure is one of the most common, and we will take a closer look at it in
+this tutorial.</p>
+
+<p><b>Header</b></p>
+<p>A header is usually located at the top of the website (or right below a top
+  navigation menu). It often contains a logo or the website name:</p>
+
+  <div class="header">
+    <h1>Header</h1>
+  </div>
+
+<p><b>Navigation Bar</b></p>
+<p>A navigation bar contains a list of links to help visitors navigating
+  through your website:</p>
+
+  <div class="header">
+    <h1>Header</h1>
+  </div>
+
+  <div class="topnav">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </div>
+
+<p><b>Content</b></p>
+<p>The layout in this section, often depends on the target users. The most
+  common layout is one (or combining them) of the following:</p>
+<ul>
+  <li><b>1-column</b> (often used for mobile browsers)</li>
+  <li><b>2-column</b> (often used for tablets and laptops)</li>
+  <li><b>3-column layout</b> (only used for desktops)</li>
+</ul>
+<p>We will create a 3-column layout, and change it to a 1-column layout on
+  smaller screens:</p>
+
+  <div class="header">
+  <h1>Header</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+
+<div class="row">
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
+      amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
+      elementum magna tristique. Quisque vehicula, risus eget aliquam
+      placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
+      Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
+      amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
+      elementum magna tristique. Quisque vehicula, risus eget aliquam
+      placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
+      Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  <div class="column">
+    <h2>Column</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
+      amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
+      elementum magna tristique. Quisque vehicula, risus eget aliquam
+      placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
+      Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+</div>
+
+  <div class="example"><p><b>Tip:</b> To create a 2-column layout, change the
+    width to 50%. To create a 4-column layout, use 25%, etc.</p>
+    <p><b>Tip:</b> Do you wonder how the @media rule works?
+      <a href="https://www.w3schools.com/css/css3_mediaqueries.asp">Read more
+        about it in our CSS Media Queries chapter</a>.</p>
+    <p><b>Tip:</b> A more modern way of creating column layouts, is to use CSS
+      Flexbox. However, it is not supported in Internet Explorer 10 and
+      earlier versions. If you require IE6-10 support, use floats (as shown
+      above). To learn more about the Flexible Box Layout Module,
+      <a href="https://www.w3schools.com/css/css3_flexbox.asp">read our CSS
+        Flexbox chapter</a>.</p>
+  </div>
+
+<p><b>Unequal Columns</b></p>
+<p>The main content is the biggest and the most important part of your site.
+It is common with <b>unequal</b> column widths, so that most of the space is
+reserved for the main content. The side content (if any) is often used as an
+alternative navigation or to specify information relevant to the main content.
+Change the widths as you like, only remember that it should add up to 100% in
+total:</p>
+
+<div class="header">
+  <h1>Header</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+
+<div class="row">
+  <div class="column1 side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+  <div class="column1 middle">
+    <h2>Main Content</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
+      amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
+      elementum magna tristique. Quisque vehicula, risus eget aliquam
+      placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
+      Praesent scelerisque tortor sed accumsan convallis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
+      amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
+      elementum magna tristique. Quisque vehicula, risus eget aliquam
+      placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
+      Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  <div class="column1 side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+</div>
+
+<p><b>Footer</b></p>
+<p>The footer is placed at the bottom of your page. It often contains
+  information like copyright and contact info:</p>
+
+  <div class="header">
+  <h1>Header</h1>
+  <p>Resize the browser window to see the responsive effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>
+
+<div class="row">
+  <div class="column1 side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+  <div class="column1 middle">
+    <h2>Main Content</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
+      amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
+      elementum magna tristique. Quisque vehicula, risus eget aliquam
+      placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
+      Praesent scelerisque tortor sed accumsan convallis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit
+      amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget
+      elementum magna tristique. Quisque vehicula, risus eget aliquam
+      placerat, purus leo tincidunt eros, eget luctus quam orci in velit.
+      Praesent scelerisque tortor sed accumsan convallis.</p>
+  </div>
+  <div class="column1 side">
+    <h2>Side</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Footer</p>
+</div>
+
+<p><b>Responsive Website Layout</b></p>
+<p>By using some of the CSS code above, we have created a responsive website
+  layout, which varies between two columns and full-width columns depending on
+  screen width:</p>
+
+  <div class="header2">
+  <h1>My Website</h1>
+  <p>Resize the browser window to see the effect.</p>
+</div>
+
+<div class="topnav2">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" style="float:right">Link</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer2">
+  <h2>Footer</h2>
+</div>
+
+</body>
+</html>
