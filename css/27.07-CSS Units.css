@@ -1,0 +1,194 @@
+/* needed? */
+body {
+    padding: 5px;
+    background: #f1f1f1;
+}
+
+mark {
+    color: red;
+}
+
+.note {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+.volume {
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
+
+.Chapters {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+
+div.example {
+    background-color: lightyellow;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+p.colorbackground {
+    background-color: lightgray;
+}
+
+table.properties table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.properties td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+h1.h11 {
+    font-size: 1.5cm;
+}
+
+h2.h21 {
+    font-size: 1cm;
+}
+
+p.p1 {
+    font-size: 0.5cm;
+    line-height: 1cm;
+}
+
+h1.h12 {
+	font-size: 15mm;
+}
+
+h2.h22 {
+	font-size: 10mm;
+}
+
+p.p2 {
+    font-size: 5mm;
+    line-height: 10mm;
+}
+
+h1.h13 {
+	font-size: 1in;
+}
+
+h2.h23 {
+	font-size: 0.5in;
+}
+
+p.p3 {
+    font-size: 0.2in;
+    line-height: 0.5in;
+}
+
+h1.h14 {
+	font-size: 50px;
+}
+
+h2.h24 {
+	font-size: 30px;
+}
+
+p.p4 {
+    font-size: 15px;
+    line-height: 20px;
+}
+
+h1.h15 {
+	font-size: 50pt;
+}
+
+h2.h25 {
+	font-size: 25pt;
+}
+
+p.p5 {
+    font-size: 15pt;
+    line-height: 25pt;
+}
+
+h1.h16 {
+	font-size: 4.5pc;
+}
+
+h2.h26 {
+	font-size: 3pc;
+}
+
+p.p6 {
+    font-size: 1.5pc;
+    line-height: 3pc;
+}
+
+p.p7 {
+    font-size: 16px;
+    line-height: 2em;
+}
+
+div.div1 {
+    font-size: 30px;
+    border: 1px solid black;
+}
+
+span.s1 {
+    font-size: 0.5em;
+}
+
+div.div2 {
+    font-size: 30px;
+    border: 1px solid black;
+}
+
+span.s2 {
+    font-size: 1ex;
+}
+
+div.div3 {
+    font-size: 3ch;
+    border: 1px solid black;
+}
+
+div.div4 {
+    font-size: 2rem;
+    border: 1px solid black;
+}
+
+h1.h17 {
+    font-size: 20vw;
+}
+
+h1.h18 {
+    font-size: 20vh;
+}
+
+h1.h19 {
+    font-size: 15vmin;
+}
+
+h1.h20 {
+    font-size: 15vmax;
+}
+
+div.div5 {
+    font-size: 150%;
+    border: 1px solid black;
+}

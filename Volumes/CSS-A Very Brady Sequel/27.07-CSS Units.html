@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Units</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/27.07-CSS Units.css" />
+<style></style>
+</head>
+
+<body>
+<h3 class="Chapters">CSS Units</h3>
+<p>CSS has several different units for expressing a length. Many CSS
+  properties take "length" values, such as width, margin, padding, font-size,
+  border-width, etc. Length is a number followed by a length unit, such as
+  10px, 2em, etc. A whitespace cannot appear between the number and the unit.
+  However, if the value is 0, the unit can be omitted. For some CSS
+  properties, negative lengths are allowed. There are two types of length
+  units: absolute and relative.</p>
+
+<p><b>Absolute Lengths</b></p>
+<p>The absolute length units are fixed and a length expressed in any of these
+  will appear as exactly that size. Absolute length units are not recommended
+  for use on screen, because screen sizes vary so much. However, they can be
+  used if the output medium is known, such as for print layout.</p>
+<table class="properties">
+  <tr>
+    <th>Unit</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>cm</td>
+    <td>centimeters</td>
+  </tr>
+  <tr>
+    <td>mm</td>
+    <td>milimeters</td>
+  </tr>
+  <tr>
+    <td>in</td>
+    <td>inches (1in=96px=2.54cm)</td>
+  </tr>
+  <tr>
+    <td>px*</td>
+    <td>pixels (1px=1/96th of 1in)</td>
+  </tr>
+  <tr>
+    <td>pt</td>
+    <td>points (1pt=72 of 1in)</td>
+  </tr>
+  <tr>
+    <td>pc</td>
+    <td>picas (1pc=12pt)</td>
+  </tr>
+</table>
+<p>* Pixels (px) are relative to the viewing device. For low-dpi devices, 1px
+  is one device pixel (dot) of the display. For printers and high resolution
+  screens 1px implies multiple device pixels.</p>
+
+  <div class="example">
+<p>Text in centimeters:</p>
+  </div>
+
+  <h1 class="h11">This is heading 1</h1>
+  <h2 class="h21">This is heading 2</h2>
+  <p class="p1">This is a paragraph.</p>
+  <p class="p1">This is another paragraph.</p>
+
+  <div class="example">
+<p>Text in milimeters:</p>
+  </div>
+
+<h1 class="h12">This is heading 1</h1>
+<h2 class="h22">This is heading 2</h2>
+<p class="p2">This is a paragraph.</p>
+<p class="p2">This is another paragraph.</p>
+
+<div class="example">Text in inches:</div>
+
+<h1 class="h13">This is heading 1</h1>
+<h2 class="h23">This is heading 2</h2>
+<p class="p3">This is a paragraph.</p>
+<p class="p3">This is another paragraph.</p>
+
+<div class="example">Text in pixels:</div>
+
+<h1 class="h14">This is heading 1</h1>
+<h2 class="h24">This is heading 2</h2>
+<p class="p4">This is a paragraph.</p>
+<p class="p4">This is another paragraph.</p>
+
+<div class="example">Text in points:</div>
+
+<h1 class="h15">This is heading 1</h1>
+<h2 class="h25">This is heading 2</h2>
+<p class="p5">This is a paragraph.</p>
+<p class="p5">This is another paragraph.</p>
+
+<div class="example">Text in picas:</div>
+
+<h1 class="h16">This is heading 1</h1>
+<h2 class="h26">This is heading 2</h2>
+<p class="p6">This is a paragraph.</p>
+<p class="p6">This is another paragraph.</p>
+
+<p><b>Relative Lengths</b></p>
+<p>Relative length units specify a length relative to another length property.
+  Relative length units scales better between different rendering mediums.</p>
+<table class="properties">
+  <tr>
+    <th>Unit</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>em</td>
+    <td>Relative to the font-size of the element (2em means 2 times the size
+      of the current font)</td>
+  </tr>
+  <tr>
+    <td>ex</td>
+    <td>Relative to the x-height of the current font (rarely used)</td>
+  </tr>
+  <tr>
+    <td>ch</td>
+    <td>Relative to width of the "0" (zero)</td>
+  </tr>
+  <tr>
+    <td>rem</td>
+    <td>Relative to font-size of the root element</td>
+  </tr>
+  <tr>
+    <td>vw</td>
+    <td>Relative to 1% of the width of the viewport</td>
+  </tr>
+  <tr>
+    <td>vh</td>
+    <td>Relative to 1% of the height of the viewport</td>
+  </tr>
+  <tr>
+    <td>vmin</td>
+    <td>Relative to 1% of viewport's smaller dimension</td>
+  </tr>
+  <tr>
+    <td>vmax</td>
+    <td>Relative to 1% of viewport's larger dimension</td>
+  </tr>
+  <tr>
+    <td>%</td>
+    <td>Relative to the parent element</td>
+  </tr>
+</table>
+
+<div class="note"><b>Tip:</b> The em and rem units are practical in creating
+  perfectly scalable layout! If the viewport is 50cm wide, 1vw = 0.5cm.
+</div>
+
+<div class="example">Text with em:</div>
+
+<p class="p7">These paragraphs have a calculated line-height of:
+  2x16px = 32px.</p>
+<p class="p7">These paragraphs have a calculated line-height of:
+  2x16px = 32px.</p>
+<p class="p7">These paragraphs have a calculated line-height of:
+  2x16px = 32px.</p>
+
+<div class="div1">The font-size of the div element is set to 30px.
+  <span class="s1">The span element inside the div element has a font-size of
+    0.5em, which equals to 0.5x30 = 15px</span>.</div>
+
+<div class="example">Text with em:</div>
+
+<div class="div2">The font-size of the div element is set to 30px.
+  <span class="s2">The span element inside the div element has a font-size of
+    1ex</span>.</div>
+
+<div class="example">Text with ch:</div>
+
+<div class="div3">The font-size of this div element is 3ch.</div>
+
+<p>The ch unit sets the font-size relative to the width of the character
+  "0".</p>
+
+<div class="example">Text with rem:</div>
+
+<div class="div4">The font-size of this div element is 2rem.</div>
+
+<p>The rem unit sets the font-size relative to the browsers base font-size,
+  and will not inherit from its parents.</p>
+
+<div class="example">Text with vw:</div>
+
+<h1 class="h17">Hello</h1>
+
+<p>Resize the width of the browser window to see how the font-size of h1
+  changes.</p>
+<p>1vw = 1% of viewport width. The vw unit is not supported in IE8 and
+  earlier.</p>
+
+<div class="example">Text with vh:</div>
+
+<h1 class="h18">Hello</h1>
+
+<p>Resize the height of the browser window to see how the font-size of h1
+  changes.</p>
+<p>1vh = 1% of viewport height. The vw unit is not supported in IE8 and
+  earlier.</p>
+
+<div class="example">Text with vmin:</div>
+
+<h1 class="h19">Hello</h1>
+
+<p>Resize the browser window (both width and height) to see how the font-size
+  of h1 changes.</p>
+<p>1vmin = 1vw or 1vh, whichever is smaller. The vw unit is not supported in
+  IE8 and earlier.</p>
+
+<div class="example">Text with vmax:</div>
+
+<h1 class="h20">Hello</h1>
+
+<p>Resize the browser window (both width and height) to see how the font-size
+  of h1 changes.</p>
+<p>1vmax = 1vw or 1vh, whichever is larger. The vw unit is not supported in
+  Internet Explorer or Safari 6.1 and earlier versions.</p>
+
+<div class="example">Text with %:</div>
+
+<div class="div5">The font-size of this div element is 150%.</div>
+
+<p>The % unit sets the font-size relative to the current font-size.</p>
+
+</body>
+</html>
