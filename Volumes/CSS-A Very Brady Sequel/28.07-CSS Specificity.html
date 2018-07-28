@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Specificity</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/28.07-CSS Specificity.css" />
+<style></style>
+</head>
+
+<body>
+<h3 class="Chapters">CSS Specificity</h3>
+<p>If there are two or more conflicting CSS rules that point to the same
+  element, the browser follows some rules to determine which one is most
+  specific and therefore wins out. Think of specificity as a score/rank that
+  determines which style declarations are ultimately applied to an element.
+  The universal selector (*) has low specificity, while ID selectors are
+  highly specific!</p>
+
+<div class="note"><b>Note:</b> Specificity is a common reason why your
+  CSS-rules don't apply to some elements, although you think they should.
+</div>
+
+<p><b>Specificity Hierarchy</b></p>
+<p>Every selector has its place in the specificity hierarchy. There are four
+  categories which define the specificity level of a selector:</p>
+<ul>
+  <li><b>Inline styles</b> - An inline style is attached directly to the
+    element to be styled. Example: &lth1 style="color: #ffffff;"&gt.</li>
+  <li><b>IDs</b> - An ID is a unique identifier for the page elements, such as
+    #navbar.</li>
+  <li><b>Classes, attributes and pseudo-classes</b> - This category includes
+    .classes, [attributes] and pseudo-classes such as :hover, :focus etc.</li>
+  <li><b>Elements and pseudo-elements</b> - This category includes element
+    names and pseudo-elements, such as h1, div, :before and :after.</li>
+</ul>
+
+<p><b>How to Calculate Specificity?</b></p>
+<p>Memorize how to calculate specificity! Start at 0, add 1000 for style
+  attribute, add 100 for each ID, add 10 for each attribute, class or
+  pseudo-class, add 1 for each element name or pseudo-element. Consider these
+  three code fragments:</p>
+
+<div class="example">
+  A: h1<br>
+  B: #content h1<br>
+  C: &ltdiv id="content"&gt&lth1 style="color: #ffffff"&gtHeading&lt/h1&gt</div>
+</div>
+
+<p>The specificity of A is 1 (one element)<br>
+The specificity of B is 101 (one ID reference and one element)<br>
+The specificity of C is 1000 (inline styling)</p>
+<p>Since 1 < 101 < 1000, the third rule (C) has a greater level of specificity
+  and therefore will be applied.</p>
+
+<p><b>Specificity Rules</b></p>
+<p><b>Equal specificity: the latest rule counts</b> - If the same rule is
+  written twice into the external style sheet, then the lower rule in the
+  style sheet is closer to the element to be styled, and therefore will be
+  applied:</p>
+<h1>This is heading 1</h1>
+<p>the latter rule is always applied.</p>
+<p><b>ID selectors have a higher specificity than attribute selectors</b> -
+  Look at the following three code lines:</p>
+
+<div id="a">This is a div</div>
+
+<p>the first rule is more specific than the other two, and will be applied.</p>
+<p><b>Contextual selectors are more specific than a single element
+  selector</b> - The embedded style sheet is closer to the element to be
+  styled. So in the following situation</p>
+  <p>From external CSS file:<br>
+  #content h1 {background-color: red;}<br>
+
+  In HTML file:<br>
+  &ltstyle&gt<br>
+  #content h1 {<br>
+      background-color: yellow;<br>
+  }<br>
+  &lt/style&gt</p>
+<p>the latter rule will be applied.</p>
+<p><b>A class selector beats any number of element selectors</b> - a class
+  selector such as .intro beats h1, p, div, etc:</p>
+  <h1 class="intro">This is a heading</h1>
+<p><b>The universal selector and inherited values have a specificity of 0</b>
+  - *, body * and similar have a zero specificity. Inherited values also have
+  a specificity of 0.</p>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
