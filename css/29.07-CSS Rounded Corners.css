@@ -1,0 +1,158 @@
+/* needed? */
+body {
+    padding: 5px;
+    background: #f1f1f1;
+}
+
+mark {
+    color: red;
+}
+
+.note {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+.volume {
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
+
+.Chapters {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+
+div.example {
+    background-color: lightyellow;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+p.colorbackground {
+    background-color: lightgray;
+}
+
+table.properties table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.properties td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#rcorners1 {
+    border-radius: 25px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners2 {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners3 {
+    border-radius: 25px;
+    background: url(../images/paper.gif);
+    background-position: left top;
+    background-repeat: repeat;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners4 {
+    border-radius: 15px 50px 30px 5px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners5 {
+    border-radius: 15px 50px 30px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners6 {
+    border-radius: 15px 50px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners7 {
+    border-radius: 15px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners8 {
+    border-radius: 50px / 15px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners9 {
+    border-radius: 15px / 50px;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+#rcorners10 {
+    border-radius: 50%;
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+}
+
+div.div1 {
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    border-radius: 25px;
+}
+
+div.div2 {
+    background: #73AD21;
+    padding: 20px;
+    width: 200px;
+    border-bottom-left-radius: 25px;
+}
