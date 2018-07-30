@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Border Images</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/30.07-CSS Border Images.css" />
+<style></style>
+</head>
+
+<body>
+
+<h3 class="Chapters">CSS Border Images</h3>
+<p>With the CSS <mark>border-image</mark> property, you can set an image to be
+  used as the border around an element.</p>
+
+<p><b>CSS border-image Property</b></p>
+<p>The CSS <mark>border-image</mark> property allows you to specify an image
+  to be used instead of the normal border around an element. The property has
+  three parts:</p>
+<ol>
+  <li>The image to use as the border</li>
+  <li>Where to slice the image</li>
+  <li>Define whether the middle sections should be repeated or stretched</li>
+</ol>
+<p>We will use the following image (called "border.png"):</p>
+<img src="../../images/border.png" alt="border.png">
+<p>The <mark>border-image</mark> property takes the image and slices it into
+  nine sections, like a tic-tac-toe board. It then places the corners at the
+  corners, and the middle sections are repeated or stretched as you
+  specify.</p>
+
+<div class="note"><b>Note:</b> For <mark>border-image</mark> to work, the
+  element also needs the <mark>border</mark> property set!
+</div>
+<p>Here, the middle sections of the image are repeated to create the
+  border:</p>
+<p id="borderimg">border-image: url(../images/border.png) 30 round;</p>
+<p>Here is the original image:</p><img src="../../images/border.png">
+<div class="note"><p><strong>Note:</strong> Internet Explorer 10, and earlier
+  versions, do not support the border-image property.</p>
+</div>
+
+<p>Here, the middle sections of the image are stretched to create the
+  border:</p>
+<p id="borderimg">border-image: url(../images/border.png) 30 stretch;</p>
+<p>Here is the original image:</p><img src="../../images/border.png">
+<p><strong>Note:</strong> Internet Explorer 10, and earlier versions, do not
+  support the border-image property.</p>
+
+<div class="note"><b>Tip:</b> The <mark>border-image</mark> property is
+  actually a shorthand property for the <mark>border-image-source</mark>,
+  <mark>border-image-slice</mark>, <mark>border-image-width</mark>,
+  <mark>border-image-outset</mark> and <mark>border-image-repeat</mark>
+  properties.
+</div>
+
+<p><b>CSS border-image - Different Slice Values</b></p>
+<p>Different slice values completely changes the look of the border:</p>
+
+<div class="example"><b>Example 1:</b>
+<p id="borderimg3">border-image: url(../../images/border.png) 50 round;</p>
+</div>
+
+<div class="example"><b>Example 2:</b>
+<p id="borderimg4">border-image: url(../../images/border.png) 20% round;</p>
+</div>
+
+<div class="example"><b>Example 3:</b>
+<p id="borderimg5">border-image: url(../../images/border.png) 30% round;</p>
+</div>
+
+<div class="note"><p><strong>Note:</strong> Internet Explorer 10, and earlier
+  versions, do not support the border-image property.</p>
+</div>
+
+<p class="colorbackground"><b>Exercise 1:</b> Give the &ltdiv&gt element an
+  image border using the image "border.png". Slice the image at 30px and
+  repeat it.</p>
+
+<div class="div1">This is a div element. It has some text.</div>
+
+<p class="colorbackground"><b>Exercise 2:</b> Give the &ltdiv&gt element an
+  image border using the image "border.png". Slice the image at 30px and
+  stretch it.</p>
+
+<div class="div2">This is a div element. It has some text.</div>
+
+<p><b>CSS Border Image Properties</b></p>
+
+<table class="properties">
+  <tr>
+    <th>Property</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><a href="https://www.w3schools.com/cssref/css3_pr_border-image.asp">
+      border-image</a></td>
+    <td>A shorthand property for setting all the border-image-* properties</td>
+  </tr>
+  <tr>
+    <td><a
+    href="https://www.w3schools.com/cssref/css3_pr_border-image-source.asp">
+    border-image-source</a></td>
+    <td>Specifies the path to the image to be used as a border</td>
+  </tr>
+  <tr>
+    <td><a
+  href="https://www.w3schools.com/cssref/css3_pr_border-image-slice.asp">
+  border-image-slice</a></td>
+    <td>Specifies how to slice the border image</td>
+  </tr>
+  <tr>
+    <td><a
+href="https://www.w3schools.com/cssref/css3_pr_border-image-width.asp">
+border-image-width</a></td>
+    <td>Specifies the widths of the border image</td>
+  </tr>
+  <tr>
+    <td><a
+href="https://www.w3schools.com/cssref/css3_pr_border-image-outset.asp">
+border-image-outset</a></td>
+    <td>Specifies the amount by which the border image area extends beyond the
+      border box</td>
+  </tr>
+  <tr>
+    <td><a
+href="https://www.w3schools.com/cssref/css3_pr_border-image-repeat.asp">
+border-image-repeat</a></td>
+    <td>Specifies whether the border image should be repeated, rounded or
+      stretched</td>
+  </tr>
+</table>
+
+
+</body>
+</html>
