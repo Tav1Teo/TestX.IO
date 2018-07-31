@@ -1,0 +1,187 @@
+/* needed? */
+body {
+    padding: 5px;
+    background: #f1f1f1;
+}
+
+mark {
+    color: red;
+}
+
+.note {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+.volume {
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
+
+.Chapters {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+
+div.example {
+    background-color: lightyellow;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+p.colorbackground {
+    background-color: lightgray;
+}
+
+table.properties table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.properties td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+html {
+  background: url(../images/img_flower.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+#example1 {
+    background-image: url(../images/img_flwr.gif), url(../images/paper.gif);
+    background-position: right bottom, left top;
+    background-repeat: no-repeat, repeat;
+    padding: 15px;
+}
+
+#example2 {
+    background: url(../images/img_flwr.gif) right bottom no-repeat,
+    url(../images/paper.gif) left top repeat;
+    padding: 15px;
+}
+
+#example3 {
+    border: 1px solid black;
+    background:url(../images/img_flwr.gif);
+    background-size: 100px 80px;
+    background-repeat: no-repeat;
+    padding:15px;
+}
+
+#example4 {
+    border: 1px solid black;
+    background:url(../images/img_flwr.gif);
+    background-repeat: no-repeat;
+    padding:15px;
+}
+
+.div1 {
+    border: 1px solid black;
+    height:120px;
+    width:150px;
+    background:url(../images/img_flwr.gif);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.div2 {
+    border: 1px solid black;
+    height:120px;
+    width:150px;
+    background:url(../images/img_flwr.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.div3 {
+    border: 1px solid black;
+    height:120px;
+    width:150px;
+    background:url(../images/img_flwr.gif);
+    background-repeat: no-repeat;
+}
+
+#example5 {
+    background: url(../images/img_tree.gif) left top no-repeat,
+    url(../images/img_flwr.gif) right bottom no-repeat,
+    url(../images/paper.gif) left top repeat;
+    padding: 15px;
+    background-size: 50px, 130px, auto;
+}
+
+#example6 {
+    border: 10px solid black;
+    padding: 35px;
+    background: url(../images/img_flwr.gif);
+    background-repeat: no-repeat;
+}
+
+#example7 {
+    border: 10px solid black;
+    padding: 35px;
+    background: url(../images/img_flwr.gif);
+    background-repeat: no-repeat;
+    background-origin: border-box;
+}
+
+#example8 {
+    border: 10px solid black;
+    padding: 35px;
+    background: url(../images/img_flwr.gif);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+
+#example9 {
+    border: 10px dotted black;
+    padding:35px;
+    background: yellow;
+}
+
+#example10 {
+    border: 10px dotted black;
+    padding:35px;
+    background: yellow;
+    background-clip: padding-box;
+}
+
+#example11 {
+    border: 10px dotted black;
+    padding:35px;
+    background: yellow;
+    background-clip: content-box;
+}
+
+div.div4 {
+    border: 10px solid black;
+    padding: 35px;
+    background: url(../images/img_flwr.gif) left top;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+
+div.div5 {
+    border: 10px dotted black;
+    padding: 35px;
+    background: lightblue;
+    background-clip: padding-box;
+}

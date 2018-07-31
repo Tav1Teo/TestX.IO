@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>CSS Multiple Backgrounds</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet"
+href="../../css/31.07-CSS Multiple Backgrounds.css" />
+<style></style>
+</head>
+
+<body>
+<h3 class="Chapters">CSS Multiple Backgrounds</h3>
+<p>In this chapter you will learn how to add multiple background images to one
+  element. You will also learn about the following properties:</p>
+<ul>
+  <li><mark>background-size</mark></li>
+  <li><mark>background-origin</mark></li>
+  <li><mark>background-clip</mark></li>
+</ul>
+<p>CSS allows you to add multiple background images for an element, through
+  the <mark>background-image</mark>property. The different background images
+  are separated by commas, and the images are stacked on top of each other,
+  where the first image is closest to the viewer. The following example has
+  two background images, the first image is a flower (aligned to the bottom
+  and right) and the second image is a paper background (aligned to the
+  top-left corner):</p>
+
+  <div id="example1">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+<p>Multiple background images can be specified using either the individual
+  background properties (as above) or the <mark>background</mark> shorthand
+  property. The following example uses the <mark>background</mark> shorthand
+  property (same result as example above):</p>
+
+  <div id="example2">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+<p><b>CSS Background Size</b></p>
+<p>The CSS <mark>background-size</mark> property allows you to specify the
+  size of background images. The size can be specified in lengths,
+  percentages or by using one of the two keywords: contain or cover. The
+  following example resizes a background image to much smaller than the
+  original image (using pixels):</p>
+
+<p>Resized background-image:</p>
+
+  <div id="example3">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+<p>Original size of the background-image:</p>
+
+  <div id="example4">
+  <h2>Lorem Ipsum Dolor</h2>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+<p>The two other possible values for <mark>background-size</mark> are
+  <mark>contain</mark> and <mark>cover</mark>.</p>
+<p>The <mark>contain</mark> keyword scales the background image to be as large
+  as possible (but both its width and its height must fit inside the content
+  area). As such, depending on the proportions of the background image and the
+  background positioning area, there may be some areas of the background which
+  are not covered by the background image.</p>
+<p>The <mark>cover</mark> keyword scales the background image so that the
+  content area is completely covered by the background image (both its width
+  and height are equal to or exceed the content area). As such, some parts of
+  the background image may not be visible in the background positioning
+  area. The following example illustrates the use of <mark>contain</mark> and
+  <mark>cover</mark>:</p>
+
+  <h3>background-size: contain:</h3>
+  <div class="div1">
+  <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+
+  <h3>background-size: cover:</h3>
+  <div class="div2">
+  <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+
+  <h3>No background-size defined:</h3>
+  <div class="div3">
+  <p>Lorem ipsum dolor sit amet.</p>
+  </div>
+
+  <p>Original image:</p>
+  <img src="../../images/img_flwr.gif" alt="Flowers" width="224" height="162">
+
+<p><b>Define Sizes of Multiple Background Images</b></p>
+<p>The <mark>background-size</mark> property also accepts multiple values for
+  background size (using a comma-separated list), when working with multiple
+  backgrounds. The following example has three background images specified,
+  with different background-size value for each image:</p>
+
+  <div id="example5">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+<p><b>Full Size Background Image</b></p>
+<p>Now we want to have a background image on a website that covers the entire
+  browser window at all times. The requirements are as follows:</p>
+<ul>
+  <li>Fill the entire page with the image (no white space)</li>
+  <li>Scale image as needed</li>
+  <li>Center image on page</li>
+  <li>Do not cause scrollbars</li>
+</ul>
+<p>The following example shows how to do it; Use the html element (the html
+  element is always at least the height of the browser window). Then set a
+  fixed and centered background on it. Then adjust its size with the
+  background-size property:</p>
+<p>html {<br>
+    background: url(../images/img_flower.jpg) no-repeat center fixed; <br>
+    background-size: cover;
+}</p>
+
+<p><b>CSS background-origin Property</b></p>
+<p>The CSS <mark>background-origin</mark> property specifies where the
+  background image is positioned. The property takes three different
+  values:</p>
+<ul>
+  <li>border-box - the background image starts from the upper left corner of
+    the border</li>
+  <li>padding-box - (default) the background image starts from the upper left
+    corner of the padding edge</li>
+  <li>content-box - the background image starts from the upper left corner of
+    the content</li>
+</ul>
+<p>The following example illustrates the <mark>background-origin</mark>
+  property:</p>
+
+<p>No background-origin (padding-box is default):</p>
+
+  <div id="example6">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+<p>background-origin: border-box:</p>
+
+  <div id="example7">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+<p>background-origin: content-box:</p>
+
+  <div id="example8">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+<p><b>CSS background-clip Property</b></p>
+<p>The CSS <mark>background-clip</mark> property specifies the painting area
+  of the background. The property takes three different values:</p>
+<ul>
+  <li>border-box - (default) the background is painted to the outside edge of
+    the border</li>
+  <li>padding-box - the background is painted to the outside edge of the
+    padding</li>
+  <li>content-box - the background is painted within the content box</li>
+</ul>
+<p>The following example illustrates the <mark>background-clip</mark>
+  property:</p>
+
+<p>No background-clip (border-box is default):</p>
+
+  <div id="example9">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  </div>
+
+<p>background-clip: padding-box:</p>
+
+  <div id="example10">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  </div>
+
+<p>background-clip: content-box:</p>
+
+  <div id="example11">
+  <h3>Lorem Ipsum Dolor</h3>
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+    nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+    volutpat.</p>
+  </div>
+
+<p class="colorbackground"><b>Exercise 1:</b> Add a second background image
+  ("img_flwr.gif") to the &ltbody&gt element. Make sure that "img_flwr.gif" is
+  displayed on top of the current background image:</p>
+<p>
+body {<br>
+    background-image: url(../images/img_flwr.gif), url(../images/paper.gif);<br>
+}</p>
+
+<p class="colorbackground"><b>Exercise 2:</b> Change the size of the
+  background image to: width 100px, height 80px.</p>
+<p>
+  body {<br>
+      background:url(../images/img_flwr.gif);<br>
+      background-repeat: no-repeat;<br>
+      background-size: 100px 80px;<br>
+  }</p>
+
+<p class="colorbackground"><b>Exercise 3:</b>Change the size of the background
+  image so it always fits the entire page.</p>
+<p>
+html {<br>
+    background: url(../images/img_flower.jpg) no-repeat center fixed;<br>
+    background-size: cover;<br>
+}<br>
+<br>
+body { <br>
+    color: white; <br>
+}</p>
+
+<p class="colorbackground"><b>Exercise 4:</b> Specify that the background
+  image position should start from the upper left corner of the
+  content-box.</p>
+
+<div class="div4">
+  <h3>This is a Heading.</h3>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+</div>
+
+<p class="colorbackground"><b>Exercise 5:</b> Specify that the "painting area"
+  of the background should be to the outside edge of the padding.</p>
+
+  <div class="div5">
+    <h3>This is a Heading.</h3>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+  </div>
+
+<p><b>CSS Advanced Background Properties</b></p>
+  <table class="properties">
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><a href="https://www.w3schools.com/cssref/css3_pr_background.asp">
+        background</a></td>
+      <td>A shorthand property for setting all the background properties in
+        one declaration</td>
+    </tr>
+    <tr>
+      <td><a
+      href="https://www.w3schools.com/cssref/css3_pr_background-clip.asp">
+      background-clip</a></td>
+      <td>Specifies the painting area of the background</td>
+    </tr>
+    <tr>
+      <td><a
+    href="https://www.w3schools.com/cssref/pr_background-image.asp">
+    background-image</a></td>
+      <td>Specifies one or more background images for an element</td>
+    </tr>
+    <tr>
+      <td><a
+  href="https://www.w3schools.com/cssref/css3_pr_background-origin.asp">
+  background-origin</a></td>
+      <td>Specifies where the background image(s) is/are positioned</td>
+    </tr>
+    <tr>
+      <td><a
+  href="https://www.w3schools.com/cssref/css3_pr_background-size.asp">
+  background-size</a></td>
+      <td>Specifies the size of the background image(s)</td>
+    </tr>
+  </table>
+
+
+</body>
+</html>
