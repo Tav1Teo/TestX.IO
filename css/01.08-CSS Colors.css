@@ -1,0 +1,174 @@
+/* needed? */
+body {
+    padding: 5px;
+    background: #f1f1f1;
+}
+
+mark {
+    color: red;
+}
+
+.note {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+.volume {
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
+
+.Chapters {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+
+div.example {
+    background-color: lightyellow;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+p.colorbackground {
+    background-color: lightgray;
+}
+
+table.properties table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.properties td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+html {
+    background: url(../images/img_flower.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+#p1 {
+    background-color:rgba(255,0,0,0.3);
+}
+
+#p2 {
+    background-color:rgba(0,255,0,0.3);
+}
+
+#p3 {
+    background-color:rgba(0,0,255,0.3);
+}
+
+#p4 {
+    background-color:rgba(192,192,192,0.3);
+}
+
+#p5 {
+    background-color:rgba(255,255,0,0.3);
+}
+
+#p6 {
+    background-color:rgba(255,0,255,0.3);
+}
+
+#p7 {
+    background-color:hsl(120,100%,50%);
+}
+#p8 {
+    background-color:hsl(120,100%,75%);
+}
+#p9 {
+    background-color:hsl(120,100%,25%);
+}
+#p10 {
+    background-color:hsl(120,60%,70%);
+}
+#p11 {
+    background-color:hsl(290,100%,50%);
+}
+#p12 {
+    background-color:hsl(290,60%,70%);
+}
+
+#p13 {
+    background-color:hsla(120,100%,50%,0.3);
+}
+
+#p14 {
+    background-color:hsla(120,100%,75%,0.3);
+}
+
+#p15 {
+    background-color:hsla(120,100%,25%,0.3);
+}
+
+#p16 {
+    background-color:hsla(120,60%,70%,0.3);
+}
+
+#p17 {
+    background-color:hsla(290,100%,50%,0.3);
+}
+
+#p18 {
+    background-color:hsla(290,60%,70%,0.3);
+}
+
+#p19 {
+    background-color:rgb(255,0,0);opacity:0.6;
+}
+
+#p20 {
+    background-color:rgb(0,255,0);opacity:0.6;
+}
+
+#p21 {
+    background-color:rgb(0,0,255);opacity:0.6;
+}
+
+#p22 {
+    background-color:rgb(192,192,192);opacity:0.6;
+}
+
+#p23 {
+    background-color:rgb(255,255,0);opacity:0.6;
+}
+
+#p24 {
+    background-color:rgb(255,0,255);opacity:0.6;
+}
+
+h1 {
+   background-color: rgb(0,255,0,0.3);
+}
+
+h1.h11 {
+	background-color: hsl(0, 100%, 50%);
+}
+
+h1.h12 {
+    background-color: hsl(0, 100%, 50%, 0.3);
+}
+
+h1.h13 {
+    background-color:rgb(255,0,0);opacity:0.4;
+}
