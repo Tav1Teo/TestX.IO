@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+<title>CSS Text Effects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" 
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" 
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet" 
+href="../../css/03.08-CSS Text Effects.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">CSS Text Effects</h1>
+
+<h2>CSS Text Overflow, Word Wrap, and Line Breaking Rules</h2>
+<p>In this chapter you will learn about the following properties:</p>
+<ul>
+    <li><mark>text-overflow</mark></li>
+    <li><mark>word-wrap</mark></li>
+    <li><mark>word-break</mark></li>
+</ul>
+
+<h2>CSS Text Overflow</h2>
+<p>The CSS <mark>text-overflow</mark>  property specifies how overflowed 
+    content that is not displayed should be signaled to the user. It can be 
+    clipped:</p>
+<h3>text-overflow: clip:</h3>
+<p class="test1">This is some long text that will not fit in the box</p>
+
+<p>or it can be rendered as an ellipsis (...):</p>
+<h3>text-overflow: ellipsis:</h3>
+<p class="test2">This is some long text that will not fit in the box</p>
+
+<p>The following example shows how you can display the overflowed content 
+    when hovering over the element:</p>
+<div class="test" style="text-overflow:ellipsis;">This is some long text that 
+    will not fit in the box</div>
+<br>
+<div class="test" style="text-overflow:clip;">This is some long text that 
+    will not fit in the box</div>
+
+<h2>CSS Word Wrapping</h2>
+<p>The CSS <mark>word-wrap</mark> property allows long words to be able to be 
+    broken and wrap onto the next line. If a word is too long to fit within 
+    an area, it expands outside. The word-wrap property allows you to force 
+    the text to wrap - even if it means splitting it in the middle of a 
+    word:</p>
+<p class="test3"> This paragraph contains a very long word: 
+    thisisaveryveryveryveryveryverylongword. The long word will break and 
+    wrap to the next line.</p>
+
+<h2>CSS Word Breaking</h2>
+<p>The CSS <mark>word-break</mark> property specifies line breaking rules.</p>
+<p class="test4">This paragraph contains some text. This line 
+    will-break-at-hyphens.</p>
+
+<p class="test5">This paragraph contains some text. The lines will break at 
+    any character.</p>
+
+<div class="note"><p>
+    <b>Note:</b> The word-break property is not supported in Opera 12 and 
+    earlier versions.</p></div>
+
+<p class="colorbackground"><b>Exercise 1:</b> Specify that the overflowed 
+    content for the &ltp&gt element should be signaled with an 
+    ellipsis (...)</p>
+<p class="test6">This paragraph contains a very long word: 
+    supercalifragilisticexpialidocious.</p>
+
+<p class="colorbackground"><b>Exercise 2:</b> Specify that text in the
+&ltp&gt element should wrap, even if it needs to split in the middle of a 
+word.</p>
+<p class="test7">This paragraph contains a very long word: 
+    supercalifragilisticexpialidocious.</p>
+
+<p class="colorbackground"><b>Exercise 3:</b> Specify that text in the
+&ltp&gt element can break between any two letters.</p>
+<p class="test8">This paragraph contains a very long word: 
+    super-cali-fragi-listic-expialidocious.</p>
+
+<h2>CSS Text Effect Properties</h2>
+<p>The following table lists the CSS text effect properties:</p>
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>
+        <a href="https://www.w3schools.com/cssref/css3_pr_text-align-last.asp">
+            text-align-last</a></td>
+        <td>Specifies how to align the last line of a text</td>
+    </tr>
+    <tr>
+        <td>
+        <a href="https://www.w3schools.com/cssref/css3_pr_text-justify.asp">
+            text-justify</a></td>
+        <td>Specifies how justified text should be aligned and spaced</td>
+    </tr>
+    <tr>
+        <td>
+        <a href="https://www.w3schools.com/cssref/css3_pr_text-overflow.asp">
+            text-overflow</a></td>
+        <td>Specifies how overflowed content that is not displayed should be 
+            signaled to the user</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/cssref/css3_pr_word-break.asp">
+            word-break</a></td>
+        <td>Specifies line breaking rules for non-CJK scripts</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/cssref/css3_pr_word-wrap.asp">
+            word-wrap</a></td>
+        <td>Allows long words to be able to be broken and wrap onto the next 
+            line</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

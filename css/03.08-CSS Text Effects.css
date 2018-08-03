@@ -1,0 +1,133 @@
+/* needed? */
+body {
+    padding: 5px;
+    background: #f1f1f1;
+}
+
+mark {
+    color: red;
+}
+
+.note {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+.volume {
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
+
+.Chapters {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+
+div.example {
+    background-color: lightyellow;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+p.colorbackground {
+    background-color: lightgray;
+}
+
+table.properties table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.properties td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+html {
+    background: url(../images/img_flower.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+p.test1 {
+    white-space: nowrap; 
+    width: 200px; 
+    border: 1px solid #000000;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+p.test2 {
+    white-space: nowrap; 
+    width: 200px; 
+    border: 1px solid #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.test {
+    white-space: nowrap; 
+    width: 200px; 
+    overflow: hidden; 
+    border: 1px solid #000000;
+}
+
+div.test:hover {
+    text-overflow: inherit;
+    overflow: visible;
+}
+
+p.test3 {
+    width: 11em; 
+    border: 1px solid #000000;
+    word-wrap: break-word;
+}
+
+p.test4 {
+    width: 140px; 
+    border: 1px solid #000000;
+    word-break: keep-all;
+}
+
+p.test5 {
+    width: 140px; 
+    border: 1px solid #000000;
+    word-break: break-all;
+}
+
+p.test6 {
+    white-space: nowrap; 
+    width: 200px; 
+    border: 1px solid #000000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+p.test7 {
+    width: 150px; 
+    border: 1px solid #000000;
+    word-wrap: break-word;
+}
+
+p.test8 {
+    width: 150px; 
+    border: 1px solid #000000;
+    word-break: break-all;
+}
