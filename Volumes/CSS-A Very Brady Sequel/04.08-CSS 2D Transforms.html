@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+<title>CSS 2D Transforms</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" 
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" 
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet" 
+href="../../css/04.08-CSS 2D Transforms.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">CSS 2D Transforms</h1>
+<p>CSS transforms allow you to translate, rotate, scale, and skew elements. A 
+    transformation is an effect that lets an element change shape, size and 
+    position. CSS supports 2D and 3D transformations. In this chapter you 
+    will learn about the following 2D transformation methods:</p>
+<ul>
+    <li><mark>translate()</mark></li>
+    <li><mark>rotate()</mark></li>
+    <li><mark>scale</mark></li>
+    <li><mark>skewX()</mark></li>
+    <li><mark>skewY()</mark></li>
+    <li><mark>matrix()</mark></li>
+</ul>
+
+<div class="note"><b>Tip:</b> You will learn about 3D transformations in the 
+    next chapter.</div>
+
+<h2>The translate() Method</h2>
+<p>The <mark>translate()</mark> method moves an element from its current 
+    position (according to the parameters given for the X-axis and the 
+    Y-axis). The following example moves the &ltdiv&gt element 50 pixels to 
+    the right, and 100 pixels down from its current position:</p>
+
+<div class="div1">This div element is moved 50 pixels to the right, and 100 
+    pixels down from its current position.</div>
+
+<h2>The rotate() Method</h2>
+<p>The <mark>rotate()</mark> method rotates an element clockwise or 
+    counter-clockwise according to a given degree. The following example 
+    rotates the &ltdiv&gt element clockwise with 20 degrees:</p>
+
+<div class="div2">This a normal div element.</div>
+
+<div class="div2" id="myDiv">This div element is rotated clockwise 20 
+    degrees.</div>
+
+<p>Using negative values will rotate the element counter-clockwise. The 
+    following example rotates the &ltdiv&gt element counter-clockwise with 20 
+    degrees:</p>
+
+<div class="div2">This a normal div element.</div>
+
+<div class="div2" id="myDiv2">This div element is rotated clockwise 20 degrees.
+</div>
+
+<h2>The scale() Method</h2>
+<p>The <mark>scale()</mark> method increases or decreases the size of an 
+    element (according to the parameters given for the width and height). The 
+    following example increases the &ltdiv&gt element to be two times of its 
+    original width, and three times of its original height:</p>
+
+<div class="div3">This div element is two times of its original width, and 
+    three times of its original height.</div>
+
+<p>The following example decreases the &ltdiv&gt element to be half of its 
+    original width and height:</p>
+
+<div class="div4">This div element is decreased to be half of its original 
+    width and height.</div>
+
+<h2>The skewX() Method</h2>
+<p>The <mark>skewX()</mark> method skews an element along the X-axis by the 
+    given angle. The following example skews the &ltdiv&gt element 20 degrees 
+    along the X-axis:</p>
+
+<div class="div2">This a normal div element.</div>
+
+<div class="div2" id="myDiv3">This div element is skewed 20 degrees along the 
+    X-axis.
+</div>
+
+<h2>The skewY() Method</h2>
+<p>The <mark>skewY()</mark> method skews an element along the Y-axis by the 
+    given angle. The following example skews the &ltdiv&gt element 20 degrees 
+    along the Y-axis:</p>
+
+<div class="div2">This a normal div element.</div>
+
+<div class="div2" id="myDiv4">This div element is skewed 20 degrees along the 
+    Y-axis.
+</div>
+
+<h2>The skew() Method</h2>
+<p>The <mark>skew()</mark> method skews an element along the X and Y-axis by 
+    the given angles. The following example skews the &ltdiv&gt element 20 
+    degrees along the X-axis, and 10 degrees along the Y-axis:</p>
+
+<div class="div2">This a normal div element.</div>
+
+<div class="div2" id="myDiv5">This div element is skewed 20 degrees along the 
+    X-axis, and 10 degrees along the Y-axis.
+</div>
+
+<p>If the second parameter is not specified, it has a zero value. So, the 
+    following example skews the &ltdiv&gt element 20 degrees along the 
+    X-axis:</p>
+
+<div class="div2">This a normal div element.</div>
+
+<div class="div2" id="myDiv6">This div element is skewed 20 degrees along the 
+    X-axis, and 10 degrees along the Y-axis.
+</div>
+
+<h2>The matrix() Method</h2>
+<p>The <mark>matrix()</mark> method combines all the 2D transform methods 
+    into one. The matrix() method take six parameters, containing mathematic 
+    functions, which allows you to rotate, scale, move (translate) and skew 
+    elements. The parameters are as follow: 
+    matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())</p>
+
+<div class="div2">This a normal div element.</div>
+
+<div class="div2" id="myDiv7">Using the matrix() method.
+</div>
+
+<div class="div2" id="myDiv8">Another use of the matrix() method.
+</div>
+
+<p class="colorbackground"><b>Exercise 1:</b> With the transform property, 
+    move the &ltdiv&gt element 100px to the right, and 200px down.</p>
+
+<div class="div5"></div>
+
+<p class="colorbackground"><b>Exercise 2:</b> With the transform property, 
+    rotate the &ltdiv&gt element 45 degrees.</p>
+
+<div class="div6"></div>
+
+<p class="colorbackground"><b>Exercise 3:</b> With the transform property, 
+    change the size of the &ltdiv&gt to half its width, but double its 
+    height.</p>
+
+<div class="div7"></div>
+
+<p class="colorbackground"><b>Exercise 4:</b> With the transform property, 
+    skew the &ltdiv&gt element 20 degrees along the X-axis, and 30 degrees 
+    along the Y-axis.</p>
+
+<div class="div8"></div>
+
+<h2>CSS Transform Properties</h2>
+<p>The following table lists all the 2D transform properties:</p>
+
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/cssref/css3_pr_transform.asp">
+            transform</a></td>
+        <td>Applies a 2D or 3D transformation to an element</td>
+    </tr>
+    <tr>
+        <td><a 
+        href="https://www.w3schools.com/cssref/css3_pr_transform-origin.asp">
+        transform-origin</a></td>
+        <td>Allows you to change the position on transformed elements</td>
+    </tr>
+</table>
+
+<h2>2D Transform Methods</h2>
+<table class="properties">
+    <tr>
+        <th>Function</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>matrix(<em>n,n,n,n,n,n</em>)</td>
+        <td>Defines a 2D transformation, using a matrix of six values</td>
+    </tr>
+    <tr>
+        <td>translate(<em>x,y</em>)</td>
+        <td>Defines a 2D translation, moving the element along the X- and the 
+            Y-axis</td>
+    </tr>
+    <tr>
+        <td>translateX(<em>n</em>)</td>
+        <td>Defines a 2D translation, moving the element along the X-axis</td>
+    </tr>
+    <tr>
+        <td>translateY(<em>n</em>)</td>
+        <td>Defines a 2D translation, moving the element along the Y-axis</td>
+    </tr>
+    <tr>
+        <td>scale(<em>x,y</em>)</td>
+        <td>Defines a 2D scale transformation, changing the elements width 
+            and height</td>
+    </tr>
+    <tr>
+        <td>scaleX(<em>n</em>)</td>
+        <td>Defines a 2D scale transformation, changing the element's 
+            width</td>
+    </tr>
+    <tr>
+        <td>scaleY(<em>n</em>)</td>
+        <td>Defines a 2D scale transformation, changing the element's 
+            height</td>
+    </tr>
+    <tr>
+        <td>rotate(<em>angle</em>)</td>
+        <td>Defines a 2D rotation, the angle is specified in the parameter</td>
+    </tr>
+    <tr>
+        <td>skew(<em>x-angle,y-angle</em>)</td>
+        <td>Defines a 2D skew transformation along the X- and the Y-axis</td>
+    </tr>
+    <tr>
+        <td>skewX(<em>angle</em>)</td>
+        <td>Defines a 2D skew transformation along the X-axis</td>
+    </tr>
+    <tr>
+        <td>skewY(<em>angle</em>)</td>
+        <td>Defines a 2D skew transformation along the Y-axis</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+/* needed? */
+body {
+    padding: 5px;
+    background: #f1f1f1;
+}
+
+mark {
+    color: red;
+}
+
+.note {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+.volume {
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
+
+.Chapters {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+
+div.example {
+    background-color: lightyellow;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+p.colorbackground {
+    background-color: lightgray;
+}
+
+table.properties table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.properties td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+html {
+    background: url(../images/img_flower.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+.div1 {
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    -ms-transform: translate(50px,100px); /* IE 9 */
+    -webkit-transform: translate(50px,100px); /* Safari */
+    transform: translate(50px,100px); /* Standard syntax */
+    margin-bottom: 110px;
+}
+
+.div2 {
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+}
+
+#myDiv {
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Safari */
+    transform: rotate(20deg); /* Standard syntax */
+    margin-bottom: 110px;
+}
+
+#myDiv2 {
+    -ms-transform: rotate(-20deg); /* IE 9 */
+    -webkit-transform: rotate(-20deg); /* Safari */
+    transform: rotate(-20deg); /* Standard syntax */
+    margin-bottom: 70px;
+}
+
+div.div3 {
+    margin: 150px;
+    width: 200px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    -ms-transform: scale(2,3); /* IE 9 */
+    -webkit-transform: scale(2,3); /* Safari */
+    transform: scale(2,3); /* Standard syntax */
+}
+
+div.div4 {
+    margin: 150px;
+    width: 200px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    -ms-transform: scale(0.5,0.5); /* IE 9 */
+    -webkit-transform: scale(0.5,0.5); /* Safari */
+    transform: scale(0.5,0.5); /* Standard syntax */
+}
+
+#myDiv3 {
+    -ms-transform: skewX(20deg); /* IE 9 */
+    -webkit-transform: skewX(20deg); /* Safari */
+    transform: skewX(20deg); /* Standard syntax */
+}
+
+#myDiv4 {
+    -ms-transform: skewY(20deg); /* IE 9 */
+    -webkit-transform: skewY(20deg); /* Safari */
+    transform: skewY(20deg); /* Standard syntax */
+    margin-bottom: 70px;
+}
+
+#myDiv5 {
+    -ms-transform: skew(20deg,10deg); /* IE 9 */
+    -webkit-transform: skew(20deg,10deg); /* Safari */
+    transform: skew(20deg,10deg); /* Standard syntax */
+    margin-bottom: 70px;
+}
+
+#myDiv6 {
+    -ms-transform: skew(20deg); /* IE 9 */
+    -webkit-transform: skew(20deg); /* Safari */
+    transform: skew(20deg); /* Standard syntax */
+}
+
+#myDiv7 {
+    -ms-transform: matrix(1, -0.3, 0, 1, 0, 0); /* IE 9 */
+    -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0); /* Safari */
+    transform: matrix(1, -0.3, 0, 1, 0, 0); /* Standard syntax */
+}
+
+#myDiv8 {
+    -ms-transform: matrix(1, 0, 0.5, 1, 150, 0); /* IE 9 */
+    -webkit-transform: matrix(1, 0, 0.5, 1, 150, 0); /* Safari */
+    transform: matrix(1, 0, 0.5, 1, 150, 0); /* Standard syntax */
+}
+
+.div5 {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transform: translate(100px,200px);
+    margin-bottom: 210px;
+}
+
+.div6 {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transform: rotate(45deg);
+}
+
+.div7 {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transform: scale(0.5,2);
+}
+
+.div8 {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    background-color: lightblue;
+    border: 1px solid black;
+    transform: skew(20deg,30deg);
+}
+
