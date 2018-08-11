@@ -1,0 +1,224 @@
+/* needed? */
+body {
+    padding: 5px;
+    background: #f1f1f1;
+}
+
+mark {
+    color: red;
+}
+
+.note {
+    background-color: lightgray;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+.volume {
+    color: red;
+    font-size: 40px;
+    background-color: black;
+    text-align: center;
+}
+
+.Chapters {
+    background-color: grey;
+    color: black;
+    padding: 10px;
+}
+
+div.example {
+    background-color: lightyellow;
+    padding: 10px;
+    margin: 6px 0px 6px 0px;
+}
+
+p.colorbackground {
+    background-color: lightgray;
+}
+
+table.properties table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: auto;
+    font-family: arial, sans-serif;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table.properties td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+html {
+    background: url(../images/img_flower.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+div.div1 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+}
+
+div.div1:hover {
+    width: 300px;
+}
+
+div.div2 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+}
+
+div.div2:hover {
+    width: 300px;
+    height: 300px;
+}
+
+/* For Safari 3.1 to 6.0 */
+#div1 {-webkit-transition-timing-function: linear;}
+#div2 {-webkit-transition-timing-function: ease;}
+#div3 {-webkit-transition-timing-function: ease-in;}
+#div4 {-webkit-transition-timing-function: ease-out;}
+#div5 {-webkit-transition-timing-function: ease-in-out;}
+
+/* Standard syntax */
+#div1 {transition-timing-function: linear;}
+#div2 {transition-timing-function: ease;}
+#div3 {transition-timing-function: ease-in;}
+#div4 {transition-timing-function: ease-out;}
+#div5 {transition-timing-function: ease-in-out;}
+
+div.div3 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 3s; /* Safari */
+    -webkit-transition-delay: 1s; /* Safari */
+    transition: width 3s;
+    transition-delay: 1s;
+}
+
+div.div3:hover {
+    width: 300px;
+}
+
+div.div4 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+}
+
+div.div4:hover {
+    width: 300px;
+    height: 300px;
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+}
+
+div.div5 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    /* For Safari 3.1 to 6.0 */
+    -webkit-transition-property: width;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-timing-function: linear;
+    -webkit-transition-delay: 1s;
+    /* Standard syntax */
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 1s;
+}
+
+div.div5:hover {
+    width: 300px;
+}
+
+div.div6 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s linear 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s linear 1s;
+}
+
+div.div6:hover {
+    width: 300px;
+}
+
+div.div7 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s linear;
+}
+
+div.div7:hover {
+    width: 300px;
+}
+
+div.div8 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s ease-in-out;
+}
+
+div.div8:hover {
+    width: 300px;
+}
+
+div.div9 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s;
+    transition-delay: 0.5s;
+}
+
+div.div9:hover {
+    width: 300px;
+}
+
+div.div10 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: background 2s, transform 2s;
+}
+
+div.div10:hover {
+    background: blue;
+    transform: rotate(180deg);
+}
+
+div.div11 {
+    width: 100px;
+    height: 100px;
+    background: red;
+    transition: width 2s ease-in-out 0.5s;
+}
+
+div.div11:hover {
+    width: 400px;
+}

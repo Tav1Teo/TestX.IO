@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+<title>CSS Transitions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" 
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" 
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet" 
+href="../../css/11.08-CSS Transitions.css" />
+<style></style>
+</head>
+
+<body>
+
+<h1 class="Chapters">CSS Transitions</h1>
+<p>CSS transitions allows you to change property values smoothly (from one 
+    value to another), over a given duration. To create a transition effect, 
+    you must specify two things:</p>
+<ul>
+    <li>the CSS property you want to add an effect to</li>
+    <li>the duration of the effect</li>
+</ul>
+
+<div class="note"><b>Note:</b> If the duration part is not specified, the 
+    transition will have no effect, because the default value is 0.</div>
+
+<p>The following example shows a 100px * 100px red &ltdiv&gt element. The
+    &ltdiv&gt element has also specified a transition effect for the width 
+    property, with a duration of 2 seconds:</p>
+
+<div class="div1"></div>
+
+<p>The transition effect will start when the specified CSS property (width) 
+    changes value. Now, let us specify a new value for the width property 
+    when a user mouses over the &ltdiv&gt element:</p>
+
+<div class="div1"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<p>Notice that when the cursor mouses out of the element, it will gradually 
+    change back to its original style.</p>
+
+<h2>Change Several Property Values</h2>
+<p>The following example adds a transition effect for both the width and 
+    height property, with a duration of 2 seconds for the width and 4 seconds 
+    for the height:</p>
+
+<div class="div2"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<h2>Specify the Speed Curve of the Transition</h2>
+<p>The <mark>transition-timing-function</mark> property specifies the speed 
+    curve of the transition effect. The transition-timing-function property 
+    can have the following values:</p>
+<ul>
+    <li><mark>ease</mark> - specifies a transition effect with a slow start, 
+        then fast, then end slowly (this is default)</li>
+    <li><mark>linear</mark> - specifies a transition effect with the same 
+        speed from start to end</li>
+    <li><mark>ease-in</mark> - specifies a transition effect with a slow 
+        start</li>
+    <li><mark>ease-out</mark> - specifies a transition effect with a slow 
+        end</li>
+    <li><mark>ease-in-out</mark> - specifies a transition effect with a slow 
+        start and end</li>
+    <li><mark>cubic-bezier(n,n,n,n)</mark> - lets you define your own values 
+        in a cubic-bezier function</li>
+</ul>
+<p>The following example shows the some of the different speed curves that 
+    can be used:</p>
+
+<div class="div1" id="div1">linear</div>
+<br>
+<div class="div1" id="div2">ease</div>
+<br>
+<div class="div1" id="div3">ease-in</div>
+<br>
+<div class="div1" id="div4">ease-out</div>
+<br>
+<div class="div1" id="div5">ease-in-out</div>
+<br>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<h2>Delay the Transition Effect</h2>
+<p>The <mark>transition-delay</mark> property specifies a delay (in seconds) 
+    for the transition effect. The following example has a 1 second delay 
+    before starting:</p>
+
+<div class="div3"></div>
+
+<div class="note"><p><b>Note:</b> The transition effect has a 1 second delay 
+    before starting.</p>
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier 
+    versions.</p></div>
+
+<h2>Transition + Transformation</h2>
+<p>The following example also adds a transformation to the transition 
+    effect:</p>
+
+<div class="div4"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<div class="example"><b>Example 1:</b> The CSS transition properties can be 
+    specified one by one, like this:</div>
+
+<div class="div5"></div>
+
+<div class="note"><p><b>Note:</b> The transition effect has a 1 second delay 
+    before starting.</p>
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier 
+    versions.</p></div>
+
+<div class="example"><b>Example 2:</b>Or by using the shorthand property 
+<mark>transition</mark></div>
+
+<div class="div6"></div>
+
+<div class="note"><p><b>Note:</b> The transition effect has a 1 second delay 
+    before starting.</p>
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier 
+    versions.</p></div>
+
+<p class="colorbackground"><b>Exercise 1:</b> Add a 2 second transition 
+    effect for width changes of the &ltdiv&gt element.</p>
+
+<div class="div7"></div>
+
+<p class="colorbackground"><b>Exercise 2:</b> Specify that the transition of 
+    the &ltdiv&gt element should have a "ease-in-out" speed curve.</p>
+
+<div class="div8"></div>
+
+<p class="colorbackground"><b>Exercise 3:</b> Specify that the transition of 
+    the &ltdiv&gt element should have a "0.5" second delay before starting.</p>
+
+<div class="div9"></div>
+
+<p class="colorbackground"><b>Exercise 4:</b> Add a 2 second transition 
+    effect for background, and transform changes of the &ltdiv&gt element.</p>
+
+<div class="div10"></div>
+
+<p class="colorbackground"><b>Exercise 5:</b> Using the transition shorthand 
+    property, specify width changes for the &ltdiv&gt element should have: 
+    "2" second duration, "ease-in-out" speed curve, and a "0.5" second delay 
+    before starting.</p>
+
+<div class="div11"></div>
+
+<h2>CSS Transition Properties</h2>
+<p>The following table lists all the CSS transition properties:</p>
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/cssref/css3_pr_transition.asp">
+        transition</a></td>
+        <td>A shorthand property for setting the four transition properties 
+        into a single property</td>
+    </tr>
+    <tr>
+        <td>
+    <a href="https://www.w3schools.com/cssref/css3_pr_transition-delay.asp">
+    transition-delay</a></td>
+        <td>Specifies a delay (in seconds) for the transition effect</td>
+    </tr>
+    <tr>
+        <td>
+    <a href="https://www.w3schools.com/cssref/css3_pr_transition-duration.asp">
+        transition-duration</a></td>
+        <td>Specifies how many seconds or milliseconds a transition effect 
+        takes to complete</td>
+    </tr>
+    <tr>
+        <td>
+    <a href="https://www.w3schools.com/cssref/css3_pr_transition-property.asp">
+        transition-property</a></td>
+        <td>Specifies the name of the CSS property the transition effect is 
+        for</td>
+    </tr>
+    <tr>
+        <td><a 
+href="https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp">
+         transition-timing-function</a></td>
+        <td>Specifies the speed curve of the transition effect</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+<title>CSS 3D Transforms</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" 
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" 
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet" 
+href="../../css/11.08-CSS 3D Transforms.css" />
+<style></style>
+</head>
+
+<body>
+
+    <h1 class="Chapters">CSS 3D Transforms</h1>
+<p>CSS allows you to format your elements using 3D transformations. In this 
+    chapter you will learn about the following 3D transformation methods:</p>
+<ul>
+    <li><mark>rotateX()</mark></li>
+    <li><mark>rotateY()</mark></li>
+    <li><mark>rotateZ()</mark></li>
+</ul>
+
+<h2>The rotateX() Method</h2>
+<p>The <mark>rotateX()</mark> method rotates an element around its X-axis at 
+    a given degree:</p>
+
+<div>
+    This a normal div element.</div>
+
+<div id="myDiv1">
+    This div element is rotated 150 degrees.</div>
+
+<div class="note"><p>
+    <b>Note:</b> Internet Explorer 9 (and earlier versions) does not support 
+    the rotateX() method.</p></div>
+
+<h2>The rotateY() Method</h2>
+<p>The <mark>rotateY()</mark> method rotates an element around its Y-axis at 
+    a given degree:</p>
+
+<div>
+    This a normal div element.</div>
+
+<div id="myDiv2">
+    This div element is rotated 150 degrees.</div>
+
+<div class="note"><p>
+    <b>Note:</b> Internet Explorer 9 (and earlier versions) does not support 
+    the rotateY() method.</p></div>
+
+<h2>The rotateZ() Method</h2>
+<p>The <mark>rotateZ()</mark> method rotates an element around its Z-axis at 
+    a given degree:</p>
+
+<div>
+    This a normal div element.</div>
+
+<div id="myDiv3">
+    This div element is rotated 90 degrees.</div>
+
+<div class="note"><p>
+    <b>Note:</b> Internet Explorer 9 (and earlier versions) does not support 
+    the rotateZ() method.</p></div>
+
+<p class="colorbackground"><b>Exercise 1:</b> With the transform property, 
+    rotate the &ltdiv&gt element 150deg around its X-axis.</p>
+
+<div class="div2">This is a div element</div>
+
+<p class="colorbackground"><b>Exercise 2:</b> With the transform property, 
+    rotate the &ltdiv&gt element 120deg around its Y-axis.</p>
+
+<div class="div3">This is a div element</div>
+
+<p class="colorbackground"><b>Exercise 3:</b> With the transform property, 
+    rotate the &ltdiv&gt element 90deg around its Z-axis.</p>
+
+<div class="div4">This is a div element</div>
+
+<h2>CSS Transform Properties</h2>
+<p>The following table lists all the 3D transform properties:</p>
+
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/cssref/css3_pr_transform.asp">
+        transform</a></td>
+        <td>Applies a 2D or 3D transformation to an element</td>
+    </tr>
+    <tr>
+        <td>
+    <a href="https://www.w3schools.com/cssref/css3_pr_transform-origin.asp">
+    transform-origin</a></td>
+        <td>Allows you to change the position on transformed elements</td>
+    </tr>
+    <tr>
+        <td>
+        <a href="https://www.w3schools.com/cssref/css3_pr_transform-style.asp">
+        transform-style</a></td>
+        <td>Specifies how nested elements are rendered in 3D space</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/cssref/css3_pr_perspective.asp">
+        perspective</a></td>
+        <td>Specifies the perspective on how 3D elements are viewed</td>
+    </tr>
+    <tr>
+        <td>
+    <a href="https://www.w3schools.com/cssref/css3_pr_perspective-origin.asp">
+        perspective-origin</a></td>
+        <td>Specifies the bottom position of 3D elements</td>
+    </tr>
+    <tr>
+        <td>
+    <a href="https://www.w3schools.com/cssref/css3_pr_backface-visibility.asp">
+        backface-visibility</a></td>
+        <td>Defines whether or not an element should be visible when not 
+        facing the screen</td>
+    </tr>
+</table>
+
+<h2>3D Transform Methods</h2>
+<table class="properties">
+    <tr>
+        <th>Function</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>matrix3d(<em>n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n</em>)</td>
+        <td>Defines a 3D transformation, using a 4x4 matrix of 16 values</td>
+    </tr>
+    <tr>
+        <td>translate3d(<em>x,y,z</em>)</td>
+        <td>Defines a 3D translation</td>
+    </tr>
+    <tr>
+        <td>translateX(<em>x</em>)</td>
+        <td>Defines a 3D translation, using only the value for the X-axis</td>
+    </tr>
+    <tr>
+        <td>translateY(<em>y</em>)</td>
+        <td>Defines a 3D translation, using only the value for the Y-axis</td>
+    </tr>
+    <tr>
+        <td>translateZ(<em>z</em>)</td>
+        <td>Defines a 3D translation, using only the value for the Z-axis</td>
+    </tr>
+    <tr>
+        <td>scale3d(<em>x,y,z</em>)</td>
+        <td>Defines a 3D scale transformation</td>
+    </tr>
+    <tr>
+        <td>scaleX(<em>x</em>)</td>
+        <td>Defines a 3D scale transformation by giving a value for the X-axis
+        </td>
+    </tr>
+    <tr>
+        <td>scaleY(<em>y</em>)</td>
+        <td>Defines a 3D scale transformation by giving a value for the Y-axis
+        </td>
+    </tr>
+    <tr>
+        <td>scaleZ(<em>z</em>)</td>
+        <td>Defines a 3D scale transformation by giving a value for the Z-axis
+        </td>
+    </tr>
+    <tr>
+        <td>rotate3d(<em>x,y,z,angle</em>)</td>
+        <td>Defines a 3D rotation</td>
+    </tr>
+    <tr>
+        <td>rotateX(<em>angle</em>)</td>
+        <td>Defines a 3D rotation along the X-axis</td>
+    </tr>
+    <tr>
+        <td>rotateY(<em>angle</em>)</td>
+        <td>Defines a 3D rotation along the Y-axis</td>
+    </tr>
+    <tr>
+        <td>rotateZ(<em>angle</em>)</td>
+        <td>Defines a 3D rotation along the Y-axis</td>
+    </tr>
+    <tr>
+        <td>perspective(<em>n</em>)</td>
+        <td>Defines a perspective view for a 3D transformed element</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
