@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+<title>CSS Animations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" 
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" 
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link type="text/css" rel="stylesheet" 
+href="../../css/12.08-CSS Animations.css" />
+<style></style>
+</head>
+
+<body>
+
+<h1 class="Chapters">CSS Animations</h1>
+<p>CSS animations allows animation of most HTML elements without using 
+    JavaScript or Flash. An animation lets an element gradually change from 
+    one style to another. You can change as many CSS properties you want, as 
+    many times you want. To use CSS animation, you must first specify some 
+    keyframes for the animation. Keyframes hold what styles the element will 
+    have at certain times.</p>
+
+<h2>The @keyframes Rule</h2>
+<p>When you specify CSS styles inside the <mark>@keyframes</mark> rule, the 
+    animation will gradually change from the current style to the new style 
+    at certain times. To get an animation to work, you must bind the 
+    animation to an element. The following example binds the "example" 
+    animation to the &ltdiv&gt element. The animation will last for 4 
+    seconds and it will gradually change the background-color of the 
+    &ltdiv&gt element from "red" to "yellow":</p>
+
+<div class="div1"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p>
+<p><b>Note:</b> When an animation is finished, it changes back to its 
+    original style.</p>
+<p><b>Note:</b> The <mark>animation-duration</mark> property defines how long 
+    time an animation should take to complete. If the 
+    <mark>animation-duration</mark> property is not specified, no animation 
+    will occur, because the default value is 0s (0 seconds).</p></div>
+
+<p>In the example above we have specified when the style will change by using 
+    the keywords "from" and "to" (which represents 0% (start) and 100% 
+    (complete)). It is also possible to use percent. By using percent, you 
+    can add as many style changes as you like. The following example will 
+    change the background-color of the &ltdiv&gt element when the animation 
+    is 25% complete, 50% complete and again when the animation is 100% 
+    complete:</p>
+
+<div class="div2"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<p>The following example will change both the background-color and the 
+    position of the &ltdiv&gt element when the animation is 25% complete, 50% 
+    complete and again when the animation is 100% complete:</p>
+
+<div class="div3"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<h2>Delay an Animation</h2>
+<p>The <mark>animation-delay</mark> property specifies a delay for the start 
+    of an animation. The following example has a 2 seconds delay before 
+    starting the animation:</p>
+
+<div class="div4"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<p>Negative values are also allowed. If using negative values, the animation 
+    will start as if it had already been playing for <em>N</em> seconds. In 
+    the following example, the animation will start as if it had already been 
+    playing for 2 seconds:</p>
+
+<div class="div5"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<h2>Set How Many Times an Animation Should Run</h2>
+<p>The <mark>animation-iteration-count</mark> property specifies the number 
+    of times an animation should run. The following example will run the 
+    animation 3 times before it stops:</p>
+
+<div class="div6"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<p>The following example uses the value "infinite" to make the animation 
+    continue for ever:</p>
+
+<div class="div7"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<h2>Run Animation in Reverse Direction or Alternate Cycles</h2>
+<p>The <mark>animation-direction</mark> property specifies whether an 
+    animation should be played forwards, backwards or in alternate cycles. 
+    The animation-direction property can have the following values:</p>
+<ul>
+    <li><mark>normal</mark> - The animation is played as normal (forwards). 
+        This is default</li>
+    <li><mark>reverse</mark> - The animation is played in reverse direction 
+        (backwards)</li>
+    <li><mark>alternate</mark> - The animation is played forwards first, then 
+        backwards</li>
+    <li><mark>alternate-reverse</mark> - The animation is played backwards 
+        first, then forwards</li>
+</ul>
+<p>The following example will run the animation in reverse direction 
+    (backwards):</p>
+
+<div class="div8"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<p>The following example uses the value "alternate" to make the animation run 
+    forwards first, then backwards:</p>
+
+<div class="div9"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<p>The following example uses the value "alternate-reverse" to make the 
+    animation run backwards first, then forwards:</p>
+
+<div class="div10"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<h2>Specify the Speed Curve of the Animation</h2>
+<p>The <mark>animation-timing-function</mark> property specifies the speed 
+    curve of the animation. The animation-timing-function property can have 
+    the following values:</p>
+<ul>
+    <li><mark>ease</mark> - Specifies an animation with a slow start, then 
+        fast, then end slowly (this is default)</li>
+    <li><mark>linear</mark> - Specifies an animation with the same speed from 
+        start to end</li>
+    <li><mark>ease-in</mark> - Specifies an animation with a slow start</li>
+    <li><mark>ease-out</mark> - Specifies an animation with a slow end</li>
+    <li><mark>ease-in-out</mark> - Specifies an animation with a slow start 
+        and end</li>
+    <li><mark>cubic-bezier(n,n,n,n)</mark> - Lets you define your own values 
+        in a cubic-bezier function</li>
+</ul>
+<p>The following example shows the some of the different speed curves that 
+    can be used:</p>
+
+<div class="div11" id="div1">linear</div>
+<div class="div11" id="div2">ease</div>
+<div class="div11" id="div3">ease-in</div>
+<div class="div11" id="div4">ease-out</div>
+<div class="div11" id="div5">ease-in-out</div>
+
+<div class="note"><p><strong>Note:</strong> The animation-timing-funtion 
+    property is not supported in Internet Explorer 9 and earlier 
+    versions.</p></div>
+
+<h2>Specify the fill-mode For an Animation</h2>
+<p>CSS animations do not affect an element before the first keyframe is 
+    played or after the last keyframe is played. The animation-fill-mode
+    property can override this behavior. The <mark>animation-fill-mode</mark> 
+    property specifies a style for the target element when the animation is 
+    not playing (before it starts, after it ends or both). The 
+    animation-fill-mode property can have the following values:</p>
+<ul>
+    <li><mark>none</mark> - Default value. Animation will not apply any 
+        styles to the element before or after it is executing</li>
+    <li><mark>forwards</mark> - The element will retain the style values that 
+        is set by the last keyframe (depends on animation-direction and 
+        animation-iteration-count)</li>
+    <li><mark>backwards</mark> - The element will get the style values that 
+        is set by the first keyframe (depends on animation-direction) and 
+        retain this during the animation-delay period</li>
+    <li><mark>both</mark> - The animation will follow the rules for both 
+        forwards and backwards, extending the animation properties in both 
+        directions</li>
+</ul>
+<p>The following example lets the &ltdiv&gt element retain the style values 
+    from the last keyframe when the animation ends:</p>
+
+<div class="div12"></div>
+
+<div class="note"><p><strong>Note:</strong> The animation-fill-mode property 
+    is not supported in Internet Explorer 9 and earlier versions.</p></div>
+
+<p>The following example lets the &ltdiv&gt element get the style values set by 
+    the first keyframe before the animation starts (during the 
+    animation-delay period):</p>
+
+<div class="div13"></div>
+
+<div class="note"><p><strong>Note:</strong> The animation-fill-mode property 
+    is not supported in Internet Explorer 9 and earlier versions.</p></div>
+
+<p>The following example lets the &ltdiv&gt element get the style values set 
+    by the first keyframe before the animation starts, and retain the style 
+    values from the last keyframe when the animation ends:</p>
+
+<div class="div14"></div>
+
+<div class="note"><p><strong>Note:</strong> The animation-fill-mode property 
+    is not supported in Internet Explorer 9 and earlier versions.</p></div>
+
+<h2>Animation Shorthand Property</h2>
+<p>The example below uses six of the animation properties:</p>
+
+<div class="div15"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<p>The same animation effect as above can be achieved by using the shorthand 
+    <mark>animation</mark> property:</p>
+
+<div class="div16"></div>
+
+<div class="note"><p><b>Note:</b> This example does not work in Internet 
+    Explorer 9 and earlier versions.</p></div>
+
+<p class="colorbackground"><b>Exercise 1:</b> Add a 2 second animation for 
+    the &ltdiv&gt element, which changes the color from red to blue. Call the 
+    animation "example".</p>
+
+<div class="div16"></div>
+
+<p class="colorbackground"><b>Exercise 2:</b> Add the following 5 steps to 
+    the animation "example" (using 0%, 25%, 50%, 75%, and 100%):</p>
+<ol>
+    <li>0% - Set background color to "red", left position to "0px", top 
+        position to: "0px"</li>
+    <li>25% - Set background color to "blue", left position to "0px", top 
+        position to: "200px"</li>
+    <li>50% - Set background color to "green", left position to "200px", top 
+        position to: "200px"</li>
+    <li>75% - Set background color to "yellow", left position to "200px", top 
+        position to: "0px"</li>
+    <li>100% - Set background color to "red", left position to "0px", top 
+        position to: "0px"</li>
+</ol>
+
+<div class="div17"></div>
+
+<p class="colorbackground"><b>Exercise 3:</b> Specify that the animation of 
+    the &ltdiv&gt element should have a "1" second delay before starting.</p>
+
+<div class="div18"></div>
+
+<p class="colorbackground"><b>Exercise 4:</b> Specify that the animation of 
+    the &ltdiv&gt element should continue to loop for ever.</p>
+
+<div class="div19"></div>
+
+<p class="colorbackground"><b>Exercise 5:</b> Specify that the animation of 
+    the &ltdiv&gt element should alternate between running forwards and 
+    backwards.</p>
+
+<div class="div20"></div>
+
+<p class="colorbackground"><b>Exercise 6:</b> Specify that the animation of 
+    the &ltdiv&gt element should have a "ease-in-out" speed curve.</p>
+
+<div class="div21"></div>
+
+<h2>CSS Animation Properties</h2>
+<p>The following table lists the @keyframes rule and all the CSS animation 
+    properties:</p>
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a 
+    href="https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp">
+        @keyframes</a></td>
+        <td>Specifies the animation code</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/cssref/css3_pr_animation.asp">
+        animation</a></td>
+        <td>A shorthand property for setting all the animation properties</td>
+    </tr>
+    <tr>
+        <td>
+        <a href="https://www.w3schools.com/cssref/css3_pr_animation-delay.asp">
+        animation-delay</a></td>
+        <td>Specifies a delay for the start of an animation</td>
+    </tr>
+    <tr>
+        <td><a 
+    href="https://www.w3schools.com/cssref/css3_pr_animation-direction.asp">
+        animation-direction</a></td>
+        <td>Specifies whether an animation should be played forwards, 
+            backwards or in alternate cycles</td>
+    </tr>
+    <tr>
+        <td>
+    <a href="https://www.w3schools.com/cssref/css3_pr_animation-duration.asp">
+        animation-duration</a></td>
+        <td>Specifies how long time an animation should take to complete one 
+        cycle</td>
+    </tr>
+    <tr>
+        <td><a 
+    href="https://www.w3schools.com/cssref/css3_pr_animation-fill-mode.asp">
+        animation-fill-mode</a></td>
+        <td>Specifies a style for the element when the animation is not 
+        playing (before it starts, after it ends, or both)</td>
+    </tr>
+    <tr>
+        <td><a 
+href="https://www.w3schools.com/cssref/css3_pr_animation-iteration-count.asp">
+        animation-iteration-count</a></td>
+        <td>Specifies the number of times an animation should be played</td>
+    </tr>
+    <tr>
+        <td>
+        <a href="https://www.w3schools.com/cssref/css3_pr_animation-name.asp">
+        animation-name</a></td>
+        <td>Specifies the name of the @keyframes animation</td>
+    </tr>
+    <tr>
+        <td><a 
+    href="https://www.w3schools.com/cssref/css3_pr_animation-play-state.asp">
+        animation-play-state</a></td>
+        <td>Specifies whether the animation is running or paused</td>
+    </tr>
+    <tr>
+        <td><a 
+href="https://www.w3schools.com/cssref/css3_pr_animation-timing-function.asp">
+        animation-timing-function</a></td>
+        <td>Specifies the speed curve of the animation</td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+</body>
+</html>
