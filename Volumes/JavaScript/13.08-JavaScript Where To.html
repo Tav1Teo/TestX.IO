@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Where To</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/13.08-JavaScript Where To.css" />
+<style></style>
+<script>
+    function myFunction2() {
+        document.getElementById("demo2").innerHTML = "Paragraph changed.";
+    }
+</script>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Where To</h1>
+<h2>The &ltscript&gt Tag</h2>
+<p>In HTML, JavaScript code must be inserted between &ltscript&gt and 
+    &lt/script&gt tags.</p>
+<p id="demo1"></p>
+
+<script>
+    document.getElementById("demo1").innerHTML = "My First JavaScript";
+</script>
+
+<div class="note">Old JavaScript examples may use a type attribute: &ltscript 
+    type="text/javascript"&gt.
+The type attribute is not required. JavaScript is the default scripting 
+language in HTML.</div>
+
+<h2>JavaScript Functions and Events</h2>
+<p>A JavaScript <b>function</b> is a block of JavaScript code, that can be 
+    executed when "called" for. For example, a function can be called when an 
+<b>event</b> occurs, like when the user clicks a button.</p>
+
+<h2>JavaScript in &lthead&gt or &ltbody&gt</h2>
+<p>You can place any number of scripts in an HTML document. Scripts can be 
+    placed in the &ltbody&gt, or in the &lthead&gt section of an HTML page, 
+    or in both.</p>
+
+<h2>JavaScript in &lthead&gt</h2>
+<p>In this example, a JavaScript function is placed in the &lthead&gt section 
+    of an HTML page. The function is invoked (called) when a button is 
+    clicked:</p>
+<p id="demo2">A Paragraph.</p>
+
+<button type="button" onclick="myFunction2()">Try it</button>
+
+<h2>JavaScript in &ltbody&gt</h2>
+<p>In this example, a JavaScript function is placed in the &ltbody&gt section 
+    of an HTML page. The function is invoked (called) when a button is 
+    clicked:</p>
+<p id="demo3">A Paragraph.</p>
+
+<button type="button" onclick="myFunction3()">Try it</button>
+
+<script>
+    function myFunction3() {
+        document.getElementById("demo3").innerHTML = "Paragraph changed.";
+    }
+</script>
+
+<div class="note">Placing scripts at the bottom of the &ltbody&gt element 
+    improves the display speed, because script compilation slows down the 
+    display.</div>
+
+<h2>External JavaScript</h2>
+<p>Scripts can also be placed in external files:</p>
+<p>External scripts are practical when the same code is used in many 
+    different web pages. JavaScript files have the file extension 
+    <b>.js</b> To use an external script, put the name of the script file in 
+    the src (source) attribute of a &ltscript&gt tag:</p>
+<p id="demo4">A Paragraph.</p>
+
+<button type="button" onclick="myFunction4()">Try it</button>
+
+<p>(myFunction is stored in an external file called "myScript.js")</p>
+
+<script src="../../js/myScript.js"></script>
+
+<p>You can place an external script reference in &lthead&gt or &ltbody&gt as 
+    you like. The script will behave as if it was located exactly where the 
+    &ltscript&gt tag is located.</p>
+
+<div class="note">External scripts cannot contain &ltscript&gt tags.</div>
+
+<h2>External JavaScript Advantages</h2>
+<p>Placing scripts in external files has some advantages:</p>
+<ul>
+    <li>It separates HTML and code</li>
+    <li>It makes HTML and JavaScript easier to read and maintain</li>
+    <li>Cached JavaScript files can speed up page loads</li>
+</ul>
+<p>To add several script files to one page - use several script tags:</p>
+
+<script src="myScript1.js"></script>
+<script src="myScript2.js"></script>
+
+<h2>External References</h2>
+<p>External scripts can be referenced with a full URL or with a path relative 
+    to the current web page. This example uses a full URL to link to a 
+    script:</p>
+<p id="demo5">A Paragraph.</p>
+
+<button type="button" onclick="myFunction5()">Try it</button>
+
+<p>(myFunction is stored in an external file called "myScript.js")</p>
+
+<script src="C:\Users\lenovo\Desktop\TestX.IO\js"></script>
+
+<p>This example uses a script located in a specified folder on the current 
+    web site:</p>
+<p id="demo6">A Paragraph.</p>
+
+<button type="button" onclick="myFunction6()">Try it</button>
+
+<p>(myFunction is stored in an external file called "myScript.js")</p>
+
+<script src="../../js/myScript.js"></script>
+
+<div class="note">You can read more about file paths in the chapter 
+    <a href="https://www.w3schools.com/html/html_filepaths.asp">HTML File 
+        Paths</a>.</div>
+
+
+
+
+
+
+</body>
+</html>
