@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Comments</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/15.08-JavaScript Comments.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Comments</h1>
+<p>JavaScript comments can be used to explain JavaScript code, and to make it 
+    more readable. JavaScript comments can also be used to prevent execution, 
+    when testing alternative code.</p>
+
+<h2>Single Line Comments</h2>
+<p>Single line comments start with //. Any text between // and the end of the 
+    line will be ignored by JavaScript (will not be executed). This example 
+    uses a single-line comment before each code line:</p>
+
+<h2 id="myH"></h2>
+<p id="myP"></p>
+
+<script>
+    // Change heading:
+    document.getElementById("myH").innerHTML = "JavaScript Comments";
+    // Change paragraph:
+    document.getElementById("myP").innerHTML = "My first paragraph.";
+</script>
+
+<p>This example uses a single line comment at the end of each line to explain 
+    the code:</p>
+<p id="demo1"></p>
+
+<script>
+    var x = 5;      // Declare x, give it the value of 5
+    var y = x + 2;  // Declare y, give it the value of x + 2 
+    // Write y to demo:
+    document.getElementById("demo1").innerHTML = y;
+</script>
+
+<h2>Multi-line Comments</h2>
+<p>Multi-line comments start with /* and end with */. Any text between /* and 
+    */ will be ignored by JavaScript. This example uses a multi-line comment 
+    (a comment block) to explain the code:</p>
+
+<h2 id="myH2"></h2>
+<p id="myP2"></p>
+
+<script>
+    /*
+    The code below will change
+    the heading with id = "myH2"
+    and the paragraph with id = "myP2"
+    */
+    document.getElementById("myH2").innerHTML = "JavaScript Comments";
+    document.getElementById("myP2").innerHTML = "My first paragraph.";
+</script>
+
+<div class="note">It is most common to use single line comments. Block 
+    comments are often used for formal documentation.</div>
+
+<h2>Using Comments to Prevent Execution</h2>
+<p>Using comments to prevent execution of code is suitable for code testing. 
+    Adding // in front of a code line changes the code lines from an 
+    executable line to a comment. This example uses // to prevent execution 
+    of one of the code lines:</p>
+
+<h1 id="myH3"></h1>
+
+<p id="myP3"></p>
+
+<script>
+    //document.getElementById("myH3").innerHTML = "My First Page";
+    document.getElementById("myP3").innerHTML = "My first paragraph.";
+</script>
+
+<p>The line starting with // is not executed.</p>
+<p>This example uses a comment block to prevent execution of multiple 
+    lines:</p>
+
+<h1 id="myH4"></h1>
+
+<p id="myP4"></p>
+
+<script>
+    /*
+    document.getElementById("myH4").innerHTML = "Welcome to my Homepage";
+    document.getElementById("myP4").innerHTML = "This is my first paragraph.";
+    */
+    document.getElementById("myP4").innerHTML = 
+    "The comment-block is not executed.";
+</script>
+
+</body>
+</html>
