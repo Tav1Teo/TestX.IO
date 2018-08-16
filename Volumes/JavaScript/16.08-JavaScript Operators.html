@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Operators</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/16.08-JavaScript Operators.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Operators</h1>
+<p>Assign values to variables and add them together:</p>
+<p>x = 5, y = 2, calculate z = x + y, and display z:</p>
+<p id="demo1"></p>
+
+<script>
+    var x = 5;
+    var y = 2;
+    var z = x + y;
+    document.getElementById("demo1").innerHTML = z;
+</script>
+
+<p>The <b>assignment</b> operator (=) assigns a value to a variable.</p>
+<p id="demo2"></p>
+
+<script>
+    var x = 10;
+    document.getElementById("demo2").innerHTML = x;
+</script>
+
+<p>The <b>addition</b> operator (+) adds numbers:</p>
+<p id="demo3"></p>
+
+<script>
+    var x = 5;
+    var y = 2;
+    var z = x + y;
+    document.getElementById("demo3").innerHTML = z;
+</script>
+
+<p>The <b>multiplication</b> operator (*) multiplies numbers.</p>
+<p id="demo4"></p>
+
+<script>
+    var x = 5;
+    var y = 2;
+    var z = x * y;
+    document.getElementById("demo4").innerHTML = z;
+</script>
+
+<h2>JavaScript Arithmetic Operators</h2>
+<p>Arithmetic operators are used to perform arithmetic on numbers:</p>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>+</td>
+        <td>Addition</td>
+    </tr>
+    <tr>
+        <td>-</td>
+        <td>Substraction</td>
+    </tr>
+    <tr>
+        <td>*</td>
+        <td>Multiplication</td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>Division</td>
+    </tr>
+    <tr>
+        <td>%</td>
+        <td>Modulus (Division Remainder)</td>
+    </tr>
+    <tr>
+        <td>++</td>
+        <td>Increment</td>
+    </tr>
+    <tr>
+        <td>--</td>
+        <td>Decrement</td>
+    </tr>
+</table>
+
+<div class="note">Arithmetic operators are fully described in the 
+    <a href="https://www.w3schools.com/js/js_arithmetic.asp">JavaScript 
+        Arithmetic</a> chapter.</div>
+    
+<h2>JavaScript Assignment Operators</h2>
+<p>Assignment operators assign values to JavaScript variables.</p>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Example</th>
+        <th>Same As</th>
+    </tr>
+    <tr>
+        <td>=</td>
+        <td>x = y</td>
+        <td>x = y</td>
+    </tr>
+    <tr>
+        <td>+=</td>
+        <td>x += y</td>
+        <td>x = x + y</td>
+    </tr>
+    <tr>
+        <td>-=</td>
+        <td>x -= y</td>
+        <td>x = x - y</td>
+    </tr>
+    <tr>
+        <td>*=</td>
+        <td>x *= y</td>
+        <td>x = x * y</td>
+    </tr>
+    <tr>
+        <td>/=</td>
+        <td>x /= y</td>
+        <td>x = x / y</td>
+    </tr>
+    <tr>
+        <td>%=</td>
+        <td>x %= y</td>
+        <td>x = x % y</td>
+    </tr>
+</table>
+
+<p>The <b>addition assignment</b> operator (+=) adds a value to a variable.</p>
+<p id="demo5"></p>
+
+<script>
+    var x = 10;
+    x += 5;
+    document.getElementById("demo5").innerHTML = x;
+</script>
+
+<div class="note">Assignment operators are fully described in the 
+    <a href="https://www.w3schools.com/js/js_assignment.asp">JavaScript 
+        Assignment</a> chapter.</div>
+
+<h2>JavaScript String Operators</h2>
+<p>The + operator can also be used to add (concatenate) strings.</p>
+<p id="demo6"></p>
+
+<script>
+    var txt1 = "John";
+    var txt2 = "Doe";
+    document.getElementById("demo6").innerHTML = txt1 + " " + txt2;
+</script>
+
+<p>The += assignment operator can also be used to add (concatenate) 
+    strings:</p>
+<p id="demo7"></p>
+
+<script>
+    txt1 = "What a very ";
+    txt1 += "nice day";
+    document.getElementById("demo7").innerHTML = txt1;
+</script>
+
+<div class="note">When used on strings, the + operator is called the 
+    concatenation operator.</div>
+
+<h2>Adding Strings and Numbers</h2>
+<p>Adding two numbers, will return the sum, but adding a number and a string 
+    will return a string:</p>
+<p id="demo8"></p>
+
+<script>
+    var x = 5 + 5;
+    var y = "5" + 5;
+    var z = "Hello" + 5;
+    document.getElementById("demo8").innerHTML =
+        x + "<br>" + y + "<br>" + z;
+</script>
+
+<div class="note">If you add a number and a string, the result will be a 
+    string!</div>
+
+<h2>JavaScript Comparison Operators</h2>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>==</td>
+        <td>equal to</td>
+    </tr>
+    <tr>
+        <td>===</td>
+        <td>equal value and equal type</td>
+    </tr>
+    <tr>
+        <td>!=</td>
+        <td>not equal</td>
+    </tr>
+    <tr>
+        <td>!==</td>
+        <td>not equal value or not equal type</td>
+    </tr>
+    <tr>
+        <td>&lt</td>
+        <td>greater than</td>
+    </tr>
+    <tr>
+        <td>&gt</td>
+        <td>less than</td>
+    </tr>
+    <tr>
+        <td>&lt=</td>
+        <td>greater than or equal to</td>
+    </tr>
+    <tr>
+        <td>&gt=</td>
+        <td>less than or equal to</td>
+    </tr>
+    <tr>
+        <td>?</td>
+        <td>ternary operator</td>
+    </tr>
+</table>
+
+<div class="note">Comparison operators are fully described in the 
+    <a href="https://www.w3schools.com/js/js_comparisons.asp">JS 
+        Comparisons</a> chapter.</div>
+
+<h2>JavaScript Logical Operators</h2>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>&&</td>
+        <td>logical and</td>
+    </tr>
+    <tr>
+        <td>||</td>
+        <td>logical or</td>
+    </tr>
+    <tr>
+        <td>!</td>
+        <td>logical not</td>
+    </tr>
+</table>
+
+<div class="note">Logical operators are fully described in the
+    <a href="https://www.w3schools.com/js/js_comparisons.asp">JS Comparisons
+    </a> chapter.</div>
+
+<h2>JavaScript Type Operators</h2>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>typeof</td>
+        <td>Returns the type of a variable</td>
+    </tr>
+    <tr>
+        <td>instanceof</td>
+        <td>Returns true if an object is an instance of an object type</td>
+    </tr>
+</table>
+
+<div class="note">Type operators are fully described in the 
+    <a href="https://www.w3schools.com/js/js_type_conversion.asp">JS Type 
+        Conversion</a> chapter.</div>
+
+<h2>JavaScript Bitwise Operators</h2>
+<p>Bit operators work on 32 bits numbers. Any numeric operand in the 
+    operation is converted into a 32 bit number. The result is converted back 
+    to a JavaScript number.</p>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Same as</th>
+        <th>Result</th>
+        <th>Decimal</th>
+    </tr>
+    <tr>
+        <td>&</td>
+        <td>AND</td>
+        <td>5 & 1</td>
+        <td>0101 & 0001</td>
+        <td>0001</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>|</td>
+        <td>OR</td>
+        <td>5 | 1</td>
+        <td>0101 | 0001</td>
+        <td>0101</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>~</td>
+        <td>NOT</td>
+        <td>~ 5</td>
+        <td>~0101</td>
+        <td>1010</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>^</td>
+        <td>XOR</td>
+        <td>5 ^ 1</td>
+        <td>0101 ^ 0001</td>
+        <td>0100</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>&lt&lt</td>
+        <td>Zero fill left shift</td>
+        <td>5 &lt&lt 1</td>
+        <td>0101 &lt&lt 1</td>
+        <td>1010</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>&gt&gt</td>
+        <td>Signed right shift</td>
+        <td>5 &gt&gt 1</td>
+        <td>0101 &gt&gt 1</td>
+        <td>0010</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>&gt&gt&gt</td>
+        <td>Zero fill right shift</td>
+        <td>5 &gt&gt&gt 1</td>
+        <td>0101 &gt&gt&gt 1</td>
+        <td>0010</td>
+        <td>2</td>
+    </tr>
+</table>
+
+<div class="note">The examples above uses 4 bits unsigned examples. But 
+    JavaScript uses 32-bit signed numbers. Because of this, in JavaScript,
+~ 5 will not return 10. It will return -6. ~00000000000000000000000000000101 
+will return 11111111111111111111111111111010. Bitwise operators are fully 
+described in the <a href="https://www.w3schools.com/js/js_bitwise.asp">JS 
+    Bitwise</a> chapter.</div>
+
+</body>
+</html>

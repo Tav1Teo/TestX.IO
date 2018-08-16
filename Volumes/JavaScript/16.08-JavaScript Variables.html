@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Variables</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/16.08-JavaScript Variables.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Variables</h1>
+<p>JavaScript variables are containers for storing data values. In this 
+    example, x, y, and z, are variables:</p>
+<p id="demo1"></p>
+
+<script>
+    var x = 5;
+    var y = 6;
+    var z = x + y;
+    document.getElementById("demo1").innerHTML =
+        "The value of z is: " + z;
+</script>
+
+<p>From the example above, you can expect:</p>
+<ul>
+    <li>x stores the value 5</li>
+    <li>y stores the value 6</li>
+    <li>z stores the value 11</li>
+</ul>
+
+<h2>Much Like Algebra</h2>
+<p>In this example, price1, price2, and total, are variables:</p>
+<p id="demo2"></p>
+
+<script>
+    var price1 = 5;
+    var price2 = 6;
+    var total = price1 + price2;
+    document.getElementById("demo2").innerHTML =
+        "The total is: " + total;
+</script>
+
+<p>In programming, just like in algebra, we use variables (like price1) to 
+    hold values. In programming, just like in algebra, we use variables in 
+    expressions (total = price1 + price2). From the example above, you can 
+    calculate the total to be 11.</p>
+
+<div class="note">JavaScript variables are containers for storing data 
+    values.</div>
+
+<h2>JavaScript Identifiers</h2>
+<p>All JavaScript <b>variables</b> must be <b>identified</b> with <b>unique 
+    names</b>. These unique names are called <b>identifiers</b>. Identifiers 
+    can be short names (like x and y) or more descriptive names (age, sum, 
+    totalVolume). The general rules for constructing names for variables 
+    (unique identifiers) are:</p>
+<ul>
+    <li>Names can contain letters, digits, underscores, and dollar signs.</li>
+    <li>Names must begin with a letter</li>
+    <li>Names can also begin with $ and _ (but we will not use it in this 
+        tutorial)</li>
+    <li>Names are case sensitive (y and Y are different variables)</li>
+    <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+</ul>
+
+<div class="note">JavaScript identifiers are case-sensitive.</div>
+
+<h2>The Assignment Operator</h2>
+<p>In JavaScript, the equal sign (=) is an "assignment" operator, not an 
+    "equal to" operator. This is different from algebra. The following does 
+    not make sense in algebra:</p>
+<p>x = x + 5</p>
+<p>In JavaScript, however, it makes perfect sense: it assigns the value of 
+    x + 5 to x. (It calculates the value of x + 5 and puts the result into x. 
+    The value of x is incremented by 5.)</p>
+
+<div class="note">The "equal to" operator is written like == in 
+    JavaScript.</div>
+
+<h2>JavaScript Data Types</h2>
+<p>JavaScript variables can hold numbers like 100 and text values like "John 
+    Doe". In programming, text values are called text strings. JavaScript can 
+    handle many types of data, but for now, just think of numbers and 
+    strings. Strings are written inside double or single quotes. Numbers are 
+    written without quotes. If you put a number in quotes, it will be treated 
+    as a text string.</p>
+<p id="demo3"></p>
+
+<script>
+    var pi = 3.14;
+    var person = "John Doe";
+    var answer = 'Yes I am!';
+
+    document.getElementById("demo3").innerHTML =
+        pi + "<br>" + person + "<br>" + answer;
+</script>
+
+<h2>Declaring (Creating) JavaScript Variables</h2>
+<p>Creating a variable in JavaScript is called "declaring" a variable. You 
+    declare a JavaScript variable with the <b>var</b> keyword:</p>
+<p>var carName;</p>
+<p>After the declaration, the variable has no value. (Technically it has the 
+    value of <b>undefined</b>). To <b>assign</b> a value to the variable, use 
+    the equal sign:</p>
+<p>carName = "Volvo";</p>
+<p>You can also assign a value to the variable when you declare it:</p>
+<p>var carName = "Volvo";</p>
+<p>In the example below, we create a variable called carName and assign the 
+    value "Volvo" to it. Then we "output" the value inside an HTML paragraph 
+    with id="demo4":</p>
+<p id="demo4"></p>
+
+<script>
+    var carName = "Volvo";
+    document.getElementById("demo4").innerHTML = carName;
+</script>
+
+<div class="note">It's a good programming practice to declare all variables 
+    at the beginning of a script.</div>
+
+<h2>One Statement, Many Variables</h2>
+<p>You can declare many variables in one statement. Start the statement with 
+    <b>var</b> and separate the variables by <b>comma</b>:</p>
+<p id="demo5"></p>
+
+<script>
+    var person = "John Doe", carName = "Volvo", price = 200;
+    document.getElementById("demo5").innerHTML = carName;
+</script>
+
+<p>A declaration can span multiple lines:</p>
+<p id="demo6"></p>
+
+<script>
+    var person = "John Doe",
+        carName = "Volvo",
+        price = 200;
+    document.getElementById("demo6").innerHTML = carName;
+</script>
+
+<h2>Value = undefined</h2>
+<p>In computer programs, variables are often declared without a value. The 
+    value can be something that has to be calculated, or something that will 
+    be provided later, like user input. A variable declared without a value 
+    will have the value <b>undefined</b>. The variable carName will have the 
+    value undefined after the execution of this statement:</p>
+<p id="demo7"></p>
+
+<script>
+    var carName;
+    document.getElementById("demo7").innerHTML = carName;
+</script>
+
+<h2>Re-Declaring JavaScript Variables</h2>
+<p>If you re-declare a JavaScript variable, it will not lose its value. The 
+    variable carName will still have the value "Volvo" after the execution of 
+    these statements:</p>
+<p id="demo8"></p>
+
+<script>
+    var carName = "Volvo";
+    var carName;
+    document.getElementById("demo8").innerHTML = carName;
+</script>
+
+<h2>JavaScript Arithmetic</h2>
+<p>As with algebra, you can do arithmetic with JavaScript variables, using 
+    operators like = and +:</p>
+<p>The result of adding 5 + 2 + 3:</p>
+<p id="demo9"></p>
+
+<script>
+    var x = 5 + 2 + 3;
+    document.getElementById("demo9").innerHTML = x;
+</script>
+
+<p>You can also add strings, but strings will be concatenated:</p>
+<p>The result of adding "John" + " " + "Doe":</p>
+<p id="demo10"></p>
+
+<script>
+    var x = "John" + " " + "Doe";
+    document.getElementById("demo10").innerHTML = x;
+</script>
+
+<p>Also try this:</p>
+<p>The result of adding "5" + 2 + 3:</p>
+<p id="demo11"></p>
+
+<script>
+    x = "5" + 2 + 3;
+    document.getElementById("demo11").innerHTML = x;
+</script>
+
+<div class="note">If you put a number in quotes, the rest of the numbers will 
+    be treated as strings, and concatenated.</div>
+
+<p>Now try this:</p>
+<p>The result of adding 2 + 3 + "5":</p>
+<p id="demo11"></p>
+
+<script>
+    var x = 2 + 3 + "5"
+    document.getElementById("demo11").innerHTML = x;
+</script>
+
+<p class="colorbackground"><b>Exercise 1:</b> Create a variable called 
+    <b>carName</b>, assign the value "<b>Volvo</b>" to it and display it.</p>
+<p id="demo12">Display the result here.</p>
+
+<script>
+    var carName = "Volvo";
+    document.getElementById("demo12").innerHTML = carName;
+</script>
+
+<p class="colorbackground"><b>Exercise 2:</b> Create a variable called 
+<b>number</b>, assign the value <b>50</b> to it and display it.</p>
+<p id="demo13">Display the result here.</p>
+
+<script>
+    var number = "50";
+    document.getElementById("demo13").innerHTML = number;
+</script>
+
+<p class="colorbackground"><b>Exercise 3:</b> The code below should display 
+    "Volvo" - Fix it.</p>
+<p id="demo14">Display the result here.</p>
+
+<script>
+    var carName = "Volvo";
+    document.getElementById("demo14").innerHTML = carName;
+</script>
+
+<p class="colorbackground"><b>Exercise 4:</b> Display the sum of 5 + 10, 
+    using two variables x and y.</p>
+<p id="demo15">Display the result here.</p>
+
+<script>
+    var x = 5;
+    var y = 10;
+    document.getElementById("demo15").innerHTML = (x + y);
+</script>
+
+<p class="colorbackground"><b>Exercise 5:</b> Create a third variable called 
+<b>z</b>, assign x + y to it and display it.</p>
+<p id="demo16">Display the result here.</p>
+
+<script>
+    var x = 5;
+    var y = 10;
+    var z = x + y;
+    document.getElementById("demo16").innerHTML = + z;
+</script>
+
+<p class="colorbackground"><b>Exercise 6:</b> Use a <b>single</b> var keyword 
+    to create three variables with the following values:<br>
+    firstName = "John" <br>
+    lastName = "Doe" <br>
+    age = 35</p>
+<p id="demo17">Display the result here.</p>
+
+<script>
+    var firstName = "John", lastName = "Doe", age = 35;
+    document.getElementById("demo17").innerHTML =
+        firstName + " " + lastName + " is " + age;
+</script>
+
+
+
+</body>
+</html>
