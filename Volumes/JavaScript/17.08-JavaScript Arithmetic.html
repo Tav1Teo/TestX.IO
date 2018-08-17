@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Arithmetic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/17.08-JavaScript Arithmetic.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Arithmetic</h1>
+<p>Arithmetic operators perform arithmetic on numbers (literals or 
+    variables).</p>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>+</td>
+        <td>Addition</td>
+    </tr>
+    <tr>
+        <td>-</td>
+        <td>Substraction</td>
+    </tr>
+    <tr>
+        <td>*</td>
+        <td>Multiplication</td>
+    </tr>
+    <tr>
+        <td>/</td>
+        <td>Division</td>
+    </tr>
+    <tr>
+        <td>%</td>
+        <td>Modulus (Division Remainder)</td>
+    </tr>
+    <tr>
+        <td>++</td>
+        <td>Increment</td>
+    </tr>
+    <tr>
+        <td>--</td>
+        <td>Decrement</td>
+    </tr>
+</table>
+
+<h2>Arithmetic Operations</h2>
+<p>A typical arithmetic operation operates on two numbers. The two numbers 
+    can be literals:</p>
+<p id="demo1"></p>
+
+<script>
+    var x = 100 + 50;
+    document.getElementById("demo1").innerHTML = x;
+</script>
+
+<p>or variables:</p>
+<p id="demo2"></p>
+
+<script>
+    var a = 100;
+    var b = 50;
+    var x = a + b;
+    document.getElementById("demo2").innerHTML = x;
+</script>
+
+<p>or expressions:</p>
+<p id="demo3"></p>
+
+<script>
+    var a = 3;
+    var x = (100 + 50) * a;
+    document.getElementById("demo3").innerHTML = x;
+</script>
+
+<h2>Operators and Operands</h2>
+<p>The numbers (in an arithmetic operation) are called <b>operands</b>. The 
+    operation (to be performed between the two operands) is defined by an 
+<b>operator</b>.</p>
+<table class="properties">
+    <tr>
+        <th>Operand</th>
+        <th>Operator</th>
+        <th>Operand</th>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>+</td>
+        <td>50</td>
+    </tr>
+</table>
+
+<h2>Adding</h2>
+<p>The <b>addition</b> operator (+) adds numbers:</p>
+<p id="demo4"></p>
+
+<script>
+    var x = 5;
+    var y = 2;
+    var z = x + y;
+    document.getElementById("demo4").innerHTML = z;
+</script>
+
+<h2>Subtracting</h2>
+<p>The <b>substraction</b> operator (-) subtracts numbers.</p>
+<p id="demo5"></p>
+
+<script>
+    var x = 5;
+    var y = 2;
+    var z = x - y;
+    document.getElementById("demo5").innerHTML = z
+</script>
+
+<h2>Multiplying</h2>
+<p>The <b>multiplication</b> operator (*) multiplies numbers.</p>
+<p id="demo6"></p>
+
+<script>
+    var x = 5;
+    var y = 2;
+    var z = x * y;
+    document.getElementById("demo6").innerHTML = z;
+</script>
+
+<h2>Dividing</h2>
+<p>The <b>division</b> operator (/) divides numbers.</p>
+<p id="demo7"></p>
+
+<script>
+    var x = 5;
+    var y = 2;
+    var z = x / y;
+    document.getElementById("demo7").innerHTML = z;
+</script>
+
+<h2>Remainder</h2>
+<p>The <b>modulus</b> operator (%) returns the division remainder.</p>
+<p id="demo8"></p>
+
+<script>
+    var x = 5;
+    var y = 2;
+    var z = x % y;
+    document.getElementById("demo8").innerHTML = z;
+</script>
+
+<div class="note">In arithmetic, the division of two integers produces a 
+    <b>quotient</b> and a <b>remainder</b>. In mathematics, the result of a 
+    <b>modulo operation</b> is the <b>remainder</b> of an arithmetic division.
+</div>
+
+<h2>Incrementing</h2>
+<p>The <b>increment</b> operator (++) increments numbers.</p>
+<p id="demo9"></p>
+
+<script>
+    var x = 5;
+    x++;
+    var z = x;
+    document.getElementById("demo9").innerHTML = z;
+</script>
+
+<h2>Decrementing</h2>
+<p>The <b>decrement</b> operator (--) decrements numbers.</p>
+<p id="demo10"></p>
+
+<script>
+    var x = 5;
+    x--;
+    var z = x;
+    document.getElementById("demo10").innerHTML = z;
+</script>
+
+<h2>Operator Precedence</h2>
+<p>Operator precedence describes the order in which operations are performed 
+    in an arithmetic expression. Multiplication has precedence over 
+    addition.</p>
+<p id="demo11"></p>
+
+<script>
+    document.getElementById("demo11").innerHTML = 100 + 50 * 3;
+</script>
+
+<p>As in traditional school mathematics, the multiplication is done first. 
+    Multiplication (*) and division (/) have higher <b>precedence</b> than 
+addition (+) and substraction (-). And (as in school mathematics) the 
+precedence can be changed by using parentheses:</p>
+<p id="demo12"></p>
+
+<script>
+    document.getElementById("demo12").innerHTML = (100 + 50) * 3;
+</script>
+
+<p>When using parentheses, the operations inside the parentheses are computed 
+    first. When many operations have the same precedence (like addition and 
+    subtraction), they are computed from left to right:</p>
+<p id="demo13"></p>
+
+<script>
+    document.getElementById("demo13").innerHTML = 100 + 50 - 3;
+</script>
+
+<h2>JavaScript Operator Precedence Values</h2>
+
+<div class="note">Pale red entries indicates ECMAScript 2015 (ES6) or 
+    higher.</div>
+<table class="properties">
+    <tr>
+        <th>Value</th>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>20</td>
+        <td>()</td>
+        <td>Expression grouping</td>
+        <td>(3+4)</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>.</td>
+        <td>Member</td>
+        <td>person.name</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>[]</td>
+        <td>Member</td>
+        <td>person["name"]</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>()</td>
+        <td>Function call</td>
+        <td>myFunction()</td>
+    </tr>
+    <tr>
+        <td>19</td>
+        <td>new</td>
+        <td>Create</td>
+        <td>new Date()</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>++</td>
+        <td>Postfix Increment</td>
+        <td>i++</td>
+    </tr>
+    <tr>
+        <td>17</td>
+        <td>--</td>
+        <td>Postfix Decrement</td>
+        <td>i--</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>++</td>
+        <td>Prefix Increment</td>
+        <td>++i</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>--</td>
+        <td>Prefix Decrement</td>
+        <td>--i</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>!</td>
+        <td>Logical not</td>
+        <td>!(x==y)</td>
+    </tr>
+    <tr>
+        <td>16</td>
+        <td>typeof</td>
+        <td>Type</td>
+        <td>typeof x</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr style="background-color:#ffdddd">
+        <td>15</td>
+        <td>**</td>
+        <td>Exponentiation (ES7)</td>
+        <td>10 ** 2</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>*</td>
+        <td>Multiplication</td>
+        <td>10 * 5</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>/</td>
+        <td>Division</td>
+        <td>10 / 5</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>%</td>
+        <td>Division Remainder</td>
+        <td>10 % 5</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>+</td>
+        <td>Addition</td>
+        <td>10 + 5</td>
+    </tr>
+    <tr>
+        <td>13</td>
+        <td>-</td>
+        <td>Substraction</td>
+        <td>10 - 5</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>&lt&lt</td>
+        <td>Shift left</td>
+        <td>x &lt&lt 2</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>&gt&gt</td>
+        <td>Shift right</td>
+        <td>x &gt&gt 2</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>&gt&gt&gt</td>
+        <td>Shift right (unsigned)</td>
+        <td>x &gt&gt&gt 2</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>&lt</td>
+        <td>Less than</td>
+        <td>x &lt y</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>&lt=</td>
+        <td>Less than or equal</td>
+        <td>x &lt= y</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>&gt</td>
+        <td>Greater than</td>
+        <td>x &gt y</td>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>&gt=</td>
+        <td>Greater than or equal</td>
+        <td>x &gt= y</td>
+    </tr>
+    <tr style="background-color:#ffdddd">
+        <td>11</td>
+        <td>in</td>
+        <td>Property in Object</td>
+        <td>"PI" in Math</td>
+    </tr>
+    <tr style="background-color:#ffdddd">
+        <td>11</td>
+        <td>instanceof</td>
+        <td>Instance of Object</td>
+        <td>instanceof Array</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>==</td>
+        <td>Equal</td>
+        <td>x == y</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>===</td>
+        <td>Strict equal</td>
+        <td>x === y</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>!=</td>
+        <td>Unequal</td>
+        <td>x != y</td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td>!==</td>
+        <td>Strict unequal</td>
+        <td>x !== y</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>&</td>
+        <td>Bitwise AND</td>
+        <td>x & y</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>^</td>
+        <td>Bitwise XOR</td>
+        <td>x ^ y</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>|</td>
+        <td>Bitwise OR</td>
+        <td>x | y</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>&&</td>
+        <td>Logical AND</td>
+        <td>x && y</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>||</td>
+        <td>Logical OR</td>
+        <td>x || y</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>?:</td>
+        <td>Condition</td>
+        <td>? "Yes" : "No"</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>+=</td>
+        <td>Assignment</td>
+        <td>x += y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>-=</td>
+        <td>Assignment</td>
+        <td>x -= y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>*=</td>
+        <td>Assignment</td>
+        <td>x *= y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>%=</td>
+        <td>Assignment</td>
+        <td>x %= y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>&lt&lt=</td>
+        <td>Assignment</td>
+        <td>x &lt&lt= y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>&gt&gt=</td>
+        <td>Assignment</td>
+        <td>x &gt&gt= y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>&gt&gt&gt=</td>
+        <td>Assignment</td>
+        <td>x &gt&gt&gt= y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>&=</td>
+        <td>Assignment</td>
+        <td>x &= y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>^=</td>
+        <td>Assignment</td>
+        <td>x ^= y</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>|=</td>
+        <td>Assignment</td>
+        <td>x |= y</td>
+    </tr>
+    <tr>
+        <td><br></td>
+    </tr>
+    <tr style="background-color:#ffdddd">
+        <td>2</td>
+        <td>yield</td>
+        <td>Pause Function</td>
+        <td>yield x</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>,</td>
+        <td>Comma</td>
+        <td>5 , 6</td>
+    </tr>
+</table>
+
+<div class="note">Expressions in parentheses are fully computed before the 
+    value is used in the rest of the expression.</div>
+
+<p class="colorbackground"><b>Exercise 1:</b> Display the sum of 10 + 5, 
+    using two variables x and y.</p>
+<p id="demo14">Display the result here.</p>
+
+<script>
+    var x = 10;
+    var y = 5;
+    var z = x + y;
+    document.getElementById("demo14").innerHTML = z;
+</script>
+
+<p class="colorbackground"><b>Exercise 2:</b> Display the difference of 
+    10 - 5, using two variables x and y.</p>
+<p id="demo15">Display the result here.</p>
+
+<script>
+    var x = 10;
+    var y = 5;
+    var z = x - y;
+    document.getElementById("demo15").innerHTML = z;
+</script>
+
+<p class="colorbackground"><b>Exercise 3:</b> Display the product of 10 * 5, 
+    using two variables x and y.</p>
+<p id="demo16">Display the result here.</p>
+
+<script>
+    var x = 10;
+    var y = 5;
+    var z = x * y;
+    document.getElementById("demo16").innerHTML = z;
+</script>
+
+<p class="colorbackground"><b>Exercise 4:</b> Display the result of 10 / 5, 
+    using two variables x and y.</p>
+<p id="demo17">Display the result here.</p>
+
+<script>
+    var x = 10;
+    var y = 5;
+    var z = x / y;
+    document.getElementById("demo17").innerHTML = z;
+</script>
+
+<p class="colorbackground"><b>Exercise 5:</b> Find the <b>remainder</b> when 
+    15 is divided by 9, using two variables x and y.</p>
+<p id="demo18">Display the result here.</p>
+
+<script>
+    var x = 15;
+    var y = 9;
+    var z = x % y;
+    document.getElementById("demo18").innerHTML = z;
+</script>
+
+</body>
+</html>
