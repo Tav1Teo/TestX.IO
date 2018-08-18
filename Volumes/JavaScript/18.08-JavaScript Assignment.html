@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Assignment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/18.08-JavaScript Assignment.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Assignment</h1>
+<h2>JavaScript Assignment Operators</h2>
+<p>Assignment operators assign values to JavaScript variables.</p>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Example</th>
+        <th>Same As</th>
+    </tr>
+    <tr>
+        <td>=</td>
+        <td>x = y</td>
+        <td>x = y</td>
+    </tr>
+    <tr>
+        <td>+=</td>
+        <td>x += y</td>
+        <td>x = x + y</td>
+    </tr>
+    <tr>
+        <td>-=</td>
+        <td>x -= y</td>
+        <td>x = x - y</td>
+    </tr>
+    <tr>
+        <td>*=</td>
+        <td>x *= y</td>
+        <td>x = x * y</td>
+    </tr>
+    <tr>
+        <td>/=</td>
+        <td>x /= y</td>
+        <td>x = x / y</td>
+    </tr>
+    <tr>
+        <td>%=</td>
+        <td>x %= y</td>
+        <td>x = x % y</td>
+    </tr>
+    <tr>
+        <td>&lt&lt=</td>
+        <td>x &lt&lt= y</td>
+        <td>x = x &lt&lt y</td>
+    </tr>
+    <tr>
+        <td>&gt&gt=</td>
+        <td>x &gt&gt= y</td>
+        <td>x = x &gt&gt y</td>
+    </tr>
+    <tr>
+        <td>&gt&gt&gt=</td>
+        <td>x &gt&gt&gt= y</td>
+        <td>x = x &gt&gt&gt y</td>
+    </tr>
+    <tr>
+        <td>&=</td>
+        <td>x &= y</td>
+        <td>x = x & y</td>
+    </tr>
+    <tr>
+        <td>^=</td>
+        <td>x ^= y</td>
+        <td>x = x ^ y</td>
+    </tr>
+    <tr>
+        <td>|=</td>
+        <td>x |= y</td>
+        <td>x = x | y</td>
+    </tr>
+    <tr>
+        <td>**=</td>
+        <td>x **= y</td>
+        <td>x = x ** y</td>
+    </tr>
+</table>
+
+<div class="note">The **= operator is an experimental part of the ECMAScript 
+    2016 proposal (ES7). It is not stable across browsers. Do not use it.</div>
+
+<h2>Assignment Examples</h2>
+<p>The = assignment operator assigns a value to a variable.</p>
+<p id="demo1"></p>
+
+<script>
+    var x = 10;
+    document.getElementById("demo1").innerHTML = x;
+</script>
+
+<p>The += assignment operator adds a value to a variable.</p>
+<p id="demo2"></p>
+
+<script>
+    var x = 10;
+    x += 5;
+    document.getElementById("demo2").innerHTML = x;
+</script>
+
+<p>The -= assignment operator subtracts a value from a variable.</p>
+<p id="demo3"></p>
+
+<script>
+    var x = 10;
+    x -= 5;
+    document.getElementById("demo3").innerHTML = x;
+</script>
+
+<p>The *= assignment operator multiplies a variable.</p>
+<p id="demo4"></p>
+
+<script>
+    var x = 10;
+    x *= 5;
+    document.getElementById("demo4").innerHTML = x;
+</script>
+
+<p>The /= assignment divides a variable.</p>
+<p id="demo5"></p>
+
+<script>
+    var x = 10;
+    x /= 5;
+    document.getElementById("demo5").innerHTML = x;
+</script>
+
+<p>The %= assignment operator assigns a remainder to a variable.</p>
+<p id="demo6"></p>
+
+<script>
+    var x = 10;
+    x %= 5;
+    document.getElementById("demo6").innerHTML = x;
+</script>
+
+<p class="colorbackground"><b>Exercise 1:</b> Use the += operator to add a 
+    value of 5 to the variable x.</p>
+<p id="demo7"></p>
+
+<script>
+    var x = 10;
+    x += 5;
+    document.getElementById("demo7").innerHTML = x;
+</script>
+
+<p class="colorbackground"><b>Exercise 2:</b> Use the -= operator to subtract 
+    a value of 5 from the variable x.</p>
+<p id="demo8"></p>
+
+<script>
+    var x = 10;
+    x -= 5;
+    document.getElementById("demo8").innerHTML = x;
+</script>
+
+<p class="colorbackground"><b>Exercise 3:</b> Use the *= operator to multiply 
+    the variable x with 5.</p>
+<p id="demo9"></p>
+
+<script>
+    var x = 10;
+    x *= 5;
+    document.getElementById("demo9").innerHTML = x;
+</script>
+
+<p class="colorbackground"><b>Exercise 4:</b> Use the /= operator to divide 
+    the variable x with 5.</p>
+<p id="demo10"></p>
+
+<script>
+    var x = 10;
+    x /= 5;
+    document.getElementById("demo10").innerHTML = x;
+</script>
+
+<p class="colorbackground"><b>Exercise 5:</b> Use the %= operator to assign a 
+    remainder of 10 / 3 to the variable x.</p>
+<p id="demo11"></p>
+
+<script>
+    var x = 10;
+    x %= 3;
+    document.getElementById("demo11").innerHTML = x;
+</script>
+
+</body>
+</html>
