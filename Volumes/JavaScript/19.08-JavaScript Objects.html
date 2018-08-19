@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Objects</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/19.08-JavaScript Objects.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Objects</h1>
+<h2>Real Life Objects, Properties, and Methods</h2>
+<p>In real life, a car is an <b>object</b>. A car has <b>properties</b> like 
+weight and color and <b>methods</b> like start and stop:</p>
+<table class="properties">
+    <tbody>
+        <tr>
+            <th style="width:370px">
+                Object
+            </th>
+            <th>
+                Properties
+            </th>
+            <th>
+                Methods
+            </th>
+        </tr>
+        <tr>
+            <td>
+            <img src="../../images/objectExplained.gif" 
+            style="width:368px;height:230px;">
+            </td>
+            <td>
+                <br>car.name = Fiat<br><br> car.model = 500<br><br> 
+                car.weight = 850kg<br><br> car.color = white
+            </td>
+            <td>
+                <br>car.start()<br><br> car.drive()
+                <br><br> car.brake()
+                <br><br>car.stop()</td>
+        </tr>
+    </tbody>
+</table>
+<p>All cars have the same <b>properties</b>, but the property <b>values</b> 
+differ from car to car. All cars have the same <b>methods</b>, but the 
+methods are performed <b>at different times</b>.</p>
+
+<h2>JavaScript Objects</h2>
+<p>You have already learned that JavaScript variables are containers for data 
+    values. This code assigns a <b>simple value</b> (Fiat) to a <b>variable</b>
+ named car:</p>
+<p id="demo1"></p>
+
+<script>
+// Create and display a variable:
+var car = "Fiat";
+document.getElementById("demo1").innerHTML = car;
+</script>
+
+<p>Objects are variables too. But objects can contain many values. This code 
+    assigns <b>many values</b> (Fiat, 500, white) to a <b>variable</b> named 
+car:</p>
+<p id="demo2"></p>
+
+<script>
+    // Create an object:
+    var car = { type: "Fiat", model: "500", color: "white" };
+
+    // Display some data from the object:
+    document.getElementById("demo2").innerHTML = car.type;
+</script>
+
+<p>The values are written as <b>name:value</b> pairs (name and value 
+    separated by a colon).</p>
+
+<div class="note">JavaScript objects are containers for <b>named values</b> 
+    called properties or methods.</div>
+
+<h2>Object Definition</h2>
+<p>You define (and create) a JavaScript object with an object literal:</p>
+<p id="demo3"></p>
+
+<script>
+    // Create an object:
+    var person = { firstName: "John", lastName: "Doe", age: 50, 
+    eyeColor: "blue" };
+
+    // Display some data from the object:
+    document.getElementById("demo3").innerHTML =
+        person.firstName + " is " + person.age + " years old.";
+</script>
+
+<p>Spaces and line breaks are not important. An object definition can span 
+    multiple lines:</p>
+<p id="demo4"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue"
+    };
+
+    // Display some data from the object:
+    document.getElementById("demo4").innerHTML =
+        person.firstName + " is " + person.age + " years old.";
+</script>
+
+<h2>Object Properties</h2>
+<p>The <b>name:values</b> pairs in JavaScript objects are called 
+    <b>properties</b>:</p>
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Property Value</th>
+    </tr>
+    <tr>
+        <td>firstName</td>
+        <td>John</td>
+    </tr>
+    <tr>
+        <td>lastName</td>
+        <td>Doe</td>
+    </tr>
+    <tr>
+        <td>age</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>eyeColor</td>
+        <td>blue</td>
+    </tr>
+</table>
+
+<h2>Accessing Object Properties</h2>
+<p>You can access object properties in two ways:</p>
+<p><em>objectName.propertyName</em></p>
+<p>or</p>
+<p><em>objectName[<span style="color:brown">"propertyName"</span>]</em>
+</p>
+
+<div class="example"><b>Example 1:</b> There are two different ways to access 
+   an object property. You can use person.property or person["property"].
+<p id="demo5"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566
+    };
+    // Display some data from the object:
+    document.getElementById("demo5").innerHTML =
+        person.firstName + " " + person.lastName;
+</script>
+
+</div>
+
+<div class="example"><b>Example 2:</b> There are two different ways to access 
+   an object property. You can use person.property or person["property"].
+<p id="demo6"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566
+    };
+    // Display some data from the object:
+    document.getElementById("demo6").innerHTML =
+        person["firstName"] + " " + person["lastName"];
+</script>
+
+</div>
+
+<h2>Object Methods</h2>
+<p>Objects can also have <b>methods</b>. Methods are <b>actions</b> that can 
+    be performed on objects. Methods are stored in properties as <b>function 
+        definitions</b>.</p>
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Property Value</th>
+    </tr>
+    <tr>
+        <td>firstName</td>
+        <td>John</td>
+    </tr>
+    <tr>
+        <td>lastName</td>
+        <td>Doe</td>
+    </tr>
+    <tr>
+        <td>age</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>eyeColor</td>
+        <td>blue</td>
+    </tr>
+    <tr>
+        <td>fullName</td>
+        <td>function() {return this.firstName + " " + this.lastName;}</td>
+    </tr>
+</table>
+
+<div class="note">A method is a function stored as a property.</div>
+
+<div class="example"><b>Example 3:</b>
+<p id="demo7"></p>
+
+<script>
+    var person = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.getElementById("demo7").innerHTML =
+                person["firstName"] + " " + person["lastName"];
+</script>
+</div>
+
+<h2>The <b>this</b> Keyword</h2>
+<p>In a function definition, <b>this</b> refers to the "owner" of the 
+    function. In the example above, <b>this</b> is the <b>person object</b> 
+    that "owns" the <b>fullName</b> function. In other words, 
+    <b>this.firstName</b> means the <b>firstName</b> property of 
+    <b>this object</b>. Read more about the <b>this</b> keyword at 
+<a href="https://www.w3schools.com/js/js_this.asp">JS this Keyword</a>.</p>
+
+<h2>Accessing Object Methods</h2>
+<p>You access an object method with the following syntax:</p>
+<p><em>objectName.methodName()</em></p>
+
+<div class="example"><p></p><b>Example 4:</b> An object method is a function 
+    definition, stored as a property value.</p>
+<p id="demo8"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    // Display data from the object:
+    document.getElementById("demo8").innerHTML = person.fullName();
+</script>
+
+</div>
+
+<div class="example"><p><b>Example 5:</b> If you access a method 
+    <b>without</b> the () parentheses, it will return the <b>function 
+    definition</b>:</p>
+<p id="demo9"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    // Display data from the object:
+    document.getElementById("demo9").innerHTML = person.fullName;
+</script>
+
+</div>
+
+<h2>Do Not Declare Strings, Numbers, and Booleans as Objects!</h2>
+<p>When a JavaScript variable is declared with the keyword "new", the 
+    variable is created as an object:</p>
+<p>var x = new String();        // Declares x as a String object<br>
+var y = new Number();        // Declares y as a Number object<br>
+var z = new Boolean();       // Declares z as a Boolean object</p>
+<p>Avoid String, Number, and Boolean objects. They complicate your code and 
+    slow down execution speed.</p>
+<p class="colorbackground"><b>Exercise 1:</b> Display "John" by extracting 
+    information from the person object.</p>
+<p id="demo10">Display the result here.</p>
+
+<script>
+    var person = { firstName: "John", lastName: "Doe" };
+    document.getElementById("demo10").innerHTML = person.firstName;
+</script>
+
+<p class="colorbackground"><b>Exercise 2:</b> Add the following property and 
+    value to the person object: <b>country: USA</b>.</p>
+<p id="demo11"></p>
+
+<script>
+    var person = { firstName: "John", lastName: "Doe", country: "USA" };
+    document.getElementById("demo11").innerHTML = person.country;
+</script>
+
+<p class="colorbackground"><b>Exercise 3:</b> Create an object called 
+    <b>person</b> with name = John, age = 50. Then, access the object to 
+    display "John is 50 years old".</p>
+<p id="demo12">Display the result here.</p>
+
+<script>
+    // Create the object here
+    var person = { firstName: "John", age: "50" };
+    document.getElementById("demo12").innerHTML =
+        person.firstName + " is " + person.age + " years old.";
+</script>
+
+</body>
+</html>
