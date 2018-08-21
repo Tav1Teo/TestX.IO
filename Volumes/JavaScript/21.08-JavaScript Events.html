@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Events</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/21.08-JavaScript Events.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Events</h1>
+<p>HTML events are "<b>things</b>" that happen to HTML elements. When 
+    JavaScript is used in HTML pages, JavaScript can "<b>react</b>" on these 
+    events.</p>
+<h2>HTML Events</h2>
+<p>An HTML event can be something the browser does, or something a user does. 
+    Here are some examples of HTML events:</p>
+<ul>
+    <li>An HTML web page has finished loading</li>
+    <li>An HTML input field was changed</li>
+    <li>An HTML button was clicked</li>
+</ul>
+<p>Often, when events happen, you may want to do something. JavaScript lets 
+    you execute code when events are detected. HTML allows event handler 
+    attributes, <b>with JavaScript code</b>, to be added to HTML elements. 
+    With single quotes:</p>
+<p>&lt<em>element event=<b>'some JavaScript'</b></em>&gt</p>
+<p>With double quotes:</p>
+<p>&lt<em>element event=<b>"some JavaScript"</b></em>&gt</p>
+<p>In the following example, an onclick attribute (with code), is added to a 
+    button element:</p>
+
+<button onclick="document.getElementById('demo1').innerHTML=Date()">
+    The time is?</button>
+
+<p id="demo1"></p>
+<p>In the example above, the JavaScript code changes the content of the 
+    element with id="demo". In the next example, the code changes the content 
+    of its own element (using <b>this</b>.innerHTML):</p>
+
+<button onclick="this.innerHTML=Date()">The time is?</button>
+
+<div class="note">JavaScript code is often several lines long. It is more 
+    common to see event attributes calling functions:</div>
+
+<p>Click the button to display the date.</p>
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+    function displayDate() {
+        document.getElementById("demo2").innerHTML = Date();
+    }
+</script>
+
+<p id="demo2"></p>
+
+<h2>Common HTML Events</h2>
+<p>Here is a list of some common HTML events:</p>
+<table class="properties">
+    <tr>
+        <th>Event</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>onchange</td>
+        <td>An HTML element has been changed</td>
+    </tr>
+    <tr>
+        <td>onclick</td>
+        <td>The user clicks an HTML element</td>
+    </tr>
+    <tr>
+        <td>onmouseover</td>
+        <td>The user moves the mouse over an HTML element</td>
+    </tr>
+    <tr>
+        <td>onmouseout</td>
+        <td>The user moves the mouse away from an HTML element</td>
+    </tr>
+    <tr>
+        <td>onkeydown</td>
+        <td> The user pushes a keyboard key</td>
+    </tr>
+    <tr>
+        <td>onload</td>
+        <td> The browser has finished loading the page</td>
+    </tr>
+</table>
+
+<p>The list is much longer: 
+    <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">
+        W3Schools JavaScript Reference HTML DOM Events</a>.</p>
+    
+<h2>What can JavaScript Do?</h2>
+<p>Event handlers can be used to handle, and verify, user input, user actions 
+    and browser actions:</p>
+<ul>
+    <li>Things that should be done every time a page loads</li>
+    <li>Things that should be done when the page is closed</li>
+    <li>Action that should be performed when a user clicks a button</li>
+    <li>Content that should be verified when a user inputs data</li>
+    <li>And more...</li>
+</ul>
+<p>Many different methods can be used to let JavaScript work with events:</p>
+<ul>
+    <li>HTML event attributes can execute JavaScript code directly</li>
+    <li>HTML event attributes can call JavaScript functions</li>
+    <li>You can assign your own event handler functions to HTML elements</li>
+    <li>You can prevent events from being sent or being handled</li>
+    <li>And more...</li>
+</ul>
+
+<div class="note">You will learn a lot more about events and event handlers 
+    in the HTML DOM chapters.</div>
+
+<p class="colorbackground"><b>Exercise 1:</b> The &ltp&gt element should do 
+    something when someone clicks on it. Try to fix it!</p>
+<p onclick="this.innerHTML='GOOD JOB!'">Click me.</p>
+
+<p class="colorbackground"><b>Exercise 2:</b> When the button is clicked, 
+    trigger myFunction() with an event.</p>
+
+<button onclick="myFunction()">Click Me</button>
+
+<p id="demo3"></p>
+
+<script>
+    function myFunction() {
+        document.getElementById("demo3").innerHTML = "Hello World";
+    }
+</script>
+
+<p class="colorbackground"><b>Exercise 3:</b> The &ltspan&gt element should 
+    do something when someone moves the mouse over it. Try to fix it!</p>
+<span onmouseover="this.style.color='red'">Mouse over me!</span>
+
+
+
+
+
+
+
+</body>
+</html>
