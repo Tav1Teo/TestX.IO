@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript String Methods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/22.08-JavaScript String Methods.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript String Methods</h1>
+<h2>String Methods and Properties</h2>
+<p>String methods help you to work with strings. Primitive values, like "John 
+    Doe", cannot have properties or methods (because they are not objects). 
+    But with JavaScript, methods and properties are also available to 
+    primitive values, because JavaScript treats primitive values as objects 
+    when executing methods and properties.</p>
+
+<h2>String Length</h2>
+<p>The <b>length</b> property returns the length of a string:</p>
+<p id="demo1"></p>
+
+<script>
+    var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    document.getElementById("demo1").innerHTML = txt.length;
+</script>
+
+<h2>Finding a String in a String</h2>
+<p>The <b>indexOf()</b> method returns the index of (the position of) the 
+<b>first</b> occurrence of a specified text in a string:</p>
+<p id="demo2"></p>
+
+<script>
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.indexOf("locate");
+    document.getElementById("demo2").innerHTML = pos;
+</script>
+
+<div class="note">JavaScript counts positions from zero. 0 is the first 
+    position in a string, 1 is the second, 2 is the third etc.</div>
+
+<p>The <b>lastIndexOf()</b> method returns the index of the <b>last</b> 
+    occurrence of a specified text in a string:</p>
+<p id="demo3"></p>
+
+<script>
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.lastIndexOf("locate");
+    document.getElementById("demo3").innerHTML = pos;
+</script>
+
+<p>Both indexOf(), and lastIndexOf() return -1 if the text is not found.</p>
+<p id="demo4"></p>
+
+<script>
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.indexOf("John");
+    document.getElementById("demo4").innerHTML = pos;
+</script>
+
+<p>Both methods accept a second parameter as the starting position for the 
+    search:</p>
+<p id="demo5"></p>
+
+<script>
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.indexOf("locate", 15);
+    document.getElementById("demo5").innerHTML = pos;
+</script>
+
+<h2>Searching for a String in a String</h2>
+<p>The <b>search()</b> method searches a string for a specified value and 
+    returns the position of the match:</p>
+<p id="demo6"></p>
+
+<script>
+    var str = "Please locate where 'locate' occurs!";
+    var pos = str.search("locate");
+    document.getElementById("demo6").innerHTML = pos;
+</script>
+
+<p>The two methods are <b>NOT</b> equal. These are the differences:</p>
+<ul>
+    <li>The search() method cannot take a second start position argument.</li>
+    <li>The indexOf() method cannot take powerful search values (regular 
+        expressions).</li>
+</ul>
+
+<h2>Extracting String Parts</h2>
+<p>There are 3 methods for extracting a part of a string:</p>
+<ul>
+    <li>slice(start, end)</li>
+    <li>substring(start, end)</li>
+    <li>substr(start, length)</li>
+</ul>
+
+<h2>The slice() Method</h2>
+<p><b>slice()</b> extracts a part of a string and returns the extracted part 
+    in a new string. The method takes 2 parameters: the starting index 
+    (position), and the ending index (position). This example slices out a 
+    portion of a string from position 7 to position 13:</p>
+<p id="demo7"></p>
+
+<script>
+    var str = "Apple, Banana, Kiwi";
+    var res = str.slice(7, 13);
+    document.getElementById("demo7").innerHTML = res; 
+</script>
+
+<p>If a parameter is negative, the position is counted from the end of the 
+    string. This example slices out a portion of a string from position -12 
+    to position -6:</p>
+<p id="demo8"></p>
+
+<script>
+    var str = "Apple, Banana, Kiwi";
+    var res = str.slice(-12, -6);
+    document.getElementById("demo8").innerHTML = res;
+</script>
+
+<p>If you omit the second parameter, the method will slice out the rest of 
+    the string:</p>
+<p><p id="demo9"></p>
+
+<script>
+    var str = "Apple, Banana, Kiwi";
+    var res = str.slice(7);
+    document.getElementById("demo9").innerHTML = res;
+</script></p>
+
+<p>or counting from the end:</p>
+<p id="demo10"></p>
+
+<script>
+    var str = "Apple, Banana, Kiwi";
+    var res = str.slice(-12)
+    document.getElementById("demo10").innerHTML = res;
+</script>
+
+<div class="note">Negative positions do not work in Internet Explorer 8 and 
+    earlier.</div>
+
+<h2>The substring() Method</h2>
+<p><b>substring()</b> is similar to slice(). The difference is that 
+    substring() cannot accept negative indexes.</p>
+<p id="demo11"></p>
+
+<script>
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substring(7, 13);
+    document.getElementById("demo11").innerHTML = res;
+</script>
+
+<p>If you omit the second parameter, substring() will slice out the rest of 
+    the string.</p>
+
+<h2>The substr() Method</h2>
+<p><b>substr()</b> is similar to slice(). The difference is that the second 
+    parameter specifies the <b>length</b> of the extracted part.</p>
+<p id="demo12"></p>
+
+<script>
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substr(7, 6);
+    document.getElementById("demo12").innerHTML = res;
+</script>
+
+<p>If you omit the second parameter, substr() will slice out the rest of the 
+    string. The substr() method extracts a part of a string and returns the 
+    extracted parts in a new string:</p>
+<p id="demo13"></p>
+
+<script>
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substr(7);
+    document.getElementById("demo13").innerHTML = res;
+</script>
+
+<p>If the first parameter is negative, the position counts from the end of 
+    the string.</p>
+<p id="demo14"></p>
+
+<script>
+    var str = "Apple, Banana, Kiwi";
+    var res = str.substr(-4);
+    document.getElementById("demo14").innerHTML = res;
+</script>
+
+<h2>Replacing String Content</h2>
+<p>The <b>replace()</b> method replaces a specified value with another value 
+    in a string. Replace "Microsoft" with "W3Schools" in the paragraph 
+    below:</p>
+
+<button onclick="myFunction15()">Try it</button>
+
+<p id="demo15">Please visit Microsoft!</p>
+
+<script>
+    function myFunction15() {
+        var str = document.getElementById("demo15").innerHTML;
+        var txt = str.replace("Microsoft", "W3Schools");
+        document.getElementById("demo15").innerHTML = txt;
+    }
+</script>
+
+<div class="note">The replace() method does not change the string it is 
+    called on. It returns a new string.</div>
+
+<p>By default, the replace() function replaces <b>only the first</b> match. 
+Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+<button onclick="myFunction16()">Try it</button>
+
+<p id="demo16">Please visit Microsoft and Microsoft!</p>
+
+<script>
+    function myFunction16() {
+        var str = document.getElementById("demo16").innerHTML;
+        var txt = str.replace("Microsoft", "W3Schools");
+        document.getElementById("demo16").innerHTML = txt;
+    }
+</script>
+
+<p>By default, the replace() function is case sensitive. Writing MICROSOFT 
+    (with upper-case) will not work. Replace "Microsoft" with "W3Schools" in 
+    the paragraph below:</p>
+
+<button onclick="myFunction17()">Try it</button>
+
+<p id="demo17">Please visit Microsoft!</p>
+
+<script>
+    function myFunction17() {
+        var str = document.getElementById("demo17").innerHTML;
+        var txt = str.replace("MICROSOFT", "W3Schools");
+        document.getElementById("demo17").innerHTML = txt;
+    }
+</script>
+
+<p>The example does not work because MICROSOFT is written with upper case 
+    letters. To replace case insensitive, use a <b>regular expression</b> 
+    with an <b>/i</b> flag (insensitive). Replace "Microsoft" with 
+    "W3Schools" in the paragraph below:</p>
+
+<button onclick="myFunction18()">Try it</button>
+
+<p id="demo18">Please visit Microsoft!</p>
+
+<script>
+    function myFunction18() {
+        var str = document.getElementById("demo18").innerHTML;
+        var txt = str.replace(/MICROSOFT/i, "W3Schools");
+        document.getElementById("demo18").innerHTML = txt;
+    }
+</script>
+
+<div class="note">Note that regular expressions are written without 
+    quotes.</div>
+
+<p>To replace all matches, use a <b>regular expression</b> with a <b>/g</b> 
+flag (global match). Replace all occurrences of "Microsoft" with "W3Schools" 
+in the paragraph below:</p>
+
+<button onclick="myFunction19()">Try it</button>
+
+<p id="demo19">Please visit Microsoft and Microsoft!</p>
+
+<script>
+    function myFunction19() {
+        var str = document.getElementById("demo19").innerHTML;
+        var txt = str.replace(/Microsoft/g, "W3Schools");
+        document.getElementById("demo19").innerHTML = txt;
+    }
+</script>
+
+<div class="note">You will learn a lot more about regular expressions in the 
+    chapter <a href="https://www.w3schools.com/js/js_regexp.asp"> JavaScript 
+        Regular Expressions</a>.</div>
+
+<h2>Converting to Upper and Lower Case</h2>
+<p>A string is converted to upper case with <b>toUpperCase()</b>:</p>
+
+<button onclick="myFunction20()">Try it</button>
+
+<p id="demo20">Hello World!</p>
+
+<script>
+    function myFunction20() {
+        var text = document.getElementById("demo20").innerHTML;
+        document.getElementById("demo20").innerHTML = text.toUpperCase();
+    }
+</script>
+
+<p>A string is converted to lower case with <b>toLowerCase()</b>:</p>
+
+<button onclick="myFunction21()">Try it</button>
+
+<p id="demo21">Hello World!</p>
+
+<script>
+    function myFunction21() {
+        var text = document.getElementById("demo21").innerHTML;
+        document.getElementById("demo21").innerHTML = text.toLowerCase();
+    }
+</script>
+
+<h2>The concat() Method</h2>
+<p><b>concat()</b> joins two or more strings:</p>
+<p id="demo22"></p>
+
+<script>
+    var text1 = "Hello";
+    var text2 = "World!";
+    var text3 = text1.concat(" ", text2);
+    document.getElementById("demo22").innerHTML = text3;
+</script>
+
+<p>The <b>concat()</b> method can be used instead of the plus operator. These 
+    two lines do the same:</p>
+<p>var text = "Hello" + " " + "World!";<br>
+var text = "Hello".concat(" ", "World!");</p>
+
+<div class="note">All string methods return a new string. They don't modify 
+    the original string. Formally said: Strings are immutable: Strings cannot 
+    be changed, only replaced.</div>
+
+<h2>String.trim()</h2>
+<p>String.trim() removes whitespace from both sides of a string.</p>
+<p>Click the button to alert the string with removed whitespace.</p>
+
+<button onclick="myFunction23()">Try it</button>
+
+<script>
+    function myFunction23() {
+        var str = "       Hello World!       ";
+        alert(str.trim());
+    }
+</script>
+
+<div class="note"><p><strong>Note:</strong> The trim() method is not 
+    supported in Internet Explorer 8 and earlier versions.</p>
+    <p><b>Note:</b> String.trim() is not supported in Internet Explorer 8 or 
+        lower.</p></div>
+    
+<p>If you need to support IE 8, you can use String.replace with a regular
+    expression instead:</p>
+
+<script>
+    var str = "       Hello World!       ";
+    alert(str.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, ''));
+</script>
+
+<!-- dafaq is that?! -->
+
+<p>You can also use the replace solution above to add a trim function to the 
+    JavaScript String.prototype:</p>
+
+<script>
+    if (!String.prototype.trim) {
+        String.prototype.trim = function () {
+            return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+        };
+    };
+    var str = "       Hello World!        ";
+    alert(str.trim());
+</script>
+
+<h2>Extracting String Characters</h2>
+<p>There are 3 methods for extracting string characters:</p>
+<ul>
+    <li>charAt(position)</li>
+    <li>charCodeAt(position)</li>
+    <li>Property access [ ]</li>
+</ul>
+
+<h2>The charAt() Method</h2>
+<p>The <b>charAt()</b> method returns the character at a specified index 
+    (position) in a string:</p>
+<p id="demo24"></p>
+
+<script>
+    var str = "HELLO WORLD";
+    document.getElementById("demo24").innerHTML = str.charAt(0);
+</script>
+
+<h2>The charCodeAt() Method</h2>
+<p>The <b>charCodeAt()</b> method returns the unicode of the character at a 
+    specified index in a string: The method returns an UTF-16 cone integer
+between 0 and 65535.</p>
+<p id="demo25"></p>
+
+<script>
+    var str = "HELLO WORLD";
+    document.getElementById("demo25").innerHTML = str.charCodeAt(0);
+</script>
+
+<h2>Property Access</h2>
+<p>ECMAScript 5 (2009) allows property access [ ] on strings:</p>
+<p id="demo26"></p>
+
+<script>
+    var str = "HELLO WORLD";
+    document.getElementById("demo26").innerHTML = str[0];
+</script>
+
+<div class="note">Property access might be a little <b>unpredictable</b>:</div>
+<ul>
+    <li>It does not work in Internet Explorer 7 or earlier</li>
+    <li>It makes strings look like arrays (but they are not)</li>
+    <li>If no character is found, [ ] returns undefined, while charAt() 
+        returns an empty string.</li>
+    <li>It is read only. str[0] = "A" gives no error (but does not work!)</li>
+</ul>
+<p>ECMAScript 5 allows property acces on strings, but read only:</p>
+<p id="demo27"></p>
+
+<script>
+    var str = "HELLO WORLD";
+    str[0] = "A";  // Does not work
+    document.getElementById("demo27").innerHTML = str[0];
+</script>
+
+<div class="note">If you want to work with a string as an array, you can 
+    convert it to an array.</div>
+
+<h2>Converting a String to an Array</h2>
+<p>A string can be converted to an array with the <b>split()</b> method. 
+    Click "Try it" to display the first array element, after a string 
+    split.</p>
+
+<button onclick="myFunction28()">Try it</button>
+
+<p id="demo28"></p>
+
+<script>
+    function myFunction28() {
+        var str = "a,b,c,d,e,f";
+        var arr = str.split(",");
+        document.getElementById("demo28").innerHTML = arr[0];
+    }
+</script>
+
+<p>If the separator is omitted, the returned array will contain the whole 
+    string in index [0]. If the separator is "", the returned array will be 
+    an array of single characters:</p>
+<p id="demo29"></p>
+
+<script>
+    var str = "Hello";
+    var arr = str.split("");
+    var text = "";
+    var i;
+    for (i = 0; i < arr.length; i++) {
+        text += arr[i] + "<br>"
+    }
+    document.getElementById("demo29").innerHTML = text;
+</script>
+
+<h2>Complete String Reference</h2>
+<p>For a complete reference, go to our 
+    <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp">Complete 
+        JavaScript String Reference</a>. The reference contains descriptions 
+        and examples of all string properties and methods.</p>
+
+<p class="colorbackground"><b>Exercise 1:</b> Display the position of the 
+    first occurrence of "World" in the variable txt.</p>
+<p id="demo30"></p>
+
+<script>
+    var txt = "Hello World";
+    document.getElementById("demo30").innerHTML = txt.indexOf("World");
+</script>
+
+<p class="colorbackground"><b>Exercise 2:</b> Use the slice() method to 
+    display only "Banana,Kiwi".</p>
+<p id="demo31"></p>
+
+<script>
+    var str = "Apple,Banana,Kiwi";
+    var res = str.slice(6);
+    document.getElementById("demo31").innerHTML = res;
+</script>
+
+<p class="colorbackground"><b>Exercise 3:</b> Use the replace() method to 
+    replace "World" with "Universe".</p>
+<p id="demo32"></p>
+
+<script>
+    var txt = "Hello World";
+    var rep = txt.replace("World", "Universe");
+    document.getElementById("demo32").innerHTML = rep;
+</script>
+
+<p class="colorbackground"><b>Exercise 4:</b> Convert the value of txt to 
+    upper case.</p>
+<p id="demo33"></p>
+
+<script>
+    var txt = "Hello World";
+    document.getElementById("demo33").innerHTML = txt.toUpperCase();
+</script>
+
+<p class="colorbackground"><b>Exercise 5:</b> Convert the value of txt to 
+    lower case.</p>
+<p id="demo34"></p>
+
+<script>
+    var txt = "Hello World";
+    document.getElementById("demo34").innerHTML = txt.toLowerCase();
+</script>
+
+<p class="colorbackground"><b>Exercise 6:</b> Use the concat() method to join 
+    the two strings: str1 and str2.</p>
+<p id="demo34">Display the result here.</p>
+
+<script>
+    var str1 = "Hello ";
+    var str2 = "World!";
+    var str3 = str1.concat(" ", str2);
+    document.getElementById("demo34").innerHTML = str3;
+</script>
+
+</body>
+</html>
