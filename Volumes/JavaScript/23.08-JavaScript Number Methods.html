@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<title>JavaScript Number Methods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/23.08-JavaScript Number Methods.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="Chapters">JavaScript Number Methods</h1>
+<h2>Number Methods and Properties</h2>
+<p>Number methods help you work with numbers. Primitive values (like 3.14 or 
+    2014), cannot have properties and methods (because they are not objects). 
+    But with JavaScript, methods and properties are also available to 
+    primitive values, because JavaScript treats primitive values as objects 
+    when executing methods and properties.</p>
+
+<h2>The toString() Method</h2>
+<p><b>toString()</b> returns a number as a string. The toString() method 
+    converts a number to a string.All number methods can be used on any type 
+    of numbers (literals, variables, or expressions):</p>
+<p id="demo1"></p>
+
+<script>
+    var x = 123;
+    document.getElementById("demo1").innerHTML =
+        x.toString() + "<br>" +
+        (123).toString() + "<br>" +
+        (100 + 23).toString();
+</script>
+
+<h2>The toExponential() Method</h2>
+<p><b>toExponential()</b> returns a string, with a number rounded and 
+    written using exponential notation. A parameter defines the number of 
+    characters behind the decimal point:</p>
+<p id="demo2"></p>
+
+<script>
+    var x = 9.656;
+    document.getElementById("demo2").innerHTML =
+        x.toExponential() + "<br>" +
+        x.toExponential(2) + "<br>" +
+        x.toExponential(4) + "<br>" +
+        x.toExponential(6);
+</script>
+
+<p>The parameter is optional. If you don't specify it, JavaScript will not 
+    round the number.</p>
+
+<h2>The toFixed() Method</h2>
+<p><b>toFixed()</b> returns a string, with the number written with a 
+    specified number of decimals:</p>
+<p>The toFixed() method rounds a number to a given number of digits. For 
+    working with money, toFixed(2) is perfect.</p>
+
+<p id="demo3"></p>
+
+<script>
+    var x = 9.656;
+    document.getElementById("demo3").innerHTML =
+        x.toFixed(0) + "<br>" +
+        x.toFixed(2) + "<br>" +
+        x.toFixed(4) + "<br>" +
+        x.toFixed(6);
+</script>
+
+<div class="note">toFixed(2) is perfect for working with money.</div>
+
+<h2>The toPrecision() Method</h2>
+<p><b>toPrecision()</b> returns a string, with a number written with a 
+    specified length:</p>
+<p id="demo4"></p>
+
+<script>
+    var x = 9.656;
+    document.getElementById("demo4").innerHTML =
+        x.toPrecision() + "<br>" +
+        x.toPrecision(2) + "<br>" +
+        x.toPrecision(4) + "<br>" +
+        x.toPrecision(6);    
+</script>
+
+<h2>The valueOf() Method</h2>
+<p><b>valueOf()</b> returns a number as a number.</p>
+<p id="demo5"></p>
+
+<script>
+    var x = 123;
+
+    document.getElementById("demo5").innerHTML =
+        x.valueOf() + "<br>" +
+        (123).valueOf() + "<br>" +
+        (100 + 23).valueOf();
+</script>
+
+<p>In JavaScript, a number can be a primitive value (typeof = number) or an 
+    object (typeof = object). The valueOf() method is used internally in 
+    JavaScript to convert Number objects to primitive values. There is no 
+    reason to use it in your code.</p>
+
+<div class="note">All JavaScript data types have a valueOf() and a 
+    toString() method.</div>
+
+<h2>Converting Variables to Numbers</h2>
+<p>There are 3 JavaScript methods that can be used to convert variables to 
+    numbers:</p>
+<ul>
+    <li>The Number() method</li>
+    <li>The parseInt() method</li>
+    <li>The parseFloat() method</li>
+</ul>
+<p>These methods are not <b>number</b> methods, but <b>global</b> JavaScript 
+    methods.</p>
+
+<h2>Global Methods</h2>
+<p>JavaScript global methods can be used on all JavaScript data types. These 
+    are the most relevant methods, when working with numbers:</p>
+<table class="properties">
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>Number()</td>
+        <td>Returns a number, converted from its argument.</td>
+    </tr>
+    <tr>
+        <td>parseFloat()</td>
+        <td>Parses its argument and returns a floating point number</td>
+    </tr>
+    <tr>
+        <td>parseInt()</td>
+        <td>Parses its argument and returns an integer</td>
+    </tr>
+</table>
+
+<h2>The Number() Method</h2>
+<p><b>Number()</b> can be used to convert JavaScript variables to numbers:</p>
+<p id="demo6"></p>
+
+<script>
+    document.getElementById("demo6").innerHTML =
+        Number(true) + "<br>" +
+        Number(false) + "<br>" +
+        Number("10") + "<br>" +
+        Number("  10") + "<br>" +
+        Number("10  ") + "<br>" +
+        Number(" 10  ") + "<br>" +
+        Number("10.33") + "<br>" +
+        Number("10,33") + "<br>" +
+        Number("10 33") + "<br>" +
+        Number("John");
+</script>
+
+<div class="note">If the number cannot be converted, NaN (Not a Number) is 
+    returned.</div>
+
+<h2>The Number() Method Used on Dates</h2>
+<p><b>Number()</b> can also convert a date to a number:</p>
+<p id="demo7"></p>
+
+<script>
+    var x = new Date("2017-09-30");
+    document.getElementById("demo7").innerHTML = Number(x); 
+</script>
+
+<div class="note">The Number() method above returns the number of 
+    milliseconds since 1.1.1970.</div>
+
+<h2>The parseInt() Method</h2>
+<p><b>parseInt()</b> parses a string and returns a whole number. Spaces are 
+    allowed. The global JavaScript function parseInt() converts strings to 
+    numbers. Only the first number is returned:</p>
+<p id="demo8"></p>
+
+<script>
+    document.getElementById("demo8").innerHTML =
+        parseInt("10") + "<br>" +
+        parseInt("10.33") + "<br>" +
+        parseInt("10 6") + "<br>" +
+        parseInt("10 years") + "<br>" +
+        parseInt("years 10");    
+</script>
+
+<h2>The parseFloat() Method</h2>
+<p><b>parseFloat()</b> parses a string and returns a number. Spaces are 
+    allowed. The global JavaScript function parseFloat() converts strings to 
+    numbers. Only the first number is returned:</p>
+<p id="demo9"></p>
+
+<script>
+    document.getElementById("demo9").innerHTML =
+        parseFloat("10") + "<br>" +
+        parseFloat("10.33") + "<br>" +
+        parseFloat("10 6") + "<br>" +
+        parseFloat("10 years") + "<br>" +
+        parseFloat("years 10");        
+</script>
+
+<div class="note">If the number cannot be converted, NaN (Not a Number) is 
+    returned.</div>
+
+<h2>Number Properties</h2>
+
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>MAX_VALUE</td>
+        <td>Returns the largest number possible in JavaScript</td>
+    </tr>
+    <tr>
+        <td>MIN_VALUE</td>
+        <td>Returns the smallest number possible in JavaScript</td>
+    </tr>
+    <tr>
+        <td>NEGATIVE_INFINITY</td>
+        <td>Represents negative infinity (returned on overflow)</td>
+    </tr>
+    <tr>
+        <td>NaN</td>
+        <td>Represents a "Not-a-Number" value</td>
+    </tr>
+    <tr>
+        <td>POSITIVE_INFINITY</td>
+        <td>Represents infinity (returned on overflow)</td>
+    </tr>
+</table>
+
+<p>MAX_VALUE returns the largest number possible in JavaScript.</p>
+<p id="demo10"></p>
+
+<script>
+    document.getElementById("demo10").innerHTML = Number.MAX_VALUE;
+</script>
+
+<p>MIN_VALUE returns the smallest number possible in JavaScript.</p>
+<p id="demo11"></p>
+
+<script>
+    document.getElementById("demo11").innerHTML = Number.MIN_VALUE;
+</script>
+
+<p>NEGATIVE_INFINITY</p>
+<p id="demo12"></p>
+
+<script>
+    document.getElementById("demo12").innerHTML = Number.NEGATIVE_INFINITY;
+</script>
+
+<p>POSITIVE_INFINITY</p>
+<p id="demo13"></p>
+
+<script>
+    document.getElementById("demo13").innerHTML = Number.POSITIVE_INFINITY;
+</script>
+
+<p id="demo14"></p>
+
+<script>
+    document.getElementById("demo14").innerHTML = Number.NaN;
+</script>
+
+<h2>Number Properties Cannot be Used on Variables</h2>
+<p>Number properties belong to the JavaScript's number object wrapper called 
+    <b>Number</b>. These properties can only be accessed as 
+    <b>Number</b>.MAX_VALUE. Using <em>myNumber</em>.MAX_VALUE, where 
+    <em>myNumber</em> is a variable, expression, or value, will return 
+    undefined:</p>
+<p id="demo15"></p>
+
+<script>
+    var x = 6;
+    document.getElementById("demo15").innerHTML = x.MAX_VALUE;
+</script>
+
+<h2>Complete JavaScript Number Reference</h2>
+<p>For a complete reference, go to our 
+    <a href="https://www.w3schools.com/jsref/jsref_obj_number.asp">Complete 
+        JavaScript Number Reference</a>. The reference contains descriptions 
+        and examples of all Number properties and methods.</p>
+
+</body>
+</html>
