@@ -1,0 +1,153 @@
+/* Inspired by Bryant Smith (bryantsmith.com) */
+body {
+    margin: 0 auto 0 auto; 
+    margin-top:10px;
+    display: block; 
+    height:auto;
+    position: relative; 
+    width: 742px;
+    text-align: left;
+	font-family: Helvetica, Arial,  sans-serif;
+	font-size: 13px;
+	color: #F1F5F8;    
+}
+
+html {
+    background: url(../images/background.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+*
+{
+  margin: 0 auto 0 auto;
+ text-align:left;}
+
+.top {
+    display: block;
+    width: 742px;
+    height: 35px;
+    float: right;
+    clear: both;
+}
+
+.header {
+    background-image: url(../images/header.png);
+    background-repeat: no-repeat;
+    height: 155px;
+    width: 742px;
+    display: block;
+    clear: both;
+}
+
+.header h1
+{
+    position: relative;
+    margin-left: 20px;
+    padding-top: 7px;
+    color: #000000;
+    text-align: left;
+    font-size: 47px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header h2
+{
+    margin-left: 20px;    
+    padding-right: 21px;
+    position: auto;
+    color: #FFFFFF;
+    text-align: justify;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.links {
+    width: 722px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 40px;
+    text-align: center;
+    padding-right: 20px;
+}
+
+.links a, .links a:visited {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #E9EEF3;
+    background-color: #000000;
+    padding: 3px;
+}
+
+.links a:hover {
+    color: #FFFFFF;
+    background-color: #333333;
+}
+
+.content_top {
+    background-image: url(../images/content_top.png);
+    background-repeat: no-repeat;
+    height: 82px;
+    width: 742px;
+    clear: both;
+}
+
+.content_top h1 {
+    padding-top: 23px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.content_quad {
+    width: 742px;
+    height: 265px;
+    clear: both;
+    background-color: #dddddd;
+    opacity: 0.90;
+    border-top: 1px solid black;
+}
+
+.content_quad img {
+    width: 300px;
+    height: 177px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 15px;
+    float: left;
+    clear: none;
+}
+
+.content_quad .content_right {
+    margin-top: 30px;
+    width: 385px;
+    float: left;
+}
+.content_quad .content_right p {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    padding-right: 10px;
+}
+
+.content_quad  h2 {
+    color:#000000;
+    padding-bottom: 7px;
+}
+
+.footer {
+    text-align: center;
+    width: inherit;
+    color: #E6E6E6;
+    font-size: 11px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+.footer a, .footer a:visited {
+    color: #FFFFFF;
+}
