@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Math Object</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/30.08-JavaScript Math Object.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Math Object</h1>
+<p>The JavaScript Math object allows you to perform mathematical tasks on 
+    numbers. Math.PI returns the ratio of a circle's circumference to its 
+    diameter:</p>
+<p id="demo1"></p>
+
+<script>
+    document.getElementById("demo1").innerHTML = Math.PI;
+</script>
+
+<h2>Math.round()</h2>
+<p>Math.round(x) returns the value of x rounded to its nearest integer:</p>
+<p id="demo2"></p>
+
+<script>
+    document.getElementById("demo2").innerHTML = Math.round(4.4);
+</script>
+
+<h2>Math.pow()</h2>
+<p>Math.pow(x, y) returns the value of x to the power of y:</p>
+<p id="demo3"></p>
+
+<script>
+    document.getElementById("demo3").innerHTML = Math.pow(8, 2);
+</script>
+
+<h2>Math.sqrt()</h2>
+<p>Math.sqrt(x) returns the square root of x:</p>
+<p id="demo4"></p>
+
+<script>
+    document.getElementById("demo4").innerHTML = Math.sqrt(64);
+</script>
+
+<h2>Math.abs()</h2>
+<p>Math.abs(x) returns the absolute (positive) value of x:</p>
+<p id="demo5"></p>
+
+<script>
+    document.getElementById("demo5").innerHTML = Math.abs(-4.4);
+</script>
+
+<h2>Math.ceil()</h2>
+<p>Math.ceil(x) returns the value of x rounded <b>up</b> to its nearest 
+integer:</p>
+<p id="demo6"></p>
+
+<script>
+    document.getElementById("demo6").innerHTML = Math.ceil(4.4);
+</script>
+
+<h2>Math.floor()</h2>
+<p>Math.floor(x) returns the value of x rounded <b>down</b> to its nearest 
+    integer:</p>
+<p id="demo7"></p>
+
+<script>
+    document.getElementById("demo7").innerHTML = Math.floor(4.7);
+</script>
+
+<h2>Math.sin()</h2>
+<p>Math.sin(x) returns the sine (a value between -1 and 1) of the angle x 
+    (given in radians). If you want to use degrees instead of radians, you 
+    have to convert degrees to radians:</p>
+<p>Angle in radians = Angle in degrees x PI / 180.</p>
+<p id="demo8"></p>
+
+<script>
+    document.getElementById("demo8").innerHTML =
+        "The sine value of 90 degrees is " + Math.sin(90 * Math.PI / 180);
+</script>
+
+<h2>Math.cos()</h2>
+<p>Math.cos(x) returns the cosine (a value between -1 and 1) of the angle x 
+    (given in radians). If you want to use degrees instead of radians, you 
+    have to convert degrees to radians:</p>
+<p>Angle in radians = Angle in degrees x PI / 180.</p>
+<p id="demo9"></p>
+
+<script>
+    document.getElementById("demo9").innerHTML =
+        "The cosine value of 0 degrees is " + Math.cos(0 * Math.PI / 180);
+</script>
+
+<h2>Math.min() and Math.max()</h2>
+<p>Math.min() and Math.max() can be used to find the lowest or highest value 
+    in a list of arguments:</p>
+<p id="demo10"></p>
+
+<script>
+    document.getElementById("demo10").innerHTML =
+        Math.min(0, 150, 30, 20, -8, -200);
+</script>
+
+<p id="demo11"></p>
+
+<script>
+    document.getElementById("demo11").innerHTML =
+        Math.max(0, 150, 30, 20, -8, -200);
+</script>
+
+<h2>Math.random()</h2>
+<p>Math.random() returns a random number between 0 (inclusive), and 1 
+    (exclusive):</p>
+<p id="demo12"></p>
+
+<script>
+    document.getElementById("demo12").innerHTML = Math.random();
+</script>
+
+<div class="note">You will learn more about Math.random() in the next chapter 
+    of this tutorial.</div>
+
+<h2>Math Properties (Constants)</h2>
+<p>JavaScript provides 8 mathematical constants that can be accessed with the 
+    Math object:</p>
+<p id="demo13"></p>
+
+<script>
+    document.getElementById("demo13").innerHTML =
+        "<p><b>Math.E:</b> " + Math.E + "</p>" +
+        "<p><b>Math.PI:</b> " + Math.PI + "</p>" +
+        "<p><b>Math.SQRT2:</b> " + Math.SQRT2 + "</p>" +
+        "<p><b>Math.SQRT1_2:</b> " + Math.SQRT1_2 + "</p>" +
+        "<p><b>Math.LN2:</b> " + Math.LN2 + "</p>" +
+        "<p><b>Math.LN10:</b> " + Math.LN10 + "</p>" +
+        "<p><b>Math.LOG2E:</b> " + Math.LOG2E + "</p>" +
+        "<p><b>Math.Log10E:</b> " + Math.LOG10E + "</p>";
+</script>
+
+<h2>Math Constructor</h2>
+<p>Unlike other global objects, the Math object has no constructor. Methods 
+    and properties are static. All methods and properties (constants) can be 
+    used without creating a Math object first.</p>
+
+<h2>Math Object Methods</h2>
+<table class="properties">
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>abs(x)</td>
+        <td>Returns the absolute value of x</td>
+    </tr>
+    <tr>
+        <td>acos(x)</td>
+        <td>Returns the arccosine of x, in radians</td>
+    </tr>
+    <tr>
+        <td>asin(x)</td>
+        <td>Returns the arcsine of x, in radians</td>
+    </tr>
+    <tr>
+        <td>atan(x)</td>
+        <td>Returns the arctangent of x as a numeric value between -PI/2 and 
+            PI/2 radians</td>
+    </tr>
+    <tr>
+        <td>atan2(y, x)</td>
+        <td>Returns the arctangent of the quotient of its arguments</td>
+    </tr>
+    <tr>
+        <td>ceil(x)</td>
+        <td>Returns the value of x rounded up to its nearest integer</td>
+    </tr>
+    <tr>
+        <td>cos(x)</td>
+        <td>Returns the cosine of x (x is in radians)</td>
+    </tr>
+    <tr>
+        <td>exp(x)</td>
+        <td>Returns the value of Ex</td>
+    </tr>
+    <tr>
+        <td>floor(x)</td>
+        <td>Returns the value of x rounded down to its nearest integer</td>
+    </tr>
+    <tr>
+        <td>log(x)</td>
+        <td>Returns the natural logarithm (base E) of x</td>
+    </tr>
+    <tr>
+        <td>max(x, y, z, ..., n)</td>
+        <td>Returns the number with the highest value</td>
+    </tr>
+    <tr>
+        <td>min(x, y, z, ..., n)</td>
+        <td>Returns the number with the lowest value</td>
+    </tr>
+    <tr>
+        <td>pow(x, y)</td>
+        <td>Returns the value of x to the power of y</td>
+    </tr>
+    <tr>
+        <td>random()</td>
+        <td>Returns a random number between 0 and 1</td>
+    </tr>
+    <tr>
+        <td>round(x)</td>
+        <td>Returns the value of x rounded to its nearest integer</td>
+    </tr>
+    <tr>
+        <td>sin(x)</td>
+        <td>Returns the sine of x (x is in radians)</td>
+    </tr>
+    <tr>
+        <td>sqrt(x)</td>
+        <td>Returns the square root of x</td>
+    </tr>
+    <tr>
+        <td>tan(x)</td>
+        <td>Returns the tangent of an angle</td>
+    </tr>
+</table>
+
+<h2>Complete Math Reference</h2>
+<p>For a complete reference, go to our 
+    <a href="https://www.w3schools.com/jsref/jsref_obj_math.asp">complete 
+    Math object reference</a>. The reference contains descriptions and 
+    examples of all Math properties and methods.</p>
+<p class="exe"><b>Exercise 1:</b> Use the random() method to display a random 
+    number.</p>
+<p id="demo14">Display the result here.</p>
+
+<script>
+    document.getElementById("demo14").innerHTML = Math.random();
+</script>
+
+<p class="exe"><b>Exercise 2:</b> Fix the code to display the number with the 
+    highest value.</p>
+<p id="demo15">Display the result here.</p>
+
+<script>
+    document.getElementById("demo15").innerHTML = Math.max(0, 150, 30, 20, -8);
+</script>
+
+<p class="exe"><b>Exercise 3:</b> Round "5.3" to the nearest integer, and 
+    display it.</p>
+<p id="demo16">Display the result here.</p>
+
+<script>
+    document.getElementById("demo16").innerHTML = Math.floor(5.3);
+</script>
+
+<p class="exe"><b>Exercise 4:</b> Display the square root of "9".</p>
+<p id="demo17">Display the result here.</p>
+
+<script>
+    document.getElementById("demo17").innerHTML = Math.sqrt(9);
+</script>
+
+
+
+
+
+</body>
+</html>
