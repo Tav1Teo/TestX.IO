@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Comparison and Logical Operators</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/05.09-JavaScript Comparison and Logical Operators.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Comparison and Logical Operators</h1>
+<p>Comparison and Logical operators are used to test for <em>true</em> or 
+<em>false</em>.</p>
+
+<h2>Comparison Operators</h2>
+<p>Comparison operators are used in logical statements to determine equality 
+    or difference between variables or values. Given that <b>x = 5</b>, the 
+    table below explains the comparison operators:</p>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Comparing</th>
+        <th>Returns</th>
+    </tr>
+    <tr>
+        <td rowspan="3">==</td>
+        <td rowspan="3">equal to</td>
+        <td>x == 8</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>x == 5</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>x == "5"</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td rowspan="2">===</td>
+        <td rowspan="2">equal value and equal type</td>
+        <td>x === 5</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>x === "5"</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>!=</td>
+        <td>not equal</td>
+        <td>x != 8</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td rowspan="3">!==</td>
+        <td rowspan="3">not equal value or not equal type</td>
+        <td>x !== 5</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>x !== "5"</td>
+        <td>true</td>        
+    </tr>
+    <tr>
+        <td>x !== 8</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>&gt</td>
+        <td>greater than</td>
+        <td>x &gt 8</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>&lt</td>
+        <td>less than</td>
+        <td>x &lt 8</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>&gt=</td>
+        <td>greater than or equal to</td>
+        <td>x &gt= 8</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>&lt=</td>
+        <td>less than or equal to</td>
+        <td>x &lt= 8</td>
+        <td>true</td>
+    </tr>
+</table>
+<p>Assign 5 to x, and display the value of the comparison (x == 8):</p>
+<p id="demo1"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo1").innerHTML = (x == 8);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x == 5):</p>
+<p id="demo2"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo2").innerHTML = (x == 5);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x == 5):</p>
+<p id="demo3"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo3").innerHTML = (x == "5");
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x === 5):</p>
+<p id="demo4"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo4").innerHTML = (x === 5);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x === "5").</p>
+<p id="demo5"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo5").innerHTML = (x === "5");
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x != 8).</p>
+<p id="demo6"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo6").innerHTML = (x != 8);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x !== 5):</p>
+<p id="demo7"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo7").innerHTML = (x !== 5);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x !== "5"):</p>
+<p id="demo8"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo8").innerHTML = (x !== "5");
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x !== 8):</p>
+<p id="demo9"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo9").innerHTML = (x !== 8);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x > 8).</p>
+<p id="demo10"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo10").innerHTML = (x > 8);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x < 8).</p>
+<p id="demo11"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo11").innerHTML = (x < 8);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x >= 8).</p>
+<p id="demo12"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo12").innerHTML = (x >= 8);
+</script>
+
+<p>Assign 5 to x, and display the value of the comparison (x <= 8 ).</p>
+<p id="demo13"></p>
+
+<script>
+    var x = 5;
+    document.getElementById("demo13").innerHTML = (x <= 8);
+</script>
+
+<h2>How Can it be Used</h2>
+<p>Comparison operators can be used in conditional statements to compare 
+    values and take action depending on the result:</p>
+
+<div class="bb">if (age < 18) text = "Too young";</div>
+
+<h2>Logical Operators</h2>
+<p>Logical operators are used to determine the logic between variables or 
+    values. Given that <b>x = 6</b> and <b>y = 3</b>, the table below 
+    explains the logical operators:</p>
+<table class="properties">
+    <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>&&</td>
+        <td>and</td>
+        <td>(x < 10 && y > 1) is true</td>
+    </tr>
+    <tr>
+        <td>||</td>
+        <td>or</td>
+        <td>(x == 5 || y == 5) is false</td>
+    </tr>
+    <tr>
+        <td>!</td>
+        <td>not</td>
+        <td>!(x == y) is true</td>
+    </tr>
+</table>
+
+<p>The AND operator (&&) returns true if both expressions are true, otherwise 
+    it returns false.</p>
+<p id="demo14"></p>
+
+<script>
+    var x = 6;
+    var y = 3;
+
+    document.getElementById("demo14").innerHTML =
+        (x < 10 && y > 1) + "<br>" +
+        (x < 10 && y < 1);
+</script>
+
+<p>The OR operator (||) returns true if one or both expressions are true, 
+    otherwise it returns false.</p>
+<p id="demo15"></p>
+
+<script>
+    var x = 6;
+    var y = 3;
+
+    document.getElementById("demo15").innerHTML =
+        (x == 5 || y == 5) + "<br>" +
+        (x == 6 || y == 0) + "<br>" +
+        (x == 0 || y == 3) + "<br>" +
+        (x == 6 || y == 3);
+</script>
+
+<p>The NOT operator (!) returns true for false statements and false for true 
+    statements.</p>
+<p id="demo16"></p>
+
+<script>
+    var x = 6;
+    var y = 3;
+
+    document.getElementById("demo16").innerHTML =
+        !(x === y) + "<br>" +
+        !(x > y);
+</script>
+
+<h2>Conditional (Ternary) Operator</h2>
+<p>JavaScript also contains a conditional operator that assigns a value to a 
+    variable based on some condition.</p>
+<h3>Syntax</h3>
+
+<div class="bb"><p><em>variablename</em> = (<em>condition</em>) ? 
+    <em>value1:value2</em></p></div>
+
+<p>Input your age and click the button:</p>
+
+<input id="age" value="18" />
+
+<button onclick="myFunction17()">Try it</button>
+
+<p id="demo17"></p>
+
+<script>
+    function myFunction17() {
+        var age, voteable;
+        age = document.getElementById("age").value;
+        voteable = (age < 18) ? "Too young" : "Old enough";
+        document.getElementById("demo17").innerHTML = voteable + " to vote.";
+    }
+</script>
+
+<p>If the variable age is a value below 18, the value of the variable 
+    voteable will be "Too young", otherwise the value of voteable will be 
+    "Old enough".</p>
+
+<h2>Comparing Different Types</h2>
+<p>Comparing data of different types may give unexpected results. When 
+    comparing a string with a number, JavaScript will convert the string to a 
+    number when doing the comparison. An empty string converts to 0. A 
+    non-numeric string converts to NaN which is always false.</p>
+<table class="properties">
+    <tr>
+        <th>Case</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>2 &lt 12</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>2 &lt "12"</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>2 &lt "John"</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>2 &gt "John"</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>2 == "John"</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>"2" &lt "12"</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>"2" &gt "12"</td>
+        <td>true</td>
+    </tr>
+    <tr>
+        <td>"2" == "12"</td>
+        <td>false</td>
+    </tr>
+</table>
+
+<p>When comparing two strings, "2" will be greater than "12", because 
+    (alphabetically) 1 is less than 2. To secure a proper result, variables 
+    should be converted to the proper type before comparison:</p>
+<p>Input your age and click the button:</p>
+
+<input id="age" value="18" />
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+    function myFunction() {
+        var age, voteable;
+        age = Number(document.getElementById("age").value);
+        if (isNaN(age)) {
+            voteable = "Input is not a number";
+        } else {
+            voteable = (age < 18) ? "Too young" : "Old enough";
+        }
+        document.getElementById("demo").innerHTML = voteable;
+    }
+</script>
+
+<p class="exe"><b>Exercise 1:</b> Choose the correct comparison operator to 
+    display "true", when: 5 is less than 7.</p>
+<p id="demo18">Display the result here.</p>
+
+<script>
+    document.getElementById("demo18").innerHTML = 5 < 7;
+</script>
+
+<p class="exe"><b>Exercise 2:</b> Choose the correct comparison operator to 
+    display "true", when: 10 is greater than 7.</p>
+<p id="demo19">Display the result here.</p>
+
+<script>
+    document.getElementById("demo19").innerHTML = 10 > 7;
+</script>
+
+<p class="exe"><b>Exercise 3:</b> Choose the correct comparison operator to 
+    display "true", when: 10 is equal to 10.</p>
+<p id="demo20">Display the result here.</p>
+
+<script>
+    document.getElementById("demo20").innerHTML = 10 == 10;
+</script>
+
+<p class="exe"><b>Exercise 4:</b> Choose the correct comparison operator to 
+    display "true", when: 10 is NOT equal to 8.</p>
+<p id="demo21">Display the result here.</p>
+
+<script>
+    document.getElementById("demo21").innerHTML = 10 != 8;
+</script>
+
+<p class="exe"><b>Exercise 5:</b> Use a <b>conditional (ternary) operator</b> 
+for this exercise: If the variable age is a value below 18, the value of the 
+variable voteable should be "Too young", otherwise the value of voteable 
+should be "Old enough".</p>
+
+Age: <input type="number" id="age" value="18">
+<button onclick="checkAge()">Check Age</button>
+<p id="demo22"></p>
+
+<script>
+    function checkAge() {
+        var age = document.getElementById("age").value;
+        var voteable = (age < 18) ? "Too young" : "Old enough";
+        document.getElementById("demo22").innerHTML = voteable + " to vote.";
+    }
+</script>
+
+<p class="exe"><b>Exercise 6:</b> Use a <b>conditional (ternary) operator</b> 
+    for this exercise: If the variable firstName is equal to "John", the 
+    value of the variable result should be "Hello John!", otherwise the value 
+    of result should be "You're not John!".</p>
+
+First Name: <input type="text" id="fname" value="John">
+<button onclick="checkName()">Check Name</button>
+<p id="demo"></p>
+
+<script>
+   function checkName() {
+      var firstName = document.getElementById("fname").value;
+      var result = (firstName === "John") ? "Hello John!" : "You're not John!";
+      document.getElementById("demo").innerHTML = result;
+   }
+</script>
+
+</body>
+</html>
