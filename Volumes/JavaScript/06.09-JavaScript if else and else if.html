@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript if, else and else if</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/06.09-JavaScript if else and else if.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript if, else and else if</h1>
+<p>Conditional statements are used to perform different actions based on 
+    different conditions.</p>
+
+<h2>Conditional Statements</h2>
+<p>Very often when you write code, you want to perform different actions for 
+    different decisions. You can use conditional statements in your code to 
+    do this. In JavaScript we have the following conditional statements:</p>
+<ul>
+    <li>Use <b>if</b> to specify a block of code to be executed, if a 
+        specified condition is true</li>
+    <li>Use <b>else</b> to specify a block of code to be executed, if the 
+        same condition is false</li>
+    <li>Use <b>else if</b> to specify a new condition to test, if the first 
+        condition is false</li>
+    <li>Use <b>switch</b> to specify many alternative blocks of code to be 
+        executed</li>
+</ul>
+
+<div class="note">The switch statement is described in the next chapter.</div>
+
+<h2>The if Statement</h2>
+<p>Use the <b>if</b> statement to specify a block of JavaScript code to be 
+    executed if a condition is true. Syntax:</p>
+
+<div class="bb">if (<em>condition</em>) {<br>
+    <em>block of code to be executed if the condition is true<br></em>
+}</div>
+
+<div class="note">Note that <b>if</b> is in lowercase letters. Uppercase 
+    letters (If or IF) will generate a JavaScript error.</div>
+
+<p>Display "Good day!" if the hour is less than 18:00:</p>
+<p id="demo1">Good Evening!</p>
+
+<script>
+    if (new Date().getHours() < 18) {
+        document.getElementById("demo1").innerHTML = "Good day!";
+    }
+</script>
+
+<h2>The else Statement</h2>
+<p>Use the <b>else</b> statement to specify a block of code to be executed if 
+    the condition is false.</p>
+
+<div class="bb">if (<em>condition</em>) {<br>
+<em>block of code to be executed if the condition is true</em><br>
+} else {
+    <em>block of code to be executed if the condition is false</em><br>
+}</div>
+
+<p>Click the button to display a time-based greeting:</p>
+
+<button onclick="myFunction2()">Try it</button>
+
+<p id="demo2"></p>
+
+<script>
+    function myFunction2() {
+        var hour = new Date().getHours();
+        var greeting;
+        if (hour < 18) {
+            greeting = "Good day";
+        } else {
+            greeting = "Good evening";
+        }
+        document.getElementById("demo2").innerHTML = greeting;
+    }
+</script>
+
+<h2>The else if Statement</h2>
+<p>Use the <b>else if</b> statement to specify a new condition if the first 
+    condition is false. Syntax:</p>
+
+<div class="bb">if (<em>condition1</em>) {<br>
+    <em>block of code to be executed if condition1 is true</em><br>
+} else if (<em>condition2</em>) {<br>
+<em>block of code to be executed if the condition1 is false and condition2 is 
+    true</em><br>
+} else {<br>
+<em>block of code to be executed if the condition1 is false and condition2 is 
+    false</em><br>
+}</div>
+
+<div class="example"><p>If time is less than 10:00, create a "Good morning" 
+    greeting, if not, but time is less than 20:00, create a "Good day" 
+    greeting, otherwise a "Good evening":</p>
+
+<button onclick="myFunction3()">Try it</button>
+
+<p id="demo3"></p>
+
+<script>
+    function myFunction3() {
+        var greeting;
+        var time = new Date().getHours();
+        if (time < 10) {
+            greeting = "Good morning";
+        } else if (time < 20) {
+            greeting = "Good day";
+        } else {
+            greeting = "Good evening";
+        }
+        document.getElementById("demo3").innerHTML = greeting;
+    }
+</script>
+</div>
+
+<div class="example"><p>This example will write a link to either W3Schools or 
+    to the World Wildlife Foundation (WWF). By using a random number, there
+is a 50% chance for each of the links.</p>
+<p id="demo4"></p>
+
+<script>
+    if (Math.random() < 0.5) {
+        text = "<a href='https://w3schools.com'>Visit W3Schools</a>";
+    } else {
+        text = "<a href='https://wwf.org'>Visit WWF</a>";
+    }
+    document.getElementById("demo4").innerHTML = text;
+</script></div>
+
+<p class="exe"><b>Exercise 1:</b> Use the if statement to output some text if 
+    5 is greater than 2.</p>
+<p id="demo5"></p>
+
+<script>
+    if (5 > 2) {
+        document.getElementById("demo5").innerHTML = "Well done!";
+    }
+</script>
+
+<p class="exe"><b>Exercise 2:</b> Write an if statement with the following 
+    condition: 10 is greater than 5. If the condition is true, display "I did 
+    it!".</p>
+<p id="demo6">Display the result here.</p>
+
+<script>
+    if (10 > 5) {
+        document.getElementById("demo6").innerHTML = "I did it!";
+    }
+</script>
+
+<p class="exe"><b>Exercise 3:</b> Change the value of the variable firstName 
+    to make the if statement run.</p>
+<p id="demo7"></p>
+
+<script>
+    var firstName = "John";
+
+    if (firstName === "John") {
+        document.getElementById("demo7").innerHTML = "Hello John!";
+    }
+</script>
+
+<p class="exe"><b>Exercise 4:</b> Add an <b>else</b> statement to display 
+    "You're not John!".</p>
+<p id="demo8">Display the result here.</p>
+
+<script>
+    var firstName = "Greg";
+
+    if (firstName === "John") {
+        document.getElementById("demo8").innerHTML = "Hello John!";
+    } else {
+        document.getElementById("demo8").innerHTML = "You're not John!";
+    }
+</script>
+
+<p class="exe"><b>Exercise 5:</b> Write an if/else statement with the 
+    following condition: If the variable age is greater than 18, output "Old 
+    enough", otherwise output "Too young".</p>
+<p id="demo9">Display the result here.</p>
+
+<script>
+    var age = 25;
+
+    if (age > 18) {
+        document.getElementById("demo9").innerHTML = "Old enough";
+    } else {
+        document.getElementById("demo9").innerHTML = "Too young";
+    }
+</script>
+
+<p class="exe"><b>Exercise 6:</b> The if/else statement does not work. Try to 
+    fix it.</p>
+<p id="demo10">Display the result here.</p>
+
+<script>
+    var greeting;
+    var hour = new Date().getHours();
+
+    if (hour < 18) {
+        greeting = "Good day";
+    } else {
+        greeting = "Good evening";
+    }
+
+    document.getElementById("demo10").innerHTML = greeting;
+</script>
+
+</body>
+</html>
