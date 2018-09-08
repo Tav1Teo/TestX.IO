@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript For Loop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/08.09-JavaScript For Loop.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript For Loop</h1>
+<p>Loops can execute a block of code a number of times.</p>
+
+<h2>JavaScript Loops</h2>
+<p>Loops are handy, if you want to run the same code over and over again, 
+    each time with a different value. Often this is the case when working 
+    with arrays. Instead of writing:</p>
+
+<div class="bb">text += cars[0] + "&ltbr&gt";<br>
+text += cars[1] + "&ltbr&gt";<br>
+text += cars[2] + "&ltbr&gt";<br>
+text += cars[3] + "&ltbr&gt";<br>
+text += cars[4] + "&ltbr&gt";<br>
+text += cars[5] + "&ltbr&gt";</div>
+
+<p>You can write:</p>
+<p id="demo1"></p>
+
+<script>
+    var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+    var text = "";
+    var i;
+    for (i = 0; i < cars.length; i++) {
+        text += cars[i] + "<br>";
+    }
+    document.getElementById("demo1").innerHTML = text;
+</script>
+
+<h2>Different Kinds of Loops</h2>
+<p>JavaScript supports different kinds of loops:</p>
+<ul>
+    <li><b>for</b> - loops through a block of code a number of times</li>
+    <li><b>for/in</b> - loops through the properties of an object</li>
+    <li><b>while</b> - loops through a block of code while a specified 
+        condition is true</li>
+    <li><b>do/while</b> - also loops through a block of code while a 
+        specified condition is true</li>
+</ul>
+
+<h2>The For Loop</h2>
+<p>The for loop has the following syntax:</p>
+
+<div class="bb">for (<em>statement 1; statement 2; statement 3</em>) {<br>
+<em>code block to be executed</em><br>
+}</div>
+
+<p><b>Statement 1</b> is executed (one time) before the execution of the code 
+    block.</p>
+<p><b>Statement 2</b> defines the condition for executing the code block.</p>
+<p><b>Statement 3</b> is executed (every time) after the code block has been 
+    executed.</p>
+<p id="demo2"></p>
+
+<script>
+    var text = "";
+    var i;
+    for (i = 0; i < 5; i++) {
+        text += "The number is " + i + "<br>";
+    }
+    document.getElementById("demo2").innerHTML = text;
+</script>
+
+<p>From the example above, you can read:<br>
+
+Statement 1 sets a variable before the loop starts (var i = 0).<br>
+
+Statement 2 defines the condition for the loop to run (i must be less than 
+5).<br>
+
+Statement 3 increases a value (i++) each time the code block in the loop has 
+been executed.</p>
+
+<h2>Statement 1</h2>
+<p>Normally you will use statement 1 to initialize the variable used in the 
+    loop (i = 0). This is not always the case, JavaScript doesn't care. 
+    Statement 1 is optional. You can initiate many values in statement 1 
+    (separated by comma):</p>
+<p id="demo3"></p>
+
+<script>
+    var cars = ["BMW", "Volvo", "Saab", "Ford"];
+    var i, len, text;
+    for (i = 0, len = cars.length, text = ""; i < len; i++) {
+        text += cars[i] + "<br>";
+    }
+
+    document.getElementById("demo3").innerHTML = text;
+</script>
+
+<p>And you can omit statement 1 (like when your values are set before the 
+    loop starts):</p>
+<p id="demo4"></p>
+
+<script>
+    var cars = ["BMW", "Volvo", "Saab", "Ford"];
+    var i = 2;
+    var len = cars.length;
+    var text = "";
+
+    for (; i < len; i++) {
+        text += cars[i] + "<br>";
+    }
+
+    document.getElementById("demo4").innerHTML = text;
+</script>
+
+<h2>Statement 2</h2>
+<p>Often statement 2 is used to evaluate the condition of the initial variable.
+This is not always the case, JavaScript doesn't care. Statement 2 is also 
+optional. If statement 2 returns true, the loop will start over again, if it 
+returns false, the loop will end.</p>
+
+<div class="note">If you omit statement 2, you must provide a <b>break</b> 
+    inside the loop. Otherwise the loop will never end. This will crash your 
+    browser. Read about breaks in a later chapter of this tutorial.</div>
+
+<h2>Statement 3</h2>
+<p>Often statement 3 increments the value of the initial variable. This is 
+    not always the case, JavaScript doesn't care, and statement 3 is 
+    optional. Statement 3 can do anything like negative increment (i--), 
+    positive increment (i = i + 15), or anything else. Statement 3 can also 
+    be omitted (like when you increment your values inside the loop):</p>
+<p id="demo5"></p>
+
+<script>
+    var cars = ["BMW", "Volvo", "Saab", "Ford"];
+
+    var i = 0;
+    var len = cars.length;
+    var text = "";
+
+    for (; i < len;) {
+        text += cars[i] + "<br>";
+        i++;
+    }
+    document.getElementById("demo5").innerHTML = text;
+</script>
+
+<h2>The For/In Loop</h2>
+<p>The JavaScript for/in statement loops through the properties of an 
+    object:</p>
+<p id="demo6"></p>
+
+<script>
+    var txt = "";
+    var person = { fname: "John", lname: "Doe", age: 25 };
+    var x;
+    for (x in person) {
+        txt += person[x] + " ";
+    }
+    document.getElementById("demo6").innerHTML = txt;
+</script>
+
+<p class="exe"><b>Exercise 1:</b> In the for loop, change <em>num1</em> to 
+<b>0</b> and <em>num2</em> to <b>10</b> and run the code.</p>
+<p id="demo7"></p>
+
+<script>
+    var i;
+    for (i = 0; i < 10; i++) {
+        document.getElementById("demo7").innerHTML += i + "<br>";
+    }
+</script>
+
+<p class="exe"><b>Exercise 2:</b> Make the loop start counting from 5 instead 
+    of 0:</p>
+<p id="demo8"></p>
+
+<script>
+    var i;
+    for (i = 5; i < 10; i++) {
+        document.getElementById("demo8").innerHTML += i + "<br>";
+    }
+</script>
+
+<p class="exe"><b>Exercise 3:</b> Make the loop start counting from 5. Count 
+    up to (including) 50, and count only every fifth number.</p>
+<p id="demo9"></p>
+
+<script>
+    var i;
+    for (i = 5; i <= 50; i = i + 5) {
+        document.getElementById("demo9").innerHTML += i + "<br>";
+    }
+</script>
+
+<p class="exe"><b>Exercise 4:</b> Make the loop start counting downwards from 
+    10 and stop at 1. The output should be 10 9 8 7 6 5 4 3 2 1 with line 
+    breaks.</p>
+<p id="demo10"></p>
+
+<script>
+    var i;
+    for (i = 10; i > 0; i--) {
+        document.getElementById("demo10").innerHTML += i + "<br>";
+    }
+</script>
+
+<p class="exe"><b>Exercise 5:</b> <b>Inside the for loop:</b> Set the counter 
+    variable (i) to 0. Run the loop as long as i is less than the length of 
+    the food array. Increment i by 1.</p>
+<p id="demo11"></p>
+
+<script>
+    var text = "";
+    var food = ["Pizza", "Beans", "Tacos", "Fish", "Chicken"];
+    var i;
+
+    for (i = 0; i < food.length; i++) {
+        text += "I love " + food[i] + "<br>";
+    }
+
+    document.getElementById("demo11").innerHTML = text;
+</script>
+
+<p class="exe"><b>Exercise 6:</b> In this exercise, you are going to create a 
+    for loop from scratch. We have already created the counter variable 
+    <b>i</b> for you, and a text variable for output. Your task is to create 
+    a FOR LOOP that output the numbers <b>1 3 5 7 9</b> with line breaks 
+    between each number. <b>WARNING:</b> Remember to increase the variable 
+    used in the condition to avoid infinite loops (will crash your 
+    browser).</p>
+<p id="demo12"></p>
+
+<script>
+    var text = "";
+    var i;
+
+    for (i = 1; i < 10; i = i + 2) {
+        text += i + "<br>";
+    }
+
+    document.getElementById("demo12").innerHTML = text;
+</script>
+
+</body>
+</html>
