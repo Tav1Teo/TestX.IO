@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript While Loop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/10.09-JavaScript While Loop.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript While Loop</h1>
+<p>Loops can execute a block of code as long as a specified condition is 
+    true.</p>
+
+<h2>The While Loop</h2>
+<p>The while loop loops through a block of code as long as a specified 
+    condition is true. Syntax:</p>
+
+<div class="bb">while (<em>condition</em>) {<br>
+<em>code block to be executed</em><br>
+}</div>
+
+<h3>Example</h3>
+<p>In the following example, the code in the loop will run, over and over 
+    again, as long as a variable (i) is less than 10:</p>
+<p id="demo1"></p>
+
+<script>
+    var text = "";
+    var i = 0;
+    while (i < 10) {
+        text += "<br>The number is " + i;
+        i++;
+    }
+    document.getElementById("demo1").innerHTML = text;
+</script>
+
+<div class="">If you forget to increase the variable used in the condition, 
+    the loop will never end. This will crash your browser.</div>
+
+<h2>The Do/While Loop</h2>
+<p>The do/while loop is a variant of the while loop. This loop will execute 
+    the code block once, before checking if the condition is true, then it 
+    will repeat the loop as long as the condition is true. Syntax:</p>
+
+<div class="bb">do {<br>
+<em>code block to be executed</em><br>
+}<br>
+while (<em>conditiion</em>);</div>
+
+<h3>Example</h3>
+<p>The example below uses a do/while loop. The loop will always be executed 
+    at least once, even if the condition is false, because the code block is 
+    executed before the condition is tested:</p>
+<p id="demo2"></p>
+
+<script>
+    var text = ""
+    var i = 0;
+
+    do {
+        text += "<br>The number is " + i;
+        i++;
+    }
+    while (i < 10);
+
+    document.getElementById("demo2").innerHTML = text;
+</script>
+
+<p>Do not forget to increase the variable used in the condition, otherwise 
+    the loop will never end!</p>
+
+<h2>Comparing For and While</h2>
+<p>If you have read the previous chapter, about the for loop, you will 
+    discover that a while loop is much the same as a for loop, with statement 
+    1 and statement 3 omitted. The loop in this example uses a 
+    <b>for loop</b> to collect the car names from the cars array:</p>
+<p id="demo3"></p>
+
+<script>
+    var cars = ["BMW", "Volvo", "Saab", "Ford"];
+    var i = 0;
+    var text = "";
+    for (; cars[i];) {
+        text += cars[i] + "<br>";
+        i++;
+    }
+    document.getElementById("demo3").innerHTML = text;
+</script>
+
+<p>The loop in this example uses a <b>while loop</b> to collect the car names 
+    from the cars array:</p>
+<p id="demo4"></p>
+
+<script>
+    var cars = ["BMW", "Volvo", "Saab", "Ford"];
+    var i = 0;
+    var text = "";
+    while (cars[i]) {
+        text += cars[i] + "<br>";
+        i++;
+    }
+    document.getElementById("demo4").innerHTML = text;
+</script>
+
+<p class="exe"><b>Exercise 1:</b> Inside the &ltscript&gt element, change 
+<em>num1</em> to <b>0</b> and <em>num2</em> to <b>10</b> and run the code.</p>
+<p id="demo5"></p>
+
+<script>
+    var i = 0;
+    while (i < 10) {
+        document.getElementById("demo5").innerHTML += i + "<br>";
+        i++;
+    }
+</script>
+
+<p class="exe"><b>Exercise 2:</b> Make the loop start counting from 5 instead 
+    of 0:</p>
+<p id="demo6"></p>
+
+<script>
+    var i = 5;
+    while (i < 10) {
+        document.getElementById("demo6").innerHTML += i + "<br>";
+        i++;
+    }
+</script>
+
+<p class="exe"><b>Exercise 3:</b> Make the loop start counting from 5. Count 
+    up to (including) 50 and count only every fifth number.</p>
+<p id="demo7"></p>
+
+<script>
+    var i = 5;
+    while (i <= 50) {
+        document.getElementById("demo7").innerHTML += i + "<br>";
+        i = i + 5;
+    }
+</script>
+
+<p class="exe"><b>Exercise 4:</b> Make the loop start counting downwards from 
+    10 and stop at 1. The output should be 10 9 8 7 6 5 4 3 2 1 with line 
+    breaks.</p>
+<p id="demo8"></p>
+
+<script>
+    var i = 10;
+    while (i > 0) {
+        document.getElementById("demo8").innerHTML += i + "<br>";
+        i--;
+    }
+</script>
+
+<p class="exe"><b>Exercise 5:</b> The do/while loop should output 0 1 2 3 4. 
+    Try to fix it!</p>
+<p id="demo9"></p>
+
+<script>
+    var i = 0;
+    do {
+        document.getElementById("demo9").innerHTML += i + "<br>";
+        i++;
+    }
+    while (i < 5)  
+</script>
+
+</body>
+</html>
