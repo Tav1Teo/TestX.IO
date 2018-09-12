@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Type Conversion</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/12.09-JavaScript Type Conversion.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Type Conversion</h1>
+<p>Number() converts to a Number, String() converts to a String, Boolean() 
+    converts to a Boolean.</p>
+
+<h2>JavaScript Data Types</h2>
+<p>In JavaScript there are 5 different data types that can contain values:</p>
+<ul>
+    <li>string</li>
+    <li>number</li>
+    <li>boolean</li>
+    <li>object</li>
+    <li>function</li>
+</ul>
+<p>There are 3 types of objects:</p>
+<ul>
+    <li>Object</li>
+    <li>Date</li>
+    <li>Array</li>
+</ul>
+<p>And 2 data types that cannot contain values:</p>
+<ul>
+    <li>null</li>
+    <li>undefined</li>
+</ul>
+
+<h2>The typeof Operator</h2>
+<p>You can use the <b>typeof</b> operator to find the data type of a 
+    JavaScript variable.</p>
+<p id="demo1"></p>
+
+<script>
+    document.getElementById("demo1").innerHTML =
+        typeof "john" + "<br>" +
+        typeof 3.14 + "<br>" +
+        typeof NaN + "<br>" +
+        typeof false + "<br>" +
+        typeof [1, 2, 3, 4] + "<br>" +
+        typeof { name: 'john', age: 34 } + "<br>" +
+        typeof new Date() + "<br>" +
+        typeof function () { } + "<br>" +
+        typeof myCar + "<br>" +
+        typeof null;
+</script>
+
+<p>Please observe:</p>
+<ul>
+    <li>The data type of NaN is number</li>
+    <li>The data type of an array is object</li>
+    <li>The data type of a date is object</li>
+    <li>The data type of null is object</li>
+    <li>The data type of an undefined variable is <b>undefined</b>*</li>
+</ul>
+
+<div class="note">You cannot use <b>typeof</b> to determine if a JavaScript 
+    object is an array (or a date).</div>
+
+<h2>The Data Type of typeof</h2>
+<p>The typeof operator is not a variable. It is an operator. Operators 
+    ( + - * / ) do not have any data type. But, the typeof operator always
+    <b>returns a string</b> (containing the type of the operand).</p>
+
+<h2>The constructor Property</h2>
+<p>The <b>constructor</b> property returns the constructor function for all 
+    JavaScript variables.</p>
+<p id="demo2"></p>
+
+<script>
+    document.getElementById("demo2").innerHTML =
+        "john".constructor + "<br>" +
+        (3.14).constructor + "<br>" +
+        false.constructor + "<br>" +
+        [1, 2, 3, 4].constructor + "<br>" +
+        { name: 'john', age: 34 }.constructor + "<br>" +
+        new Date().constructor + "<br>" +
+        function () { }.constructor;
+</script>
+
+<p>You can check the constructor property to find out if an object is an 
+    Array (contains the word "Array"). This "home made" isArray() function 
+    returns true when used on an array:</p>
+<p id="demo3"></p>
+
+<script>
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo3").innerHTML = isArray(fruits);
+
+    function isArray(myArray) {
+        return myArray.constructor.toString().indexOf("Array") > -1;
+    }
+</script>
+
+<p>Or even simpler, you can check if the object is an Array function:</p>
+<p id="demo4"></p>
+
+<script>
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo4").innerHTML = isArray(fruits);
+
+    function isArray(myArray) {
+        return myArray.constructor === Array;
+    }
+</script>
+
+<p>You can check the constructor property to find out if an object is a Date 
+    (contains the word "Date"). This "home made" isDate() function returns 
+    true when used on an date:</p>
+<p id="demo5"></p>
+
+<script>
+    var myDate = new Date();
+    document.getElementById("demo5").innerHTML = isDate(myDate);
+
+    function isDate(myDate) {
+        return myDate.constructor.toString().indexOf("Date") > -1;
+    }
+</script>
+
+<p>Or even simpler, you can check if the object is a Date function:</p>
+<p id="demo6"></p>
+
+<script>
+    var myDate = new Date();
+    document.getElementById("demo6").innerHTML = isDate(myDate);
+
+    function isDate(myDate) {
+        return myDate.constructor === Date;
+    }
+</script>
+
+<h2>JavaScript Type Conversion</h2>
+<p>JavaScript variables can be converted to a new variable and another data 
+    type:</p>
+<ul>
+    <li>By the use of a JavaScript function</li>
+    <li><b>Automatically</b> by JavaScript itself</li>
+</ul>
+
+<h2>Converting Numbers to Strings</h2>
+<p>The global method <b>String()</b> can convert numbers to strings. It can 
+    be used on any type of numbers, literals, variables, or expressions:</p>
+<p id="demo7"></p>
+
+<script>
+    var x = 123;
+    document.getElementById("demo7").innerHTML =
+        String(x) + "<br>" +
+        String(123) + "<br>" +
+        String(100 + 23);
+</script>
+
+<p>The Number method <b>toString()</b> does the same.</p>
+<p id="demo8"></p>
+
+<script>
+    var x = 123;
+    document.getElementById("demo8").innerHTML =
+        x.toString() + "<br>" +
+        (123).toString() + "<br>" +
+        (100 + 23).toString();
+</script>
+
+<p>In the chapter <a href="https://www.w3schools.com/js/js_number_methods.asp">
+    Number Methods</a>, you will find more methods that can be used to 
+    convert numbers to strings:</p>
+<table class="properties">
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>toExponential()</td>
+        <td>Returns a string, with a number rounded and written using 
+            exponential notation.</td>
+    </tr>
+    <tr>
+        <td>toFixed()</td>
+        <td>Returns a string, with a number rounded and written with a 
+            specified number of decimals.</td>
+    </tr>
+    <tr>
+        <td>toPrecision()</td>
+        <td>Returns a string, with a number written with a specified 
+            length</td>
+    </tr>
+</table>
+
+<h2>Converting Booleans to Strings</h2>
+<p>The global method <b>String()</b> can convert booleans to strings.</p>
+
+<div class="bb">String(false) // returns "false"<br>
+String(true) // returns "true"</div>
+
+<p>The Boolean method <b>toString()</b> does the same.</p>
+
+<div class="bb">false.toString() // returns "false"<br>
+true.toString() // returns "true"</div>
+
+<h2>Converting Dates to Strings</h2>
+<p>The global method <b>String()</b> can convert dates to strings.</p>
+
+<div class="bb">String(Date()) // returns "Thu Jul 17 2014 15:38:19 GMT+0200 
+    (W. Europe Daylight Time)"</div>
+
+<p>The Date method <b>toString()</b> does the same.</p>
+
+<div class="bb">Date().toString() // returns "Thu Jul 17 2014 15:38:19 
+    GMT+0200 (W. Europe Daylight Time)"</div>
+
+<p>In the chapter <a href="https://www.w3schools.com/js/js_date_methods.asp">
+    Date Methods</a>, you will find more methods that can be used to convert 
+    dates to strings:</p>
+<table class="properties">
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>getDate()</td>
+        <td>Get the day as a number (1-31)</td>
+    </tr>
+    <tr>
+        <td>getDay()</td>
+        <td>Get the weekday as a number (0-6)</td>
+    </tr>
+    <tr>
+        <td>getFullYear()</td>
+        <td>Get the four digit year (yyyy)</td>
+    </tr>
+    <tr>
+        <td>getHours()</td>
+        <td>Get the hour (0-23)</td>
+    </tr>
+    <tr>
+        <td>getMilliseconds()</td>
+        <td>Get the milliseconds (0-999)</td>
+    </tr>
+    <tr>
+        <td>getMinutes()</td>
+        <td>Get the minutes (0-59)</td>
+    </tr>
+    <tr>
+        <td>getMonth()</td>
+        <td>Get the month (0-11)</td>
+    </tr>
+    <tr>
+        <td>getSeconds</td>
+        <td>Get the seconds (0-59)</td>
+    </tr>
+    <tr>
+        <td>getTime()</td>
+        <td>Get the time (milliseconds since January 1, 1970)</td>
+    </tr>
+</table>
+
+<h2>Converting Strings to Numbers</h2>
+<p>The global method <b>Number()</b> can convert strings to numbers. Strings 
+    containing numbers (like "3.14") convert to numbers (like 3.14). Empty 
+    strings convert to 0. Anything else converts to NaN (Not a number).</p>
+
+<div class="bb">Number("3.14") // returns 3.14<br>
+Number(" ") // returns 0<br>
+Number("") // returns 0<br>
+Number("99 88") // returns NaN</div>
+
+<p>In the chapter <a href="https://www.w3schools.com/js/js_number_methods.asp">
+    Number Methods</a>, you will find more methods that can be used to 
+    convert strings to numbers:</p>
+<table class="properties">
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>parseFloat()</td>
+        <td>Parses a string and returns a floating point number</td>
+    </tr>
+    <tr>
+        <td>parseInt()</td>
+        <td>Parses a string and returns an integer</td>
+    </tr>
+</table>
+
+<h2>The Unary + Operator</h2>
+<p>The <b>unary + operator</b> can be used to convert a variable to a 
+    number:</p>
+
+<button onclick="myFunction9()">Try it</button>
+
+<p id="demo9"></p>
+
+<script>
+    function myFunction9() {
+        var y = "5";
+        var x = + y;
+        document.getElementById("demo9").innerHTML =
+            typeof y + "<br>" + typeof x;
+    }
+</script>
+
+<p>If the variable cannot be converted, it will still become a number, but 
+    with the value NaN (Not a number):</p>
+
+<button onclick="myFunction10()">Try it</button>
+
+<p id="demo10"></p>
+
+<script>
+    function myFunction10() {
+        var y = "John";
+        var x = + y;
+        document.getElementById("demo10").innerHTML =
+            typeof x + "<br>" + x;
+    }
+</script>
+
+
+
+
+</body>
+</html>
