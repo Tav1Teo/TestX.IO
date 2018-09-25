@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The JavaScript this Keyword</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/25.09-The JavaScript this Keyword.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">The JavaScript <b>this</b> Keyword</h1>
+<p>In this example, <b>this</b> represents the <b>person</b> object. Because 
+    the person object "owns" the fullName method.</p>
+<p id="demo1"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    // Display data from the object:
+    document.getElementById("demo1").innerHTML = person.fullName();
+</script>
+
+<h2>What is <b>"this"</b>?</h2>
+<p>In a function definition, <b>this</b> refers to the "<b>owner</b>" of the 
+    function. In the example above, <b>this</b> refers to the <b>person</b> 
+    object. The <b>person</b> object "owns" the <b>fullName</b> method.</p>
+
+<h2>Default Binding</h2>
+<p>When used alone, <b>this</b> refers to the <b>Global objet</b>. In a 
+    browser the Global object is [<b>object Window</b>]. In this example, 
+    <b>this</b> represents the window Object:</p>
+<p id="demo2"></p>
+
+<script>
+    var x = this;
+    document.getElementById("demo2").innerHTML = x;
+</script>
+
+<p>When used in a function, <b>this</b> refers to the <b>Global object</b>. 
+    In this example, <b>this</b> represents the person object that "owns" the 
+    fullName method.</p>
+<p id="demo3"></p>
+
+<script>
+    document.getElementById("demo3").innerHTML = myFunction();
+    function myFunction() {
+        return this;
+    }
+</script>
+
+<p>In strict mode, <b>this</b> will be <b>undefined</b>, because strict mode 
+    does not allow default binding. In this example, <b>this</b> represents 
+    the person object that "owns" the fullName method.</p>
+<p id="demo4"></p>
+    
+<script>
+    "use strict";
+    document.getElementById("demo4").innerHTML = myFunction();
+    function myFunction() {            return this;
+    }
+</script>
+
+<h2>Object Method Binding</h2>
+<p>In these examples, <b>this</b> is the <b>person</b> object (The person 
+    object is the "owner" of the function). In this example, <b>this</b> 
+    represents the person object that "owns" the fullName method.</p>
+<p id="demo5"></p>
+    
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        myFunction: function () {
+            return this;
+        }
+    };
+
+    // Display data from the object:
+    document.getElementById("demo5").innerHTML = person.myFunction();
+</script>
+
+<p>In this example, <b>this</b> represents the <b>person</b> object. Because 
+    the person object "owns" the fullName method.</p>
+<p id="demo6"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    // Display data from the object:
+    document.getElementById("demo6").innerHTML = person.fullName();
+</script>
+
+<p>In other words: <b>this.firstName</b> means the <b>firstName</b> property 
+    of <b>this</b> (person) object.</p>
+
+<h2>Explicit Function Binding</h2>
+<p>The <b>call()</b> and <b>apply()</b> methods are predefined JavaScript 
+    methods. They can both be used to call an object method with another 
+    object as argument.</p>
+
+<div class="note">You can read more about call() and apply() later in this 
+    tutorial.</div>
+
+<p>In this example, when calling person1.fullName with person2 as argument, 
+    <b>this</b> will refer to person2, even if it is a method of person1:</p>
+<p id="demo7"></p>
+
+<script>
+    var person1 = {
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person2 = {
+        firstName: "John",
+        lastName: "Doe",
+    }
+    var x = person1.fullName.call(person2);
+    document.getElementById("demo7").innerHTML = x; 
+</script>
+
+
+</body>
+</html>
