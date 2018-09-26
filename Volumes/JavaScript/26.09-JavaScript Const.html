@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Const</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/26.09-JavaScript Const.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Const</h1>
+<h2>ECMAScript 2015</h2>
+<p>ES2015 intoduced two important new JavaScript keywords: <b>let</b> and 
+    <b>const</b>. Variables defined with <b>const</b> behave like <b>let</b>
+    variables, except they cannot be reassigned. You cannot change a 
+    primitive value:</p>
+<p id="demo1"></p>
+
+<script>
+    try {
+        const PI = 3.141592653589793;
+        PI = 3.14;
+    }
+    catch (err) {
+        document.getElementById("demo1").innerHTML = err;
+    }
+</script>
+
+<h2>Block Scope</h2>
+<p>Declaring a variable with <b>const</b> is similar to <b>let</b> when it 
+    comes to <b>Block Scope</b>. The x declared in the block, in this 
+    example, is not the same as the x declared outside the block:</p>
+<p id="demo2"></p>
+
+<script>
+    var x = 10;
+    // Here x is 10
+    {
+        const x = 2;
+        // Here x is 2
+    }
+    // Here x is 10
+    document.getElementById("demo2").innerHTML = x;
+</script>
+
+<p>You can learn more about <a href="https://www.w3schools.com/js/js_let.asp">
+    Block Scope</a> in the previous chapter: 
+    <a href="https://www.w3schools.com/js/js_let.asp">JavaScript Let</a>.</p>
+
+<h2>Assigned when Declared</h2>
+<p>JavaScript const variables must be assigned a value when they are 
+    declared:</p>
+
+<div class="bb">
+const PI;<br>
+PI = 3.14159265359;<br>
+</div>
+
+<br>
+
+<div class="bb">
+const PI = 3.14159265359;
+</div>
+
+<h2>Not Real Constants</h2>
+<p>The keyword const is a little misleading. It does NOT define a constant 
+    value. It defines a constant reference to a value. Because of this, we 
+    cannot change constant primitive values, but we can change the properties 
+    of constant objects.</p>
+
+<h2>Primitive Values</h2>
+<p>If we assign a primitive value to a constant, we cannot change the 
+    primitive value:</p>
+<p id="demo3"></p>
+
+<script>
+    try {
+        const PI = 3.141592653589793;
+        PI = 3.14;
+    }
+    catch (err) {
+        document.getElementById("demo3").innerHTML = err;
+    }
+</script>
+
+<h2>Constant Objects can Change</h2>
+<p>You can change the properties of a constant object. Declaring a constant 
+    object does NOT make the objects properties unchangeable:</p>
+<p id="demo4"></p>
+
+<script>
+    // Create an object:
+    const car = { type: "Fiat", model: "500", color: "white" };
+
+    // Change a property:
+    car.color = "red";
+
+    // Add a property:
+    car.owner = "Johnson";
+
+    // Display the property:
+    document.getElementById("demo4").innerHTML = "Car owner is " + car.owner; 
+</script>
+
+<p>But you can NOT reassign a constant object:</p>
+<p id="demo5"></p>
+
+<script>
+    try {
+        const car = { type: "Fiat", model: "500", color: "white" };
+        car = { type: "Volvo", model: "EX60", color: "red" };
+    }
+    catch (err) {
+        document.getElementById("demo5").innerHTML = err;
+    }
+</script>
+
+<h2>Constant Arrays can Change</h2>
+<p>You can change the elements of a constant array. Declaring a constant 
+    array does NOT make the elements unchangeble:</p>
+<p id="demo6"></p>
+
+<script>
+    // Create an Array:
+    const cars = ["Saab", "Volvo", "BMW"];
+
+    // Change an element:
+    cars[0] = "Toyota";
+
+    // Add an element:
+    cars.push("Audi");
+
+    // Display the Array:
+    document.getElementById("demo6").innerHTML = cars; 
+</script>
+
+<h2>Redeclaring</h2>
+<p>Redeclaring a JavaScript <b>var</b> variable is allowed anywhere in a 
+    program:</p>
+
+<div class="bb">
+var x = 2; // Allowed<br>
+var x = 3; // Allowed<br>
+x = 4; // Allowed
+</div>
+
+<p>Redeclaring or reassigning an existing <b>var</b> or <b>let</b> variable to 
+    <b>const</b>, in the same scope or in the same block, is not allowed:</p>
+
+<div class="bb">
+var x = 2;         // Allowed<br>
+const x = 2;       // Not allowed<br>
+{<br>
+    let x = 2;     // Allowed<br>
+    const x = 2;   // Not allowed<br>
+}
+</div>
+
+<p>Redeclaring or reassigning an existing <b>const</b> variable, in the same 
+    scope, or in the same block, is not allowed:</p>
+
+<div class="bb">
+const x = 2;       // Allowed<br>
+const x = 3;       // Not allowed<br>
+x = 3;             // Not allowed<br>
+var x = 3;         // Not allowed<br>
+let x = 3;         // Not allowed<br>
+<br>
+{<br>
+    const x = 2;   // Allowed<br>
+    const x = 3;   // Not allowed<br>
+    x = 3;         // Not allowed<br>
+    var x = 3;     // Not allowed<br>
+    let x = 3;     // Not allowed<br>
+}
+</div>
+
+<p>Redeclaring a variable with <b>const</b>, in another scope or in another 
+    block, is allowed:</p>
+
+<div class="bb">
+const x = 2;       // Allowed<br>
+<br>
+{<br>
+    const x = 3;   // Allowed<br>
+}<br>
+<br>
+{<br>
+    const x = 4;   // Allowed<br>
+}
+</div>
+
+<h2>Hoisting</h2>
+<p>Variables defined with <b>var</b> are hoisted to the top. 
+    (<a href="https://www.w3schools.com/js/js_hoisting.asp">Js Hoisting</a>). 
+    You can use a <b>var</b> variable before it is declared:</p>
+<p id="demo7"></p>
+
+<script>
+    carName = "Volvo";
+    document.getElementById("demo7").innerHTML = carName;
+    var carName;
+</script>
+
+<p>Variables defined with <b>const</b> are not a hoisted to the top. A 
+    <b>const</b> variable cannot be used before it is declared.</p>
+
+<div class="bb">
+carName = "Volvo";    // You can NOT use carName here<br>
+const carName = "Volvo";
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
