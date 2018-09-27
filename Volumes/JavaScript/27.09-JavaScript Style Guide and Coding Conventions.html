@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Style Guide and Coding Conventions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/27.09-JavaScript Style Guide and Coding Conventions.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Style Guide and Coding Conventions</h1>
+<p>Always use the same coding conventions for all your JavaScript projects.</p>
+
+<h2>JavaScript Coding Conventions</h2>
+<p>Coding conventions are <b>style guidelines for programming</b>. They 
+    typically cover:</p>
+<ul>
+    <li>Naming and declaration rules for variables and functions</li>
+    <li>Rules for the use of white space, indentation, and comments</li>
+    <li>Programming practices and principles</li>
+</ul>
+<p>Coding conventions <b>secure quality</b>:</p>
+<ul>
+    <li>Improves code readability</li>
+    <li>Make code maintenance easier</li>
+</ul>
+<p>Coding conventions can be documented rules for teams to follow, or just be 
+    your individual coding practice.</p>
+
+<div class="note">This page describes the general JavaScript code conventions 
+    used by W3Schools. You should also read the next chapter "Best Practices" 
+    and learn how to avoid coding pitfalls.</div>
+
+<h2>Variable Names</h2>
+<p>At W3schools we use <b>camelCase</b> for identifier names (variables and 
+    functions). All names start with a <b>letter</b>. At the bottom of this 
+    page, you will find a wider discussion about naming rules.</p>
+
+<div class="bb">
+firstName = "John";<br>
+lastName = "Doe";<br>
+<br>
+price = 19.90;<br>
+tax = 0.20;<br>
+<br>
+fullPrice = price + (price * tax);
+</div>
+
+<h2>Spaces Around Operators</h2>
+<p>Always put spaces around operators ( = + - * / ), and after commas:</p>
+
+<div class="bb">
+var x = y + z;<br>
+var values = ["Volvo", "Saab", "Fiat"];
+</div>
+
+<h2>Code Indentation</h2>
+<p>Always use 4 spaces for indentation of code blocks:</p>
+
+<div class="warning">Do not use tabs (tabulators) for indentation. Different 
+    editors interpret tabs differently.</div>
+
+<h2>Statement Rules</h2>
+<p>General rules for simple statements:</p>
+<ul>
+    <li>Always end a simple statement with a semicolon.</li>
+</ul>
+
+<div class="bb">
+var values = ["Volvo", "Saab", "Fiat"];<br>
+<br>
+var person = {<br>
+    firstName: "John",<br>
+    lastName: "Doe",<br>
+    age: 50,<br>
+    eyeColor: "blue"<br>
+};
+</div>
+
+<p>General rules for complex (compound) statements:</p>
+<ul>
+    <li>Put the opening bracket at the end of the first line.</li>
+    <li>Use one space before the opening bracket.</li>
+    <li>Put the closing bracket on a new line, without leading spaces.</li>
+    <li>Do not end a complex statement with a semicolon.</li>
+</ul>
+
+<p><b>Functions:</b></p>
+
+<div class="bb">
+function toCelsius(fahrenheit) {<br>
+    return (5 / 9) * (fahrenheit - 32);<br>
+}
+</div>
+
+<p><b>Loops:</b></p>
+
+<div class="bb">
+for (i = 0; i &lt 5; i++) {<br>
+    x += i;<br>
+}
+</div>
+
+<p><b>Conditionals:</b></p>
+
+<div class="bb">
+if (time &lt 20) {<br>
+    greeting = "Good day";<br>
+} else {<br>
+    greeting = "Good evening";<br>
+}
+</div>
+
+<h2>Object Rules</h2>
+<p>General rules for object definitions:</p>
+<ul>
+    <li>Place the opening bracket on the same line as the object name</li>
+    <li>Use colon plus one space between each property and its value</li>
+    <li>Use quotes around string values, not around numeric values</li>
+    <li>Do not add a comma after the last property-value pair</li>
+    <li>Place the closing bracket on a new line, without leading spaces.</li>
+    <li>Always end an object definition with a semicolon</li>
+</ul>
+
+<div class="bb">
+var person = {<br>
+    firstName: "John",<br>
+    lastName: "Doe",<br>
+    age: 50,<br>
+    eyeColor: "blue"<br>
+};
+</div>
+
+<p>Short objects can be written compressed, on one line, using spaces only 
+    between properties, like this:</p>
+
+<div class="bb">
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+</div>
+
+<h2>Line Length &lt 80</h2>
+<p>For readability, avoid lines longer than 80 characters. If a JavaScript 
+    statement does not fit on one line, the best place to break it, is after 
+    an operator or a comma.</p>
+
+<h2>Naming Conventions</h2>
+<p>Always use the same naming convention for all your code. For example:</p>
+<ul>
+    <li>Variable and function names written as <b>camelCase</b></li>
+    <li>Global variables written in <b>UPPERCASE</b> (We don't, but it's 
+        quite common)</li>
+    <li>Constants (like PI) written in <b>UPPERCASE</b></li>
+</ul>
+<p>Should you use <b>hyp-hens</b>, <b>camelCase</b> or <b>under_scores</b> in 
+    variable names? This is a question programmers often discuss. The answer 
+    depends on who you ask:</p>
+<b>Hyphens in HTML and CSS:</b>
+<p>HTML5 attributes can start with data- (data-quantity, data-price). CSS 
+    uses hyphens in property-names (font-size).</p>
+
+<div class="warning">Hyphens can be mistaken as subtraction attempts. Hyphens 
+    are not allowed in JavaScript names.</div>
+
+<p><b>Underscores:</b></p>
+<p>Many programmers prefer to use underscores (date_of_birth), especially in 
+    SQL databases. Underscores are often used in PHP documentation.</p>
+
+<p><b>PascalCase:</b></p>
+<p>PascalCase is often preferred by C programmers.</p>
+
+<p><b>camelCase:</b></p>
+<p>camelCase is used by JavaScript itself, by jQuery, and other JavaScript 
+    libraries.</p>
+
+<div class="bb">Do not start names with a $ sign. It will put you in conflict 
+    with many JavaScript library names.</div>
+
+<h2>Loading JavaScript in HTML</h2>
+<p>Use simple syntax for loading external scripts (the type attribute is not 
+    necessary):</p>
+
+<div class="bb">&ltscript src="myscript.js"&gt&lt/script&gt</div>
+
+<h2>Accessing HTML Elements</h2>
+<p>A consequence of using "untidy" HTML styles, might result in JavaScript 
+    errors. These two JavaScript statements will produce different results:</p>
+
+<div class="bb">
+var obj = getElementById("Demo")<br>
+<br>
+var obj = getElementById("demo")
+</div>
+
+<p>If possible, use the same naming convention (as JavaScript) in HTML. 
+    <a href="https://www.w3schools.com/html/html5_syntax.asp">Visit the HTML 
+        Style Guide</a>.</p>
+
+<h2>File Extensions</h2>
+<p>HTML files should have a <b>.html</b> extension (not <b>.htm</b>). CSS 
+    files should have a <b>.css</b> extension. JavaScript files should have a 
+    <b>.js</b> extension.</p>
+
+<h2>Use Lower Case File Names</h2>
+<p>Most web servers (Apache, Unix) are case sensitive about file names: 
+    london.jpg cannot be accessed as London.jpg. Other web servers 
+    (Microsoft, IIS) are not case sensitive: london.jpg can be accessed as 
+    London.jpg or london.jpg. If you use a mix of upper and lower case, you 
+    have to be extremely consistent. If you move from a case insensitive, to 
+    a case sensitive server, even small errors can break your web site. To 
+    avoid these problems, always use lower case file names (if possible).</p>
+
+<h2>Performance</h2>
+<p>Coding conventions are not used by computers. Most rules have little 
+    impact on the execution of programs. Indentation and extra spaces are not 
+    significant in small scripts. For code in development, readability should 
+    be preferred. Larger production scripts should be minified.</p>
+
+
+
+
+
+</body>
+</html>
