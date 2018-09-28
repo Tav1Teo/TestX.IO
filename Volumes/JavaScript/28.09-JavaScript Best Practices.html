@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Best Practices</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/28.09-JavaScript Best Practices.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Best Practices</h1>
+<p>Avoid global variables, avoid new, avoid ==, avoid eval()</p>
+
+<h2>Avoid Global Variables</h2>
+<p>Minimize the use of global variables. This includes all data types, 
+    objects and functions. Global variables and functions can be overwritten 
+    by other scripts. Use local variables instead, and learn how to use 
+    <a href="https://www.w3schools.com/js/js_function_closures.asp">
+    closures</a>.</p>
+
+<h2>Always Declare Local Variables</h2>
+<p>All variables used in a function should be declared as <b>local</b> 
+    variables. Local variables <b>must</b> be declared with the <b>var</b> 
+    keyword , otherwise they will become global variables.</p>
+
+<div class="note">Strict mode does not allow undeclared variables.</div>
+
+<h2>Declarations on Top</h2>
+<p>It is a good coding practice to put all declarations at the top of each 
+    script or function. This will:</p>
+<ul>
+    <li>Give cleaner code</li>
+    <li>Provide a single place to look for local variables</li>
+    <li>Make it easier to avoid unwanted (implied) global variables</li>
+    <li>Reduce the possibility of unwanted re-declarations</li>
+</ul>
+
+<div class="bb">
+<p>// Declare at the beginning<br>
+var firstName, lastName, price, discount, fullPrice;<br>
+<br>
+// Use later<br>
+firstName = "John";<br>
+lastName = "Doe";<br>
+<br>
+price = 19.90;<br>
+discount = 0.10;<br>
+<br>
+fullPrice = price * 100 / discount;</p>
+</div>
+
+<p>This also goes for loop variables:</p>
+
+<div class="bb">
+<p>// Declare at the beginning<br>
+var i;<br>
+<br>
+// Use later<br>
+for (i = 0; i < 5; i++) {</p>
+</div>
+
+<div class="note">By default, JavaScript moves all declarations to the top 
+    (<a href="https://www.w3schools.com/js/js_hoisting.asp">JavaScript 
+    Hoisting</a>).</div>
+
+<h2>Initialize Variables</h2>
+<p>It is a good coding practice to initialize variables when you declare them.
+This will:</p>
+<ul>
+    <li>Give cleaner code</li>
+    <li>Provide a single place to initialize variables</li>
+    <li>Avoid undefined values</li>
+</ul>
+
+<div class="bb">
+<p>// Declare and initiate at the beginning<br>
+var firstName = "",<br>
+lastName = "",<br>
+price = 0,<br>
+discount = 0,<br>
+fullPrice = 0,<br>
+myArray = [],<br>
+myObject = {};</p>
+</div>
+
+<div class="note">Initializing variables provides an idea of the intended use 
+    (and intended data type).</div>
+
+<h2>Never Declare Number, String, or Boolean Objects</h2>
+<p>Always treat numbers, strings, or booleans as primitive values. Not as 
+    objects. Declaring these types as objects, slows down execution speed and 
+    produces nasty side effects. Never create strings as objects. Strings and 
+    objects cannot be safely compared</p>
+<p id="demo1"></p>
+
+<script>
+    var x = "John";              // x is a string
+    var y = new String("John");  // y is an object
+    document.getElementById("demo1").innerHTML = x === y;
+</script>
+
+<p>Or even worse:</p>
+<p id="demo2"></p>
+
+<script>
+    var x = new String("John");
+    var y = new String("John");
+    document.getElementById("demo2").innerHTML = x == y;
+</script>
+
+<h2>Don't Use new Object()</h2>
+<ul>
+    <li>Use {} instead of new Object()</li>
+    <li>Use "" instead of new String()</li>
+    <li>Use 0 instead of new Number()</li>
+    <li>Use false instead of new Boolean()</li>
+    <li>Use [] instead of new Array()</li>
+    <li>Use /()/ instead of new RegExp()</li>
+    <li>Use function (){} instead of new Function()</li>
+</ul>
+<p id="demo3"></p>
+
+<script>
+    var x1 = {};
+    var x2 = "";
+    var x3 = 0;
+    var x4 = false;
+    var x5 = [];
+    var x6 = /()/;
+    var x7 = function () { };
+
+    document.getElementById("demo3").innerHTML =
+        "x1: " + typeof x1 + "<br>" +
+        "x2: " + typeof x2 + "<br>" +
+        "x3: " + typeof x3 + "<br>" +
+        "x4: " + typeof x4 + "<br>" +
+        "x5: " + typeof x5 + "<br>" +
+        "x6: " + typeof x6 + "<br>" +
+        "x7: " + typeof x7 + "<br>";
+</script>
+
+<h2>Beware of Automatic Type Conversions</h2>
+<p>Beware that numbers can accidentally be converted to strings or NaN (Not a 
+    Number). JavaScript is loosely typed. A variable can contain different 
+    data types, and a variable can change its data type:</p>
+<p id="demo4"></p>
+
+<script>
+    var x = "Hello";
+    var x = 5;
+    document.getElementById("demo4").innerHTML = typeof x;
+</script>
+
+<p>When doing mathematical operations, JavaScript can convert numbers to 
+    strings. Remove the comment (at the beginning of the lines) to test each 
+    case:</p>
+<p id="demo5"></p>
+
+<script>
+    var x = 5;
+    x = 5 + 7;      // x.valueOf() is 12, typeof x is a number
+    //x = 5 + "7";    // x.valueOf() is 57, typeof x is a string
+    //x = "5" + 7;    // x.valueOf() is 57, typeof x is a string
+    //x = 5 - 7;      // x.valueOf() is -2, typeof x is a number
+    //x = 5 - "7";    // x.valueOf() is -2, typeof x is a number
+    //x = "5" - 7;    // x.valueOf() is -2, typeof x is a number
+    //x = 5 - "x";    // x.valueOf() is NaN, typeof x is a number
+
+    document.getElementById("demo5").innerHTML = x.valueOf() + " " + typeof x;
+</script>
+
+<p>Subtracting a string from a string, does not generate an error but returns 
+    NaN (Not a Number):</p>
+<p id="demo6">My first paragraph.</p>
+
+<script>
+    document.getElementById("demo6").innerHTML = "Hello" - "Dolly";
+</script>
+
+<h2>Use === Comparison</h2>
+<p>The == comparison operator always converts (to matching types) before 
+    comparison. The === operator forces comparison of values and type. Remove 
+    the comment (at the beginning of each line) to test each case:</p>
+<p id="demo7"></p>
+
+<script>
+    var x;
+    x = (0 == "");     // true
+    //x = (1 == "1");    // true
+    //x = (1 == true);   // true
+    //x = (0 === "");    // false
+    //x = (1 === "1");   // false
+    //x = (1 === true);  // false
+    document.getElementById("demo7").innerHTML = x;
+</script>
+
+<h2>Use Parameter Defaults</h2>
+<p>If a function is called with a missing argument, the value of the missing 
+    argument is set to <b>undefined</b>. Undefined values can break your 
+    code. It is a good habit to assign default values to arguments. Setting a 
+    default value to a function parameter:</p>
+<p id="demo8"></p>
+
+<script>
+    function myFunction(x, y) {
+        if (y === undefined) {
+            y = 0;
+        }
+        return x * y;
+    }
+    document.getElementById("demo8").innerHTML = myFunction(4);
+</script>
+
+<p>Read more about function parameters and arguments at 
+    <a href="https://www.w3schools.com/js/js_function_parameters.asp">
+    Function Parameters</a>.</p>
+
+<h2>End Your Switches with Defaults</h2>
+<p>Always end your switch statements with a default. Even if you think there 
+    is no need for it.</p>
+<p id="demo8"></p>
+
+<script>
+    var day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+            break;
+        default:
+            day = "unknown";
+    }
+    document.getElementById("demo8").innerHTML = "Today is " + day;
+</script>
+
+<h2>Avoid Using eval()</h2>
+<p>The eval() function is used to run text as code. In almost all cases, it 
+    should not be necessary to use it. Because it allows arbitrary code to be 
+    run, it also represents a security problem.</p>
+
+</body>
+</html>
