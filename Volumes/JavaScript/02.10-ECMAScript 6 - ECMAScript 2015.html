@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ECMAScript 6 - ECMAScript 2015</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/02.10-ECMAScript 6 - ECMAScript 2015.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">ECMAScript 6 - ECMAScript 2015</h1>
+<p>ECMAScript 6 is also known as ES6 and ECMAScript 2015. Some people like to 
+    call it JavaScript 6. This chapter will introduce some of the new 
+    features in ES6.</p>
+<ul>
+    <li>JavaScript let</li>
+    <li>JavaScript const</li>
+    <li>JavaScript default parameter values</li>
+    <li>Array.find()</li>
+    <li>Array.findIndex()</li>
+</ul>
+
+<h2>JavaScript let</h2>
+<p>The <b>let</b> statement allows you to declare a variable with block 
+    scope.</p>
+<p id="demo1"></p>
+
+<script>
+    var x = 10;
+    // Here x is 10
+    {
+        let x = 2;
+        // Here x is 2
+    }
+    // Here x is 10
+    document.getElementById("demo1").innerHTML = x;
+</script>
+
+<h2>JavaScript const</h2>
+<p>The <b>const</b> statement allows you to declare a constant (a JavaScript 
+    variable with a constant value). Constants are similar to let variables, 
+    except that the value cannot be changed.</p>
+<p id="demo2"></p>
+
+<script>
+    var x = 10;
+    // Here x is 10
+    {
+        const x = 2;
+        // Here x is 2
+    }
+    // Here x is 10
+    document.getElementById("demo2").innerHTML = x;
+</script>
+
+<p>Read more about <b>let</b> and <b>const</b> in 
+    <a href="https://www.w3schools.com/js/js_let.asp">JS Let / Const</a>.</p>
+
+<h2>Default Parameter Values</h2>
+<p>ES6 allows function parameters to have default values.</p>
+<p id="demo3"></p>
+
+<script>
+    function myFunction(x, y = 10) {
+        // y is 10 if not passed or undefined
+        return x + y;
+    }
+    document.getElementById("demo3").innerHTML = myFunction(5);
+</script>
+
+<h2>Array.find()</h2>
+<p>The find() method returns the value of the first array element that passes 
+    a test function. This example finds (returns the value of ) the first 
+    element that is larger than 18:</p>
+<p id="demo4"></p>
+
+<script>
+    var numbers = [4, 9, 16, 25, 29];
+    var first = numbers.find(myFunction);
+
+    document.getElementById("demo4").innerHTML = "First number over 18 is " + 
+    first;
+
+    function myFunction(value, index, array) {
+        return value > 18;
+    }
+</script>
+
+<p>Note that the function takes 3 arguments:</p>
+<ul>
+    <li>The item value</li>
+    <li>The item index</li>
+    <li>The array itself</li>
+</ul>
+
+<h2>Array.findIndex()</h2>
+<p>The findIndex() method returns the index of the first array element that 
+    passes a test function. This example finds the index of the first element 
+    that is larger than 18:</p>
+<p id="demo5"></p>
+
+<script>
+    var numbers = [4, 9, 16, 25, 29];
+    var first = numbers.findIndex(myFunction);
+
+    document.getElementById("demo5").innerHTML = 
+    "First number over 18 has index " + first;
+
+    function myFunction(value, index, array) {
+        return value > 18;
+    }
+</script>
+<ul>
+    <li>The item value</li>
+    <li>The item index</li>
+    <li>The array itself</li>
+</ul>
+
+<h2>New Number Properties</h2>
+<p>ES6 added the following properties to the Number object:</p>
+<ul>
+    <li>EPSILON</li>
+    <li>MIN_SAFE_INTEGER</li>
+    <li>MAX_SAFE_INTEGER</li>
+</ul>
+
+<p>EPSILON</p>
+<p id="demo6"></p>
+
+<script>
+    var x = Number.EPSILON;
+    document.getElementById("demo6").innerHTML = x;
+</script>
+
+<p>MIN_SAFE_INTEGER</p>
+<p id="demo7"></p>
+
+<script>
+    var x = Number.MIN_SAFE_INTEGER;
+    document.getElementById("demo7").innerHTML = x;
+</script>
+
+<p>MAX_SAFE_INTEGER</p>
+<p id="demo8"></p>
+
+<script>
+    var x = Number.MAX_SAFE_INTEGER;
+    document.getElementById("demo8").innerHTML = x;
+</script>
+
+<h2>New Number Methods</h2>
+<p>ES6 added 2 new methods to the Number object:</p>
+<ul>
+    <li>Number.isInteger()</li>
+    <li>Number.isSafeInteger()</li>
+</ul>
+
+<h2>The Number.isInteger() Method</h2>
+<p>The <b>Number.isInteger()</b> method returns true if the argument is an 
+    integer.</p>
+<p id="demo9"></p>
+
+<script>
+    document.getElementById("demo9").innerHTML =
+        Number.isInteger(10) + "<br>" + Number.isInteger(10.5);
+</script>
+
+<h2>The Number.isSafeInteger() Method</h2>
+<p>A safe integer is an integer that can be exactly represented as a double 
+    precision number. The <b>Number.isSafeInteger()</b> method returns true 
+    if the argument is a safe integer.</p>
+<p id="demo10"></p>
+
+<script>
+    document.getElementById("demo10").innerHTML =
+        Number.isSafeInteger(10) + "<br>" + 
+        Number.isSafeInteger(12345678901234567890);
+</script>
+
+<div class="note">Safe integers are all integers from -(2^53 - 1) to 
+    +(2^53 - 1). This is safe: 9007199254740991. This is not safe: 
+    9007199254740992.</div>
+
+<h2>New Global Methods</h2>
+<p>ES6 also added 2 new global number methods:</p>
+<ul>
+    <li>isFinite()</li>
+    <li>isNaN</li>
+</ul>
+
+<h2>New Global Methods</h2>
+<p>The global <b>isFinite()</b> method returns false if the argument is 
+    Infinity or NaN. Otherwise it returns true:</p>
+<p id="demo11"></p>
+
+<script>
+    document.getElementById("demo11").innerHTML =
+        isFinite(10 / 0) + "<br>" + isFinite(10 / 1);
+</script>
+
+<h2>The isNaN() Method</h2>
+<p>The global <b>isNaN()</b> method returns true if the argument is NaN. 
+    Otherwise it returns false:</p>
+<p id="demo12"></p>
+
+<script>
+    document.getElementById("demo12").innerHTML =
+        isNaN("Hello") + "<br>" + isNaN("10");
+</script>
+
+<h2>Arrow Functions</h2>
+<p>Arrow functions allows a short syntax for writing function expressions. 
+    You don't need the function <b>keyword</b>, the <b>return</b> keyword and 
+    the <b>curly brackets</b>.</p>
+<p id="demo13"></p>
+
+<script>
+    const x = (x, y) => x * y;
+    document.getElementById("demo13").innerHTML = x(5, 5);
+</script>
+
+<p>Arrow functions do not have their own <b>this</b>. They are not well 
+    suited for defining object methods. Arrow functions must be defined 
+    before they are used. Using <b>const</b> is safer than using <b>var</b>, 
+    because a function expression is a constant value. You can only omit the 
+    return keyword and the curly brackets if the function is a single 
+    statement. It might be a good habit to keep them:</p>
+<p id="demo14"></p>
+
+<script>
+    const x = (x, y) => { return x * y };
+    document.getElementById("demo14").innerHTML = x(5, 5);
+</script>
+
+
+
+</body>
+</html>

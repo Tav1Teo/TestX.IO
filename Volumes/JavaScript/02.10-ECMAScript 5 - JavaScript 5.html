@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ECMAScript 5 - JavaScript 5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/02.10-ECMAScript 5 - JavaScript 5.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">ECMAScript 5 - JavaScript 5</h1>
+<p>ECMAScript 5 is also known as ES5 and ECMAScript 2009. This chapter 
+    introduces some of the most important features of ES5.</p>
+
+<h2>ECMAScript 5 Features</h2>
+<p>These were the new features released in 2009:</p>
+<ul>
+    <li>The "use strict" Directive</li>
+    <li>String.trim()</li>
+    <li>Array.isArray()</li>
+    <li>Array.forEach()</li>
+    <li>Array.map()</li>
+    <li>Array.filter()</li>
+    <li>Array.reduce()</li>
+    <li>Array.reduceRight()</li>
+    <li>Array.every()</li>
+    <li>Array.some()</li>
+    <li>Array.indexOf()</li>
+    <li>Array.lastIndexOf()</li>
+    <li>JSON.parse()</li>
+    <li>JSON.stringify()</li>
+    <li>Date.now()</li>
+    <li>Property Getters and Setters</li>
+    <li>New Object Property Methods</li>
+</ul>
+
+<h2>ECMAScript 5 Syntactical Changes</h2>
+<ul>
+    <li>Property access [ ] on strings</li>
+    <li>Trailing commas in array and object literals</li>
+    <li>Multiline string literals</li>
+    <li>Reserved words as property names</li>
+</ul>
+
+<h2>The "use strict" Directive</h2>
+<p>"use strict" defines that the JavaScript code should be executed in 
+    "strict mode". With strict mode you can, for example, not use undeclared 
+    variables.</p>
+
+<div class="note">You can use strict mode in all your programs. It helps you 
+    to write cleaner code, like preventing you from using undeclared 
+    variables. "use strict" is just a string expression. Old browsers will 
+    not throw an error if they don't understand it.</div>
+
+<p>Read more in <a href="https://www.w3schools.com/js/js_strict.asp">JS 
+    Strict Mode</a>.</p>
+
+<h2>String.trim()</h2>
+<p>String.trim() removes whitespace from both sides of a string.</p>
+
+<button onclick="myFunction1()">Try it</button>
+
+<p><strong>Note:</strong> The trim() method is not supported in Internet 
+    Explorer 8 and earlier versions.</p>
+
+<script>
+    function myFunction1() {
+        var str = "       Hello World!       ";
+        alert(str.trim());
+    }
+</script>
+
+<p>Read more in <a href="https://www.w3schools.com/js/js_string_methods.asp">
+    JS String Methods</a></p>
+
+<h2>Array.isArray()</h2>
+<p>Checks whether an object is an array.</p>
+
+<button onclick="myFunction2()">Try it</button>
+
+<p id="demo2"></p>
+
+<script>
+    function myFunction2() {
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        var x = document.getElementById("demo2");
+        x.innerHTML = Array.isArray(fruits);
+    }
+</script>
+
+<p>Read more in <a href="https://www.w3schools.com/js/js_arrays.asp">JS 
+    Arrays</a>.</p>
+
+<h2>Array.forEach()</h2>
+<p>The forEach() method calls a function once for each array element.</p>
+<p id="demo3"></p>
+
+<script>
+    var txt = "";
+    var numbers = [45, 4, 9, 16, 25];
+    numbers.forEach(myFunction3);
+    document.getElementById("demo3").innerHTML = txt;
+
+    function myFunction3(value) {
+        txt = txt + value + "<br>";
+    }
+</script>
+
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>Array.map()</h2>
+<p>This example multiplies each array value by 2:</p>
+<p id="demo4"></p>
+
+<script>
+    var numbers1 = [45, 4, 9, 16, 25];
+    var numbers2 = numbers1.map(myFunction4);
+
+    document.getElementById("demo4").innerHTML = numbers2;
+
+    function myFunction4(value, index, array) {
+        return value * 2;
+    }
+</script>
+
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>Array.filter()</h2>
+<p>This example creates a new array from elements with a value larger than 
+    18:</p>
+<p id="demo5"></p>
+
+<script>
+    var numbers = [45, 4, 9, 16, 25];
+    var over18 = numbers.filter(myFunction5);
+
+    document.getElementById("demo5").innerHTML = over18;
+
+    function myFunction5(value, index, array) {
+        return value > 18;
+    }
+</script>
+
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>Array.reduce()</h2>
+<p>This example finds the sum of all numbers in an array:</p>
+<p id="demo6"></p>
+
+<script>
+    var numbers = [45, 4, 9, 16, 25];
+    var sum = numbers.reduce(myFunction6);
+
+    document.getElementById("demo6").innerHTML = "The sum is " + sum;
+
+    function myFunction6(total, value, index, array) {
+        return total + value;
+    }
+</script>
+
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>Array.reduceRight()</h2>
+<p>This example also finds the sum of all numbers in an array:</p>
+<p id="demo7"></p>
+
+<script>
+    var numbers = [45, 4, 9, 16, 25];
+    var sum = numbers.reduceRight(myFunction7);
+
+    document.getElementById("demo7").innerHTML = "The sum is " + sum;
+
+    function myFunction7(total, value) {
+        return total + value;
+    }
+</script>
+
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>Array.every()</h2>
+<p>This example checks if all values are over 18:</p>
+<p id="demo8"></p>
+
+<script>
+    var numbers = [45, 4, 9, 16, 25];
+    var allOver18 = numbers.every(myFunction8);
+
+    document.getElementById("demo8").innerHTML = "All over 18 is " + allOver18;
+
+    function myFunction8(value, index, array) {
+        return value > 18;
+    }
+</script>
+
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>Array.some()</h2>
+<p>This example checks if some values are over 18:</p>
+<p id="demo9"></p>
+
+<script>
+    var numbers = [45, 4, 9, 16, 25];
+    var allOver18 = numbers.some(myFunction9);
+
+    document.getElementById("demo9").innerHTML = "Some over 18 is " + 
+    allOver18;
+
+    function myFunction9(value) {
+        return value > 18;
+    }
+</script>
+
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>Array.indexOf()</h2>
+<p>Search an array for an element value and returns its position.</p>
+<p id="demo10"></p>
+
+<script>
+    var fruits = ["Apple", "Orange", "Apple", "Mango"];
+    var a = fruits.indexOf("Apple");
+    document.getElementById("demo10").innerHTML = 
+    "Apple is found in position " + (a + 1);
+</script>
+
+<p>The indexOf() does not work in Internet Explorer 8 and earlier versions.</p>
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>Array.lastIndexOf()</h2>
+<p>Array.lastIndexOf() is the same as Array.indexOf(), but searches from the 
+    end of the array.</p>
+<p id="demo11"></p>
+
+<script>
+    var fruits = ["Apple", "Orange", "Apple", "Mango"];
+    var a = fruits.lastIndexOf("Apple");
+    document.getElementById("demo11").innerHTML = 
+    "Apple is found in position " + (a + 1);
+</script>
+
+<p>The lastIndexOf() does not work in Internet Explorer 8 and earlier 
+    versions.</p>
+<p>Learn more in <a href="https://www.w3schools.com/js/js_array_iteration.asp">
+    JS Array Iteration Methods</a>.</p>
+
+<h2>JSON.parse()</h2>
+<p>A common use of JSON is to receive data from a web server. Imagine you 
+    received this text string from a web server:</p>
+
+<div class="bb">'{"name":"John", "age":30, "city":"New York"}'</div>
+
+<p>The JavaScript function JSON.parse() is used to convert the text into a 
+    JavaScript object:</p>
+<p id="demo12"></p>
+
+<script>
+    var txt = '{"name":"John", "age":30, "city":"New York"}'
+    var obj = JSON.parse(txt);
+    document.getElementById("demo12").innerHTML = obj.name + ", " + obj.age;
+</script>
+
+<p>Read more in our <a href="https://www.w3schools.com/js/js_json_intro.asp">
+    JSON Tutorial</a>.</p>
+
+<h2>JSON.stringify()</h2>
+<p>A common use of JSON is to send data to a web server. When sending data to 
+    a web server, the data has to be a string.Imagine we have this object in 
+    JavaScript:</p>
+
+<div class="bb">var obj = {"name":"John", "age":30, "city":"New York"};</div>
+
+<p>Use the JavaScript function JSON.stringify() to convert it into a 
+    string.</p>
+
+<div class="bb">var myJSON = JSON.stringify(obj);</div>
+
+<div class="note">The result will be a string following the JSON 
+    notation.</div>
+
+<p>myJSON is now a string, and ready to be sent to a server:</p>
+<p id="demo13"></p>
+
+<script>
+    var obj = { name: "John", age: 30, city: "New York" };
+    var myJSON = JSON.stringify(obj);
+    document.getElementById("demo13").innerHTML = myJSON;
+</script>
+
+<p>Read more in our <a href="https://www.w3schools.com/js/js_json_intro.asp">
+    JSON Tutorial</a>.</p>
+
+<h2>Date.now()</h2>
+<p>Date.now() returns the number of milliseconds sinze zero date (January 1. 
+    1970 00:00:00 UTC).</p>
+<p id="demo14"></p>
+<p id="demo15"></p>
+
+<script>
+    document.getElementById("demo14").innerHTML = Date.now();
+    var d = new Date();
+    document.getElementById("demo15").innerHTML = d.getTime();
+</script>
+
+<p>Date.now() returns the same as getTime() performed on a Date object. Learn 
+    more in <a href="https://www.w3schools.com/js/js_dates.asp">JS 
+    Dates</a>.</p>
+
+<h2>Property Getters and Setters</h2>
+<p>ES5 lets you define object methods with a syntax that looks like getting 
+    or setting a property. This example creates a getter for a property 
+    called fullName:</p>
+<p id="demo16"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        get fullName() {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    // Display data from the object using a getter:
+    document.getElementById("demo16").innerHTML = person.fullName;
+</script>
+
+<p>This example creates a setter and a getter for the language property:</p>
+<p id="demo17"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "NO",
+        get lang() {
+            return this.language;
+        },
+        set lang(value) {
+            this.language = value;
+        }
+    };
+    // Set an object property using a setter:
+    person.lang = "en";
+    // Display data from the object using a getter:
+    document.getElementById("demo17").innerHTML = person.lang;
+</script>
+
+<p>This example uses a setter to secure upper case updates of language:</p>
+<p id="demo18"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "",
+        set lang(value) {
+            this.language = value.toUpperCase();
+        }
+    };
+    // Set an object property using a setter:
+    person.lang = "en";
+    // Display data from the object:
+    document.getElementById("demo18").innerHTML = person.language;
+</script>
+
+<p>Learn more about Gettes and Setters in 
+    <a href="https://www.w3schools.com/js/js_object_accessors.asp">JS Object 
+    Accessors</a>.</p>
+
+<h2>New Object Property Methods</h2>
+<p><b>Object.defineProperty()</b> is a new Object method in ES5. It lets you 
+    define an object property and/or change a property's value and/or 
+    metadata.</p>
+<p id="demo19"></p>
+
+<script>
+    // Create an Object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "NO",
+    };
+    // Change a Property:
+    Object.defineProperty(person, "language", {
+        value: "EN",
+        writable: true,
+        enumerable: true,
+        configurable: true
+    });
+    // Enumerate Properties
+    txt = "";
+    for (var x in person) {
+        txt += person[x] + "<br>";
+    }
+    document.getElementById("demo19").innerHTML = txt;
+</script>
+
+<p>Next example is the same code, except it hides the language property from 
+    enumeration:</p>
+<p id="demo20"></p>
+
+<script>
+    // Create an Object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "NO",
+    };
+    // Change a Property:
+    Object.defineProperty(person, "language", {
+        value: "EN",
+        writable: true,
+        enumerable: false,
+        configurable: true
+    });
+    // Enumerate Properties
+    txt = "";
+    for (var x in person) {
+        txt += person[x] + "<br>";
+    }
+    document.getElementById("demo20").innerHTML = txt;
+</script>
+
+<p>This example creates a setter and a getter to secure upper case uppdates 
+    of language:</p>
+<p id="demo21"></p>
+
+<script>
+    // Create an Object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "NO"
+    };
+    // Change a Property:
+    Object.defineProperty(person, "language", {
+        get: function () { return language },
+        set: function (value) { language = value.toUpperCase() }
+    });
+    // Change language
+    person.language = "en";
+    // Display language
+    document.getElementById("demo21").innerHTML = person.language;
+</script>
+
+<p>ECMAScript 5 added a lot of new Object Methods to JavaScript:</p>
+
+<div class="bb">
+<p>// Adding or changing an object property<br>
+Object.defineProperty(object, property, descriptor)<br>
+<br>
+// Adding or changing many object properties<br>
+Object.defineProperties(object, descriptors)<br>
+<br>
+// Accessing Properties<br>
+Object.getOwnPropertyDescriptor(object, property)<br>
+<br>
+// Returns all properties as an array<br>
+Object.getOwnPropertyNames(object)<br>
+<br>
+// Returns enumerable properties as an array<br>
+Object.keys(object)<br>
+<br>
+// Accessing the prototype<br>
+Object.getPrototypeOf(object)<br>
+<br>
+// Prevents adding properties to an object<br>
+Object.preventExtensions(object)<br>
+// Returns true if properties can be added to an object<br>
+Object.isExtensible(object)<br>
+<br>
+// Prevents changes of object properties (not values)<br>
+Object.seal(object)<br>
+// Returns true if object is sealed<br>
+Object.isSealed(object)<br>
+<br>
+// Prevents any changes to an object<br>
+Object.freeze(object)<br>
+// Returns true if object is frozen<br>
+Object.isFrozen(object)</p>
+</div>
+
+<p>Learn more in <a href="https://www.w3schools.com/js/js_object_es5.asp">
+    Object ECMAScript5</a>.</p>
+
+<h2>Property Access on Strings</h2>
+<p>The <b>charAt()</b> method returns the character at a specified index 
+    (position) in a string:</p>
+<p id="demo22"></p>
+
+<script>
+    var str = "HELLO WORLD";
+    document.getElementById("demo22").innerHTML = str.charAt(0);
+</script>
+
+<p>ECMAScript 5 allows property acces on strings:</p>
+<p id="demo23"></p>
+
+<script>
+    var str = "HELLO WORLD";
+    document.getElementById("demo23").innerHTML = str[0];
+</script>
+
+<div class="note">Property access on string might be a little unpredictable. 
+    Read more in <a href="https://www.w3schools.com/js/js_string_methods.asp">
+    JS String Methods</a>.</div>
+
+<h2>Trailing Commas</h2>
+<p>ECMAScript 5 allows trailing commas in object and array definitions:</p>
+<p>Object Example:</p>
+
+<div class="bb">
+person = {<br>
+firstName: "John",<br>
+lastName:" Doe",<br>
+age:46,<br>
+}
+</div>
+
+<p>Array Example:</p>
+
+<div class="bb">
+points = [<br>
+1,<br>
+5,<br>
+10,<br>
+25,<br>
+40,<br>
+100,<br>
+];
+</div>
+
+<div class="warning">WARNING !!! Internet Explorer 8 will crash. JSON does 
+    not allow trailing commas.</div>
+
+<p>JSON Objects:</p>
+
+<div class="bb">
+Allowed:<br>
+var person = '{"firstName":"John", "lastName":"Doe", "age":46}'<br>
+JSON.parse(person)<br>
+Not allowed:<br>
+var person = '{"firstName":"John", "lastName":"Doe", "age":46,}'<br>
+JSON.parse(person)
+</div>
+
+<p>JSON Arrays:</p>
+
+<div class="bb">
+Allowed:<br>
+points = [40, 100, 1, 5, 25, 10]<br>
+Not allowed:<br>
+points = [40, 100, 1, 5, 25, 10,]
+</div>
+
+<h2>Strings Over Multiple Lines</h2>
+<p>ECMAScript 5 allows string literals over multiple lines if escaped with a 
+    backslash:</p>
+<p id="demo24"></p>
+
+<script>
+    document.getElementById("demo24").innerHTML = "Hello \
+Dolly!";
+</script>
+
+<div class="note">The \ method might not have universal support. Older 
+    browsers might treat the spaces around the backslash differently. Some 
+    older browsers do not allow spaces behind the \ character.</div>
+
+<p>A safer way to break up a string literal, is to use string addition:</p>
+<p id="demo25"></p>
+
+<script>
+    document.getElementById("demo25").innerHTML = "Hello " +
+        "Dolly!";
+</script>
+
+<h2>Reserved Words as Property Names</h2>
+<p>ECMAScript 5 allows reserved words as property names:</p>
+<p id="demo26"></p>
+
+<script>
+    var obj = { name: "John", new: "yes" };
+    document.getElementById("demo26").innerHTML = obj.new;
+</script>
+
+
+</body>
+</html>
