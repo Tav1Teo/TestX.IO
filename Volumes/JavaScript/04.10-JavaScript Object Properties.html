@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Object Properties</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/04.10-JavaScript Object Properties.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Object Properties</h1>
+<p>Properties are the most important part of any JavaScript object.</p>
+
+<h2>JavaScript Properties</h2>
+<p>Properties are the values associated with a JavaScript object. A 
+    JavaScript object is a collection of unordered properties. Properties can 
+    usually be changed, added, and deleted, but some are read only.</p>
+
+<h2>Accessing JavaScript Properties</h2>
+<p>The syntax for accessing the property of an object is:</p>
+
+<div class="bb"><em>objectName.property</em> // person.age</div>
+
+<p>or</p>
+
+<div class="bb"><em>objectName["property"]</em> // person["age"]</div>
+
+<p>or</p>
+
+<div class="bb"><em>objectName[expression]</em> // x = "age"; person[x]</div>
+
+<div class="note">The expression must evaluate to a property name.</div>
+<p>There are two different ways to access an object property: you can use 
+    .property or ["property"].</p>
+<p id="demo1"></p>
+
+<script>
+    var person = {
+        firstname: "John",
+        lastname: "Doe",
+        age: 50,
+        eyecolor: "blue"
+    };
+    document.getElementById("demo1").innerHTML =
+        person.firstname + " is " + person.age + " years old.";
+</script>
+
+<p id="demo2"></p>
+
+<script>
+    var person = {
+        firstname: "John",
+        lastname: "Doe",
+        age: 50,
+        eyecolor: "blue"
+    };
+    document.getElementById("demo2").innerHTML =
+        person["firstname"] + " is " + person["age"] + " years old.";
+</script>
+
+<h2>JavaScript for...in Loop</h2>
+<p>The JavaScript for...in statement loops through the properties of an 
+    object. Syntax:</p>
+
+<div class="bb">
+for (variable in object) {<br>
+    <em>code to be executed</em><br>
+}
+</div>
+
+<p>The block of code inside of the for...in loop will be executed once for 
+    each property. Looping through the properties of an object:</p>
+<p id="demo3"></p>
+
+<script>
+    var txt = "";
+    var person = { fname: "John", lname: "Doe", age: 25 };
+    var x;
+    for (x in person) {
+        txt += person[x] + " ";
+    }
+    document.getElementById("demo3").innerHTML = txt;
+</script>
+
+<h2>Adding New Properties</h2>
+<p>You can add new properties to an existing object by simply giving it a 
+    value. Assume that the person object already exists - you can then give 
+    it new properties:</p>
+<p id="demo4"></p>
+
+<script>
+    var person = {
+        firstname: "John",
+        lastname: "Doe",
+        age: 50,
+        eyecolor: "blue"
+    };
+    person.nationality = "English";
+    document.getElementById("demo4").innerHTML =
+        person.firstname + " is " + person.nationality + ".";
+</script>
+
+<div class="note">You cannot use reserved words for property (or method) 
+    names. JavaScript naming rules apply.</div>
+
+<h2>Deleting Properties</h2>
+<p>The <b>delete</b> keyword deletes a property from an object:</p>
+<p id="demo5"></p>
+
+<script>
+    var person = {
+        firstname: "John",
+        lastname: "Doe",
+        age: 50,
+        eyecolor: "blue"
+    };
+    delete person.age;
+    document.getElementById("demo5").innerHTML =
+        person.firstname + " is " + person.age + " years old.";
+</script>
+
+<p>The delete keyword deletes both the value of the property and the property 
+    itself. After deletion, the property cannot be used before it is added 
+    back again. The delete operator is designed to be used on object 
+    properties. It has no effect on variables or functions. The delete 
+    operator should not be used on predefined JavaScript object properties. 
+    It can crash your application.</p>
+
+<h2>Property Attributes</h2>
+<p>All properties have a name. In addition they also have a value. The value 
+    is one of the property's attributes. Other attributes are: enumerable, 
+    configurable, and writable. These attributes define how the property can 
+    be accessed (is it readable?, is it writable?) In JavaScript, all 
+    attributes can be read, but only the value attribute can be changed (and 
+    only if the property is writable). ( ECMAScript 5 has methods for both 
+    getting and setting all property attributes)</p>
+
+<h2>Prototype Properties</h2>
+<p>JavaScript objects inherit the properties of their prototype. The delete 
+    keyword does not delete inherited properties, but if you delete a 
+    prototype property, it will affect all objects inherited from the 
+    prototype.</p>
+
+</body>
+</html>

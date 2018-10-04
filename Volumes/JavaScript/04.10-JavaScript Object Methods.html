@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Object Methods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/04.10-JavaScript Object Methods.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Object Methods</h1>
+
+<h2>The JavaScript <b>this</b> Keyword</h2>
+
+<p>In this example, <b>this</b> represents the <b>person</b> object. Because 
+    the person object "owns" the fullName method.</p>
+
+<p id="demo"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    // Display data from the object:
+    document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+<h2>The <b>this</b> Keyword</h2>
+<p>In a function definition, <b>this</b> refers to the "owner" of the 
+    function. In the example above, <b>this</b> is the <b>person object</b> 
+    that "owns" the <b>fullName</b> function. In other words, 
+    <b>this.firstName</b> means the <b>firstName</b> property of 
+    <b>this object</b>. Read more about the <b>this</b> keyword at 
+    <a href="https://www.w3schools.com/js/js_this.asp">JS this Keyword</a>.</p>
+
+<h2>JavaScript Methods</h2>
+<p>JavaScript methods are actions that can be performed on objects. A 
+    JavaScript <b>method</b> is a property containing a <b>function 
+    definition</b>.</p>
+<table class="properties">
+    <tr>
+        <th>Property</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>firstName</td>
+        <td>John</td>
+    </tr>
+    <tr>
+        <td>lastName</td>
+        <td>Doe</td>
+    </tr>
+    <tr>
+        <td>age</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>eyeColor</td>
+        <td>blue</td>
+    </tr>
+    <tr>
+        <td>fullName</td>
+        <td>function() {return this.firstName + " " + this.lastName;}</td>
+    </tr>
+</table>
+
+<div class="note">Methods are functions stored as object properties.</div>
+
+<h2>Accessing Object Methods</h2>
+<p>You access an object method with the following syntax:</p>
+
+<div class="bb"><em>objectName.methodName()</em></div>
+
+<p>You will typically describe fullName() as a method of the person object 
+    and fullName as a property. The fullName property will execute (as a 
+    function) when it is invoked with (). This example accesses the 
+    fullName() <b>method</b> of a person object. A method is actually a 
+    function definition stored as a property value.:</p>
+<p id="demo2"></p>
+
+<script>
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    document.getElementById("demo2").innerHTML = person.fullName();
+</script>
+
+<p>If you access the fullName <b>property</b>, without (), it will return the 
+    <b>function definition</b>. An object method is a function definition 
+    stored as a property value:</p>
+<p id="demo3"></p>
+
+<script>
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+
+    document.getElementById("demo3").innerHTML = person.fullName;
+</script>
+
+<h2>Using Built-In Methods</h2>
+<p>This example uses the toUpperCase() method of the String object, to 
+    convert a text to uppercase:</p>
+
+<div class="bb">
+var message = "Hello world!";<br>
+var x = message.toUpperCase();
+</div>
+
+<p>The value of x, after execution of the code above will be:</p>
+
+<div class="bb">HELLO WORLD!</div>
+
+<h2>Adding a Method to an Object</h2>
+<p>Adding a new method to an object is easy:</p>
+<p id="demo4"></p>
+
+<script>
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+    };
+    person.name = function () {
+        return this.firstName + " " + this.lastName;
+    };
+
+    document.getElementById("demo4").innerHTML =
+        "My father is " + person.name(); 
+</script>
+
+</body>
+</html>
