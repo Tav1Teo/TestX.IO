@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript ES5 Object Methods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/06.10-JavaScript ES5 Object Methods.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript ES5 Object Methods</h1>
+<p>ECMAScript 5 added a lot of new Object Methods to JavaScript.</p>
+<p>
+// Adding or changing an object property<br>
+Object.defineProperty(object, property, descriptor)<br>
+<br>
+// Adding or changing many object properties<br>
+Object.defineProperties(object, descriptors)<br>
+<br>
+// Accessing Properties<br>
+Object.getOwnPropertyDescriptor(object, property)<br>
+<br>
+// Returns all properties as an array<br>
+Object.getOwnPropertyNames(object)<br>
+<br>
+// Returns enumerable properties as an array<br>
+Object.keys(object)<br>
+<br>
+// Accessing the prototype<br>
+Object.getPrototypeOf(object)<br>
+<br>
+// Prevents adding properties to an object<br>
+Object.preventExtensions(object)<br>
+// Returns true if properties can be added to an object<br>
+Object.isExtensible(object)<br>
+<br>
+// Prevents changes of object properties (not values)<br>
+Object.seal(object)<br>
+// Returns true if object is sealed<br>
+Object.isSealed(object)<br>
+<br>
+// Prevents any changes to an object<br>
+Object.freeze(object)<br>
+// Returns true if object is frozen<br>
+Object.isFrozen(object)
+</p>
+
+<h2>Changing a Property Value</h2>
+<p>Syntax:</p>
+
+<div class="bb">
+Object.defineProperty(object, property, {value : <em>value</em>})
+</div>
+
+<p>This example changes a property value:</p>
+<p id="demo"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "EN"
+    };
+    // Change a property
+    Object.defineProperty(person, "language", { value: "NO" })
+    document.getElementById("demo").innerHTML = person.language;
+</script>
+
+<h2>Changing Meta Data</h2>
+<p>ES5 allows the following property meta data to be changed:</p>
+
+<div class="bb">
+writable : true // Property value can be changed<br>
+enumerable : true // Property can be enumerated<br>
+configurable : true // Property can be reconfigured
+</div>
+
+<div class="bb">
+writable : false // Property value can not be changed<br>
+enumerable : false // Property can be not enumerated<br>
+configurable : false // Property can be not reconfigured
+</div>
+
+<p>ES5 allows getters and setters to be changed:</p>
+
+<div class="bb">
+// Defining a getter<br>
+get: function() { return language }<br>
+// Defining a setter<br>
+set: function(value) { language = value }
+</div>
+
+<p>This example makes language read-only:</p>
+
+<div class="bb">
+Object.defineProperty(person, "language", {writable:false});
+</div>
+
+<p>This example makes language not enumerable:</p>
+
+<div class="bb">
+Object.defineProperty(person, "language", {enumerable:false});
+</div>
+
+<h2>Listing All Properties</h2>
+<p>This example list all properties of an object:</p>
+<p id="demo2"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "EN"
+    }
+    // Change Property
+    Object.defineProperty(person, "language", { enumerable: false });
+    // Display Properties
+    document.getElementById("demo2").innerHTML = 
+    Object.getOwnPropertyNames(person);
+</script>
+
+<h2>Listing Enumerable Properties</h2>
+<p>This example list only the enumerable properties of an object:</p>
+<p id="demo3"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "EN"
+    }
+    // Change Property
+    Object.defineProperty(person, "language", { enumerable: false });
+    // Display Properties
+    document.getElementById("demo3").innerHTML = Object.keys(person);
+</script>
+
+<h2>Adding a Property</h2>
+<p>This example adds a new property to an object:</p>
+<p id="demo4"></p>
+
+<script>
+    // Create an object:
+    var person = {
+        firstName: "John",
+        lastName: "Doe",
+        language: "EN"
+    };
+    // Add a property
+    Object.defineProperty(person, "year", { value: "2008" })
+    document.getElementById("demo4").innerHTML = person.year;
+</script>
+
+<h2>Adding Getters and Setters</h2>
+<p>The Object.defineProperty() method can also be used to add Getters and 
+    Setters:</p>
+<p id="demo5"></p>
+
+<script>
+    // Create an object:
+    var person = { firstName: "John", lastName: "Doe" };
+
+    // Define a getter
+    Object.defineProperty(person, "fullName", {
+            get: function () { return this.firstName + " " + this.lastName; }
+    });
+
+    // Display full name
+    document.getElementById("demo5").innerHTML = person.fullName;
+</script>
+
+<h2>A Counter Example</h2>
+<p>Perfect for creating counters:</p>
+<p id="demo6"></p>
+
+<script>
+    // Define an object
+    var obj = { counter: 0 };
+
+    // Define Setters and Getters
+    Object.defineProperty(obj, "reset", {
+            get: function () { this.counter = 0; }
+    });
+    Object.defineProperty(obj, "increment", {
+            get: function () { this.counter++; }
+    });
+    Object.defineProperty(obj, "decrement", {
+            get: function () { this.counter--; }
+    });
+    Object.defineProperty(obj, "add", {
+            set: function (value) { this.counter += value; }
+    });
+    Object.defineProperty(obj, "subtract", {
+            set: function (value) { this.counter -= value; }
+    });
+
+    // Play with counter:
+    obj.reset;
+    obj.add = 5;
+    obj.subtract = 1;
+    obj.increment;
+    obj.decrement;
+    document.getElementById("demo6").innerHTML = obj.counter;
+</script>
+
+</body>
+</html>

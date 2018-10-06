@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Function Definitions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/06.10-JavaScript Function Definitions.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Function Definitions</h1>
+<p>JavaScript functions are <b>defined</b> with the <b>function</b> keyword. 
+    You can use a function <b>declaration</b> or a function 
+    <b>expression</b>.</p>
+
+<h2>Function Declarations</h2>
+<p>Earlier in this tutorial, you learned that functions are <b>declared</b> 
+    with the following syntax:</p>
+
+<div class="bb">
+function <em>functionName</em>(<em>parameters</em>) {<br>
+    <em>code to be executed</em><br>
+}
+</div>
+
+<p>Declared functions are not executed immediately. They are "saved for later 
+    use", and will be executed later, when they are invoked (called upon). 
+    This example calls a function which performs a calculation and returns 
+    the result:</p>
+<p id="demo1"></p>
+
+<script>
+    var x = myFunction(4, 3);
+    document.getElementById("demo1").innerHTML = x;
+
+    function myFunction(a, b) {
+        return a * b;
+    }
+</script>
+
+<div class="note">Semicolons are used to separate executable JavaScript 
+    statements. Since a function <b>declaration</b> is not an executable 
+    statement, it is not common to end it with a semicolon.</div>
+
+<h2>Function Expressions</h2>
+<p>A JavaScript function can also be defined using an <b>expression</b>. A 
+    function expression can be stored in a variable:</p>
+<p id="demo2"></p>
+
+<script>
+    var x = function (a, b) { return a * b };
+    document.getElementById("demo2").innerHTML = x;
+</script>
+
+<p>After a function expression has been stored in a variable, the variable 
+    can be used as a function:</p>
+<p id="demo3"></p>
+
+<script>
+    var x = function (a, b) { return a * b };
+    document.getElementById("demo3").innerHTML = x(4, 3);
+</script>
+
+<p>The function above is actually an <b>anonymous function</b> (a function 
+    without a name). Functions stored in variables do not need function 
+    names. They are always invoked (called) using the variable name.</p>
+
+<div class="note">The function above ends with a semicolon because it is a 
+    part of an executable statement.</div>
+
+<h2>The Function() Constructor</h2>
+<p>As you have seen in the previous examples, JavaScript functions are 
+    defined with the <b>function</b> keyword. Functions can also be defined 
+    with a built-in JavaScript function constructor called Function().</p>
+<p id="demo4"></p>
+
+<script>
+    var myFunction = new Function("a", "b", "return a * b");
+    document.getElementById("demo4").innerHTML = myFunction(4, 3);
+</script>
+
+<p>You actually don't have to use the function constructor. The example above 
+    is the same as writing:</p>
+<p id="demo5"></p>
+
+<script>
+    var myFunction = function (a, b) { return a * b }
+    document.getElementById("demo5").innerHTML = myFunction(4, 3);
+</script>
+
+<div class="note">Most of the time, you can avoid using the <b>new</b> 
+    keyword in JavaScript.</div>
+
+<h2>Function Hoisting</h2>
+<p>Earlier in this tutorial, you learned about "hoisting". Hoisting is 
+    JavaScript's default behavior of moving <b>declarations</b> to the top of 
+    the current scope. Hoisting applies to variable declarations and to 
+    function declarations. Because of this, JavaScript functions can be 
+    called before they are declared:</p>
+
+<div class="bb">
+myFunction(5);<br>
+<br>
+function myFunction(y) {<br>
+return y * y;<br>
+}
+</div>
+
+<p>Functions defined using an expression are not hoisted.</p>
+
+<h2>Self-Invoking Functions</h2>
+<p>Function expressions can be made "self-invoking". A self-invoking 
+    expression is invoked (started) automatically, without being called. 
+    Function expressions will execute automatically if the expression is 
+    followed by (). You cannot self-invoke a function declaration. You have 
+    to add parentheses around the function to indicate that it is a function 
+    expression:</p>
+<p id="demo6"></p>
+
+<script>
+    (function () {
+        document.getElementById("demo6").innerHTML = "Hello! I called myself";
+    })();
+</script>
+
+<p>The function above is actually an <b>anonymous self-invoking function</b> 
+    (function without name).</p>
+
+<h2>Functions Can Be Used as Values</h2>
+<p>JavaScript functions can be used as values:</p>
+<p>x = myFunction(4,3) or x = 12</p>
+<p>In both cases, x becomes a number with the value of 12.</p>
+<p id="demo7"></p>
+
+<script>
+    function myFunction(a, b) {
+        return a * b;
+    }
+    var x = myFunction(4, 3);
+    document.getElementById("demo7").innerHTML = x;
+</script>
+
+<p>JavaScript functions can be used in expressions:</p>
+<p id="demo8"></p>
+
+<script>
+    function myFunction(a, b) {
+        return a * b;
+    }
+    var x = myFunction(4, 3) * 2;
+    document.getElementById("demo8").innerHTML = x;
+</script>
+
+<h2>Functions are Objects</h2>
+<p>The <b>typeof</b> operator in JavaScript returns "function" for functions.
+    But, JavaScript functions can best be described as objects. JavaScript 
+    functions have both <b>properties</b> and <b>methods</b>. The 
+    arguments.length property returns the number of arguments received when
+    the function was invoked:</p>
+<p id="demo8"></p>
+
+<script>
+    function myFunction(a, b) {
+        return arguments.length;
+    }
+    document.getElementById("demo8").innerHTML = myFunction(4, 3);
+</script>
+
+<p>The toString() method returns the function as a string:</p>
+<p id="demo9"></p>
+
+<script>
+    function myFunction(a, b) {
+        return a * b;
+    }
+    document.getElementById("demo9").innerHTML = myFunction.toString();
+</script>
+
+<div class="note">A function defined as the property of an object, is called 
+    a method to the object. A function designed to create new objects, is 
+    called an object constructor.</div>
+
+
+
+
+</body>
+</html>
