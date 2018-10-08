@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Function Call</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/08.10-JavaScript Function Call.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Function Call</h1>
+<h2>Method Reuse</h2>
+<p>With the <b>call() method</b>, you can write a method that can be used on 
+    different objects.</p>
+
+<h2>All Functions are Methods</h2>
+<p>In JavaScript all functions are object methods. If a function is not a 
+    method of a JavaScript object, it is a function of the global object (see 
+    previous chapter). The example below creates an object with 3 properties, 
+    firstName, lastName, fullName.</p>
+<p id="demo1"></p>
+
+<script>
+    var myObject = {
+        firstName: "John",
+        lastName: "Doe",
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    x = myObject.fullName();
+    document.getElementById("demo1").innerHTML = x; 
+</script>
+
+<h2>The <b>this</b> Keyword</h2>
+<p>In a function definition, <b>this</b> refers to the "owner" of the 
+    function. In the example above, <b>this</b> is the <b>person object</b> 
+    that "owns" the <b>fullName</b> function. In other words, 
+    <b>this.firstName</b> means the <b>firstName</b> property of <b>this 
+    object.</b> Read more about the <b>this</b> keyword at 
+    <a href="https://www.w3schools.com/js/js_this.asp">JS this Keyword</a>.</p>
+
+<h2>The JavaScript call() Method</h2>
+<p>The <b>call()</b> method is a predefined JavaScript method. It can be used 
+    to invoke (call) a method with an owner object as an argument 
+    (parameter).</p>
+
+<div class="note">With <b>call()</b>, an object can use a method belonging to 
+    another object.</div>
+
+<p>This example calls the <b>fullName</b> method of person, using it on 
+    <b>person1</b>:</p>
+<p id="demo2"></p>
+
+<script>
+    var person = {
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person1 = {
+        firstName: "John",
+        lastName: "Doe",
+    }
+    var person2 = {
+        firstName: "Mary",
+        lastName: "Doe",
+    }
+    var x = person.fullName.call(person1);
+    document.getElementById("demo2").innerHTML = x; 
+</script>
+
+<p>This example calls the <b>fullName</b> method of person, using it on 
+    <b>person2</b>:</p>
+<p id="demo3"></p>
+
+<script>
+    var person = {
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person1 = {
+        firstName: "John",
+        lastName: "Doe",
+    }
+    var person2 = {
+        firstName: "Mary",
+        lastName: "Doe",
+    }
+    x = person.fullName.call(person2);
+    document.getElementById("demo3").innerHTML = x; 
+</script>
+
+<h2>The call() Method with Arguments</h2>
+<p>The <b>call()</b> method can accept arguments:</p>
+<p id="demo4"></p>
+
+<script>
+    var person = {
+        fullName: function (city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + 
+            country;
+        }
+    }
+    var person1 = {
+        firstName: "John",
+        lastName: "Doe",
+    }
+    var person2 = {
+        firstName: "Mary",
+        lastName: "Doe",
+    }
+    var x = person.fullName.call(person1, "Oslo", "Norway");
+    document.getElementById("demo4").innerHTML = x; 
+</script>
+
+
+
+
+</body>
+</html>

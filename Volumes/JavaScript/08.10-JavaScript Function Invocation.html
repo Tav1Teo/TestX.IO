@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Function Parameters</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/08.10-JavaScript Function Parameters.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Function Invocation</h1>
+<p>The code inside a JavaScript function will execute when "something" invokes 
+    it.</p>
+
+<h2>Invoking a JavaScript Function</h2>
+<p>The code inside a function is not executed when the function is 
+    <b>defined</b>. The code inside a function is executed when the function 
+    is <b>invoked</b>. It is common to use the term "<b>call a function</b>" 
+    instead of "<b>invoke a function</b>". It is also common to say "call 
+    upon a function", "start a function", or "execute a function". In this 
+    tutorial, we will use <b>invoke</b>, because a JavaScript function can be 
+    invoked without being called.</p>
+
+<h2>Invoking a Function as a Function</h2>
+<p>The global function (myFunction) returns the product of the arguments 
+    (a ,b):</p>
+<p id="demo1"></p>
+
+<script>
+    function myFunction(a, b) {
+        return a * b;
+    }
+    document.getElementById("demo1").innerHTML = myFunction(10, 2); 
+</script>
+
+<p>The function above does not belong to any object. But in JavaScript there 
+    is always a default global object. In HTML the default global object is 
+    the HTML page itself, so the function above "belongs" to the HTML page. 
+    In a browser the page object is the browser window. The function above 
+    automatically becomes a window function. myFunction() and 
+    window.myFunction() is the same function:</p>
+<p id="demo2"></p>
+
+<script>
+    function myFunction(a, b) {
+        return a * b;
+    }
+    document.getElementById("demo2").innerHTML = window.myFunction(10, 2); 
+</script>
+
+<div class="note">This is a common way to invoke a JavaScript function, but 
+    not a very good practice. Global variables, methods, or functions can 
+    easily create name conflicts and bugs in the global object.</div>
+
+<h2>The <b>this</b> Keyword</h2>
+<p>In JavaScript, the thing called <b>this</b>, is the object that "owns" the 
+    current code. The value of this, when used in a function, is the object 
+    that "owns" the function.</p>
+
+<div class="note">Note that <b>this</b> is not a variable. It is a keyword. 
+    You cannot change the value of <b>this</b>.</div>
+
+<h2>The Global Object</h2>
+<p>When a function is called without an owner object, the value of <b>this</b>
+    becomes the global object. In a web browser the global object is the 
+    browser window. This example returns the window object as the value of 
+    <b>this</b>:</p>
+<p id="demo3"></p>
+
+<script>
+    var x = myFunction();
+    function myFunction() {
+        return this;
+    }
+    document.getElementById("demo3").innerHTML = x; 
+</script>
+
+<div class="note">Invoking a function as a global function, causes the value 
+    of <b>this</b> to be the global object. Using the window object as a 
+    variable can easily crash your program.</div>
+
+<h2>Invoking a Function as a Method</h2>
+<p>In JavaScript you can define functions as object methods. The following 
+    example creates an object (<b>myObject</b>), with two properties 
+    (<b>firstName</b> and <b>lastName</b>) and a method (<b>fullName</b>):</p>
+<p id="demo4"></p>
+
+<script>
+    var myObject = {
+        firstName: "John",
+        lastName: "Doe",
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    document.getElementById("demo4").innerHTML = myObject.fullName(); 
+</script>
+
+<p>The <b>fullName</b> method is a function. The function belongs to the 
+    object. <b>myObject</b> is the owner of the function. The thing called 
+    <b>this</b>, is the object that "owns" the JavaScript code. In this case 
+    the value of <b>this</b> is <b>myObject</b>. Test it! Change the 
+    <b>fullName</b> method to return the value of <b>this</b>:</p>
+<p id="demo5"></p>
+
+<script>
+    var myObject = {
+        firstName: "John",
+        lastName: "Doe",
+        fullName: function () {
+            return this;
+        }
+    }
+    document.getElementById("demo5").innerHTML = myObject.fullName();
+</script>
+
+<div class="note">Invoking a function as an object method, causes the value of 
+    <b>this</b> to be the object itself.</div>
+
+<h2>Invoking a Function with a Function Constructor</h2>
+<p>If a function invocation is preceded with the <b>new</b> keyword, it is a 
+    constructor invocation. It looks like you create a new function, but 
+    since JavaScript functions are objects you actually create a new 
+    object:</p>
+<p id="demo6"></p>
+
+<script>
+    function myFunction(arg1, arg2) {
+        this.firstName = arg1;
+        this.lastName = arg2;
+    }
+
+    var x = new myFunction("John", "Doe")
+    document.getElementById("demo6").innerHTML = x.firstName; 
+</script>
+
+<p>A constructor invocation creates a new object. The new object inherits the 
+    properties and methods from its constructor.</p>
+
+<div class="note">The <b>this</b> keyword in the constructor does not have a 
+    value. The value of <b>this</b> will be the new object created when the 
+    function is invoked.</div>
+
+
+</body>
+</html>

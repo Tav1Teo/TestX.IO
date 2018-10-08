@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Function Parameters</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/08.10-JavaScript Function Parameters.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Function Parameters</h1>
+<p>A JavaScript function does not perform any checking on parameter values 
+    (arguments).</p>
+
+<h2>Function Parameters and Arguments</h2>
+<p>Earlier in this tutorial, you learned that functions can have 
+    <b>parameters</b>:</p>
+
+<div class="bb">
+<em>functionName</em>(<em>parameter1, parameter2, parameter3</em>) {<br>
+<em>code to be executed</em><br>
+}
+</div>
+
+<p>Function <b>parameters</b> are the <b>names</b> listed in the function 
+    definition. Function <b>arguments</b> are the real <b>values</b> passed 
+    to (and received by) the function.</p>
+
+<h2>Parameter Rules</h2>
+<p>JavaScript function definitions do not specify data types for parameters. 
+    JavaScript functions do not perform type checking on the passed arguments.
+    JavaScript functions do not check the number of arguments received.</p>
+
+<h2>Parameter Defaults</h2>
+<p>If a function is called with <b>missing arguments</b> (less than 
+    declared), the missing values are set to: <b>undefined</b>. Sometimes 
+    this is acceptable, but sometimes it is better to assign a default value 
+    to the parameter:</p>
+<p id="demo1"></p>
+
+<script>
+    function myFunction(x, y) {
+        if (y === undefined) {
+            y = 0;
+        }
+        return x * y;
+    }
+    document.getElementById("demo1").innerHTML = myFunction(4);
+</script>
+
+<div class="bb"><a href="https://www.w3schools.com/js/js_es6.asp">ECMAScript 
+    2015</a>allows default parameters in the function call:<br>
+function (a=1, b=1) { // function code }</div>
+
+<h2>The Arguments Object</h2>
+<p>JavaScript functions have a built-in object called the arguments object. 
+    The argument object contains an array of the arguments used when the 
+    function was called (invoked). This way you can simply use a function to 
+    find (for instance) the highest value in a list of numbers:</p>
+<p id="demo2"></p>
+
+<script>
+    function findMax() {
+        var i;
+        var max = -Infinity;
+        for (i = 0; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+                max = arguments[i];
+            }
+        }
+        return max;
+    }
+    document.getElementById("demo2").innerHTML = findMax(4, 5, 6);
+</script>
+
+<p>Or create a function to sum all input values:</p>
+<p id="demo3"></p>
+
+<script>
+    function sumAll() {
+        var i;
+        var sum = 0;
+        for (i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
+        return sum;
+    }
+    document.getElementById("demo3").innerHTML =
+        sumAll(1, 123, 500, 115, 44, 88);
+</script>
+
+<div class="note">If a function is called with <b>too many arguments</b> (more 
+    than declared), these arguments can be reached using <b>the arguments 
+    object</b>.</div>
+
+<h2>Arguments are Passed by Value</h2>
+<p>The parameters, in a function call, are the function's arguments. 
+    JavaScript arguments are passed by <b>value</b>: The function only gets 
+    to know the values, not the argument's locations. If a function changes 
+    an argument's value, it does not change the parameter's original value. 
+    <b>Changes to arguments are not visible (reflected) outside the 
+    function.</b></p>
+
+<h2>Objects are Passed by Reference</h2>
+<p>In JavaScript, object references are values. Because of this, objects will 
+    behave like they are passed by <b>reference</b>: If a function changes an 
+    object property, it changes the original value. <b>Changes to object 
+    properties are visible (reflected) outside the function.</b></p>
+    
+</body>
+</html>
