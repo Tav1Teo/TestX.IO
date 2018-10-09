@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript Function Apply</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/09.10-JavaScript Function Apply.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript Function Apply</h1>
+<h2>Method Reuse</h2>
+<p>With the <b>apply()</b> method, you can write a method that can be used on 
+    different objects.</p>
+
+<h2>The JavaScript apply() Method</h2>
+<p>The <b>apply()</b> method is similar to the <b>call()</b> method (previous 
+    chapter). In this example the <b>fullName</b> method of <b>person</b> is 
+    <b>applied</b> on <b>person1</b>:</p>
+<p id="demo1"></p>
+
+<script>
+    var person = {
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    }
+    var person1 = {
+        firstName: "John",
+        lastName: "Doe",
+    }
+    var x = person.fullName.apply(person1);
+    document.getElementById("demo1").innerHTML = x; 
+</script>
+
+<h2>The Difference Between call() and apply()</h2>
+<p>The difference is: The call() method takes arguments <b>separately</b>. 
+    The apply() method takes arguments as an <b>array</b>.</p>
+
+<div class="note">The apply() method is very handy if you want to use an 
+    array instead of an argument list.</div>
+
+<h2>The apply() Method with Arguments</h2>
+<p>The <b>apply()</b> method accepts arguments in an array:</p>
+<p id="demo2"></p>
+
+<script>
+    var person = {
+        fullName: function (city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + 
+            country;
+        }
+    }
+    var person1 = {
+        firstName: "John",
+        lastName: "Doe",
+    }
+    var x = person.fullName.apply(person1, ["Oslo", "Norway"]);
+    document.getElementById("demo2").innerHTML = x; 
+</script>
+
+<p>Compared with the <b>call()</b> method:</p>
+<p id="demo3"></p>
+
+<script>
+    var person = {
+        fullName: function (city, country) {
+            return this.firstName + " " + this.lastName + "," + city + "," + 
+            country;
+        }
+    }
+    var person1 = {
+        firstName: "John",
+        lastName: "Doe",
+    }
+    var person2 = {
+        firstName: "Mary",
+        lastName: "Doe",
+    }
+    var x = person.fullName.call(person1, "Oslo", "Norway");
+    document.getElementById("demo3").innerHTML = x; 
+</script>
+
+<h2>Simulate a Max Method on Arrays</h2>
+<p>You can find the largest number (in a list of numbers) using the 
+    Math.max() method:</p>
+<p id="demo4"></p>
+
+<script>
+    document.getElementById("demo4").innerHTML = Math.max(1, 2, 3); 
+</script>
+
+<p>Since JavaScript <b>arrays</b> do not have a max() method, you can apply 
+    the Math.max() method instead.</p>
+<p id="demo5"></p>
+
+<script>
+    document.getElementById("demo5").innerHTML = 
+    Math.max.apply(null, [1, 2, 3]); 
+</script>
+
+<p>The first argument (null) does not matter. It is not used in this example.
+    These examples will give the same result:</p>
+<p id="demo6"></p>
+
+<script>
+    document.getElementById("demo6").innerHTML = 
+    Math.max.apply(Math, [1, 2, 3]); 
+</script>
+
+<p id="demo7"></p>
+
+<script>
+    document.getElementById("demo7").innerHTML = 
+    Math.max.apply(" ", [1, 2, 3]); 
+</script>
+
+<p id="demo8"></p>
+
+<script>
+    document.getElementById("demo8").innerHTML = Math.max.apply(0, [1, 2, 3]); 
+</script>
+
+<h2>JavaScript Strict Mode</h2>
+<p>In JavaScript strict mode, if the first argument of the apply() method is 
+    not an object, it becomes the owner (object) of the invoked function. In 
+    "non-strict" mode, it becomes the global object.</p>
+
+
+</body>
+</html>
