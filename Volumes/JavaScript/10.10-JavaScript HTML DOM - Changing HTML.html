@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript HTML DOM - Changing HTML</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/10.10-JavaScript HTML DOM - Changing HTML.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript HTML DOM - Changing HTML</h1>
+<p>The HTML DOM allows JavaScript to change the content of HTML elements.</p>
+
+<h2>Changing the HTML Output Stream</h2>
+<p>In JavaScript, document.write() can be used to write directly to the HTML 
+    output stream. JavaScript can create dynamic HTML content:</p>
+
+<script>
+    document.write(Date());
+</script>
+
+<div class="note">Never use document.write() after the document is loaded. It 
+    will overwrite the document.</div>
+
+<h2>Changing HTML Content</h2>
+<p>The easiest way to modify the content of an HTML element is by using the 
+    <b>innerHTML</b> property. To change the content of an HTML element, use 
+    this syntax:</p>
+
+<div class="bb">document.getElementById(<em>id</em>).innerHTML = 
+    <em>new HTML</em></div>
+
+<p>This example changes the content of a &ltp&gt element:</p>
+<p id="p1">Hello World!</p>
+
+<script>
+    document.getElementById("p1").innerHTML = "New text!";
+</script>
+
+<p>The paragraph above was changed by a script. Example explained:</p>
+<ul>
+    <li>The HTML document above contains a &ltp&gt element with id="p1"</li>
+    <li>We use the HTML DOM to get the element with id="p1"</li>
+    <li>A JavaScript changes the content (innerHTML) of that element to 
+        "New text!"</li>
+</ul>
+
+<p>This example changes the content of an &lth1&gt element:</p>
+
+<h3 id="id01">Old Heading</h3>
+
+<script>
+    var element = document.getElementById("id01");
+    element.innerHTML = "New Heading";
+</script>
+
+<p>JavaScript changed "Old Heading" to "New Heading". Example explained:</p>
+<ul>
+    <li>The HTML document above contains an &lth3&gt element with id="id01"</li>
+    <li>We use the HTML DOM to get the element with id="id01"</li>
+    <li>A JavaScript changes the content (innerHTML) of that element to 
+        "New Heading"</li>
+</ul>
+
+<h2>Changing the Value of an Attribute</h2>
+<p>To change the value of an HTML attribute, use this syntax:</p>
+
+<div class="bb">document.getElementById(<em>id</em>).<em>attribute = 
+    new value</em></div>
+
+<p>This example changes the value of the src attribute of an &ltimg&gt 
+    element:</p>
+
+<img id="image" src="../../images/smiley.gif" width="160" height="120">
+
+<script>
+    document.getElementById("image").src = "../../images/landscape.jpg";
+</script>
+
+<p>The original image was smiley.gif, but the script changed it to 
+    landscape.jpg. Example explained:</p>
+<ul>
+    <li>The HTML document above contains an &ltimg&gt element with 
+        id="myImage"</li>
+    <li>We use the HTML DOM to get the element with id="myImage"</li>
+    <li>A JavaScript changes the src attribute of that element from 
+        "smiley.gif" to "landscape.jpg"</li>
+</ul>
+
+</body>
+</html>
