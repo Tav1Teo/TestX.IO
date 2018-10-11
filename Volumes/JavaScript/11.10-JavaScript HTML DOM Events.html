@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript HTML DOM Events</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/11.10-JavaScript HTML DOM Events.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript HTML DOM Events</h1>
+<p>HTML DOM allows JavaScript to react to HTML events.</p>
+
+<h2>Reacting to Events</h2>
+<p>A JavaScript can be executed when an event occurs, like when a user clicks 
+    on an HTML element. To execute code when a user clicks on an element, add 
+    JavaScript code to an HTML event attribute:</p>
+
+<div class="bb">onclick=<em>JavaScript</em></div>
+
+<p>Examples of HTML events:</p>
+<ul>
+    <li>When a user clicks the mouse</li>
+    <li>When a web page has loaded</li>
+    <li>When an image has been loaded</li>
+    <li>When the mouse moves over an element</li>
+    <li>When an input field is changed</li>
+    <li>When a HTML form is submitted</li>
+    <li>When a user strokes a key</li>
+</ul>
+<p>In this example, the content of the &lth1&gt element is changed when a 
+    user clicks on it:</p>
+
+<h3 onclick="this.innerHTML='Ooops!'">Click on this text!</h3>
+
+<p>In this example, a function is called from the event handler:</p>
+
+<h3 onclick="changeText(this)">Click on this text!</h3>
+
+<script>
+    function changeText(id) {
+        id.innerHTML = "Ooops!";
+    }
+</script>
+
+<h2>HTML Event Attributes</h2>
+<p>To assign events to HTML elements you can use event attributes. Click the 
+    button to display the date:</p>
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+    function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+    }
+</script>
+
+<p id="demo"></p>
+
+<p>In the example above, a function named <em>displayDate</em> will be 
+    executed when the button is clicked.</p>
+
+<h2>Assign Events Using the HTML DOM</h2>
+<p>The HTML DOM allows you to assign events to HTML elements using 
+    JavaScript:</p>
+
+<button id="myBtn1">Try it</button>
+
+<p id="demo1"></p>
+
+<script>
+    document.getElementById("myBtn1").onclick = displayDate;
+
+    function displayDate() {
+        document.getElementById("demo1").innerHTML = Date();
+    }
+</script>
+
+<p>In the example above, a function named <em>displayDate</em> is assigned to 
+    an HTML element with the id="myBtn". The function will be executed when 
+    the button is clicked.</p>
+
+<h2>The onload and onunload Events</h2>
+<p>The onload and onunload events are triggered when the user enters or 
+    leaves the page. The onload event can be used to check the visitor's 
+    browser type and browser version, and load the proper version of the web 
+    page based on the information. The onload and onunload events can be used 
+    to deal with cookies.</p>
+<p id="demo2"></p>
+
+<script>
+    function checkCookies() {
+        var text = "";
+        if (navigator.cookieEnabled == true) {
+            text = "Cookies are enabled.";
+        } else {
+            text = "Cookies are not enabled.";
+        }
+        document.getElementById("demo2").innerHTML = text;
+    }
+</script>
+
+<h2>The onchange Event</h2>
+<p>The onchange event is often used in combination with validation of input 
+    fields. Below is an example of how to use the onchange. The upperCase() 
+    function will be called when a user changes the content of an input 
+    field.</p>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("fname");
+        x.value = x.value.toUpperCase();
+    }
+</script>
+
+Enter your name: <input type="text" id="fname" onchange="myFunction()">
+<p>When you leave the input field, a function is triggered which 
+    transforms the input text to upper case.</p>
+
+<h2>The onmouseover and onmouseout Events</h2>
+<p>The onmouseover and onmouseout events can be used to trigger a function 
+    when the user mouses over, or out of, an HTML element:</p>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+    style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+    Mouse Over Me</div>
+
+<script>
+    function mOver(obj) {
+        obj.innerHTML = "Thank You"
+    }
+
+    function mOut(obj) {
+        obj.innerHTML = "Mouse Over Me"
+    }
+</script>
+
+<h2>The onmousedown, onmouseup and onclick Events</h2>
+<p>The onmousedown, onmouseup, and onclick events are all parts of a 
+    mouse-click. First when a mouse-button is clicked, the onmousedown event 
+    is triggered, then, when the mouse-button is released, the onmouseup 
+    event is triggered, finally, when the mouse-click is completed, the 
+    onclick event is triggered.</p>
+
+<div onmousedown="mDown(this)" onmouseup="mUp(this)" 
+    style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+    Click Me</div>
+
+<script>
+    function mDown(obj) {
+        obj.style.backgroundColor = "#1ec5e5";
+        obj.innerHTML = "Release Me";
+    }
+
+    function mUp(obj) {
+        obj.style.backgroundColor = "#D94A38";
+        obj.innerHTML = "Thank You";
+    }
+</script>
+
+<h2>More Examples</h2>
+<p><a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onmousedown">
+    onmousedown and onmouseup</a>: Change an image when a user holds down the 
+    mouse button.</p>
+<p>
+<a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onload">
+    onload</a>: Display an alert box when the page has finished loading.</p>
+<p>
+<a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onfocus">
+    onfocus</a>: Change the background-color of an input field when it gets 
+    focus.</p>
+<p>
+<a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_event_onmouse">
+    Mouse Events</a>: Change the color of an element when the cursor moves 
+    over it.</p>
+
+<h2>HTML DOM Event Object Reference</h2>
+<p>For a list of all HTML DOM events, look at our complete 
+    <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">HTML DOM 
+        Event Object Reference</a>.</p>
+
+</body>
+</html>
