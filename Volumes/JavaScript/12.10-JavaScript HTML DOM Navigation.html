@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript HTML DOM Navigation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/12.10-JavaScript HTML DOM Navigation.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript HTML DOM Navigation</h1>
+<p>With the HTML DOM, you can navigate the node tree using node 
+    relationships.</p>
+
+<h2>DOM Nodes</h2>
+<p>According to the W3C HTML DOM standard, everything in an HTML document is 
+    a node:</p>
+<ul>
+    <li>The entire document is a document node</li>
+    <li>Every HTML element is an element node</li>
+    <li>The text inside HTML elements are text nodes</li>
+    <li>Every HTML attribute is an attribute node (deprecated)</li>
+    <li>All comments are comment nodes</li>
+</ul>
+
+<div class="bb"><img src="../../images/pic_htmltree.png" alt="DOM Nodes"></div>
+
+<p>With the HTML DOM, all nodes in the node tree can be accessed by JavaScript.
+    New nodes can be created, and all nodes can be modified or deleted.</p>
+
+<h2>Node Relationships</h2>
+<p>The nodes in the node tree have a hierarchical relationship to each other.
+    The terms parent, child, and sibling are used to describe the 
+    relationships.</p>
+<ul>
+    <li>In a node tree, the top node is called the root (or root node)</li>
+    <li>Every node has exactly one parent, except the root (which has no 
+        parent)</li>
+    <li>A node can have a number of children</li>
+    <li>Siblings (brothers or sisters) are nodes with the same parent</li>
+</ul>
+
+<div class="bb"><img src="../../images/pic_navigate.png" alt="Node Tree"></div>
+
+<div class="bb">
+&lthtml&gt<br>
+<br>
+&lthead&gt<br>
+    &lttitle&gtDOM Tutorial&lt/title&gt<br>
+&lt/head&gt<br>
+<br>
+&ltbody&gt<br>
+    &lth1&gtDOM Lesson one&lt/h1&gt<br>
+    &ltp&gtHello world!&lt/p&gt<br>
+&lt/body&gt<br>
+<br>
+&lt/html&gt
+</div>
+
+<p>From the HTML above you can read:</p>
+<ul>
+    <li>&lthtml&gt is the root node</li>
+    <li>&lthtml&gt has no parents</li>
+    <li>&lthtml&gt is the parent of &lthead&gt and &ltbody&gt</li>
+    <li>&lthead&gt is the first child of &lthtml&gt</li>
+    <li>&ltbody&gt is the last child of &lthtml&gt</li>
+</ul>
+<p>and:</p>
+<ul>
+    <li>&lthead&gt has one child: &lttitle&gt</li>
+    <li>&lttitle&gt has one child (a text node): "DOM Tutorial"</li>
+    <li>&ltbody&gt has two children: &lth1&gt and &ltp&gt</li>
+    <li>&lth1&gt has one child: "DOM Lesson one"</li>
+    <li>&ltp&gt has one child: "Hello world!"</li>
+    <li>&lth1&gt and &ltp&gt are siblings</li>
+</ul>
+
+<h2>Navigating Between Nodes</h2>
+<p>You can use the following node properties to navigate between nodes with 
+    JavaScript:</p>
+<ul>
+    <li>parentNode</li>
+    <li>childNodes[<em>nodenumber</em>]</li>
+    <li>firstChild</li>
+    <li>lastChild</li>
+    <li>nextSibling</li>
+    <li>previousSibling</li>
+</ul>
+
+<h2>Child Nodes and Node Values</h2>
+
+<div class="note">A common error in DOM processing is to expect an element 
+    node to contain text.</div>
+
+<div class="bb">&lttitle id="demo"&gtDOM Tutorial&lt/title&gt</div>
+
+<p>The element node &lttitle&gt (in the example above) does <b>not</b> 
+    contain text. It contains a <b>text node</b> with the value "DOM 
+    Tutorial". The value of the text node can be accessed by the node's 
+    <b>innerHTML</b> property:</p>
+
+<div class="bb">var myTitle = document.getElementById("demo").innerHTML;</div>
+
+<p>Accessing the innerHTML property is the same as accessing the 
+    <b>nodeValue</b> of the first child:</p>
+
+<div class="bb">
+    var myTitle = document.getElementById("demo").firstChild.nodeValue;</div>
+
+<p>Accessing the first child can also be done like this:</p>
+
+<div class="bb">var myTitle = 
+    document.getElementById("demo").childNodes[0].nodeValue;</div>
+
+<p>All the (3) following examples retrieves the text of an &lth1&gt element 
+    and copies it into a &ltp&gt element:</p>
+<h3 id="id01">My First Page</h3>
+<p id="id02"></p>
+
+<script>
+    document.getElementById("id02").innerHTML = 
+    document.getElementById("id01").innerHTML;
+</script>
+
+<h3 id="id03">My First Page</h3>
+<p id="id04"></p>
+
+<script>
+    document.getElementById("id04").innerHTML = 
+    document.getElementById("id03").firstChild.nodeValue;
+</script>
+
+<h3 id="id05">My First Page</h3>
+<p id="id06"></p>
+
+<script>
+    document.getElementById("id06").innerHTML = 
+    document.getElementById("id05").childNodes[0].nodeValue;
+</script>
+
+<h2>InnerHTML</h2>
+<p>In this tutorial we use the innerHTML property to retrieve the content of 
+    an HTML element. However, learning the other methods above is useful for 
+    understanding the tree structure and the navigation of the DOM.</p>
+
+<h2>DOM Root Nodes</h2>
+<p>There are two special properties that allow access to the full document:</p>
+<ul>
+    <li>document.body - The body of the document</li>
+    <li>document.documentElement - The full document</li>
+</ul>
+<p>Hello World!</p>
+
+<div>
+    <p>The DOM is very useful!</p>
+    <p>This example demonstrates the <b>document.body</b> property.</p>
+</div>
+
+<script>
+    alert(document.body.innerHTML);
+</script>
+
+<p>Hello World!</p>
+
+<div>
+    <p>The DOM is very useful!</p>
+    <p>This example demonstrates the <b>document.documentElement</b> 
+    property.</p>
+</div>
+
+<script>
+    alert(document.documentElement.innerHTML);
+</script>
+
+<h2>The nodeName Property</h2>
+<p>The nodeName property specifies the name of a node.</p>
+<ul>
+    <li>nodeName is read-only</li>
+    <li>nodeName of an element node is the same as the tag name</li>
+    <li>nodeName of an attribute node is the attribute name</li>
+    <li>nodeName of a text node is always #text</li>
+    <li>nodeName of the document node is always #document</li>
+</ul>
+
+<h3 id="id07">My First Page</h3>
+<p id="id08"></p>
+
+<script>
+    document.getElementById("id08").innerHTML = 
+    document.getElementById("id07").nodeName;
+</script>
+
+<div class="note"><b>Note:</b> nodeName always contains the uppercase tag 
+    name of an HTML element.</div>
+
+<h2>The nodeValue Property</h2>
+<p>The nodeValue property specifies the value of a node.</p>
+<ul>
+    <li>nodeValue for element nodes is undefined</li>
+    <li>nodeValue for text nodes is the text itself</li>
+    <li>nodeValue for attribute nodes is the attribute value</li>
+</ul>
+
+<h2>The nodeType Property</h2>
+<p>The nodeType property is read only. It returns the type of a node.</p>
+<h3 id="id09">My First Page</h3>
+<p id="id10"></p>
+
+<script>
+    document.getElementById("id10").innerHTML = 
+    document.getElementById("id09").nodeType;
+</script>
+
+<p>The most important nodeType properties are:</p>
+<table class="properties">
+    <tr>
+        <th>Node</th>
+        <th>Type</th>
+        <th>Example</th>
+    </tr>
+    <tr>
+        <td>ELEMENT_NODE</td>
+        <td>1</td>
+        <td>&lth1 class="heading"&gtW3Schools&lt/h1&gt</td>
+    </tr>
+    <tr>
+        <td>ATTRIBUTE_NODE</td>
+        <td>2</td>
+        <td>class = "heading" (deprecated)</td>
+    </tr>
+    <tr>
+        <td>TEXT_NODE</td>
+        <td>3</td>
+        <td>W3Schools</td>
+    </tr>
+    <tr>
+        <td>COMMENT_NODE</td>
+        <td>8</td>
+        <td>&lt!-- This is a comment --&gt</td>
+    </tr>
+    <tr>
+        <td>DOCUMENT_NODE</td>
+        <td>9</td>
+        <td>The HTML document itself (the parent of &lthtml&gt)</td>
+    </tr>
+    <tr>
+        <td>DOCUMENT_TYPE_NODE</td>
+        <td>10</td>
+        <td>&lt!Doctype html&gt</td>
+    </tr>
+</table>
+
+<div class="note">Type 2 is deprecated in the HTML DOM (but works). It is not 
+    deprecated in the XML DOM.</div>
+
+</body>
+</html>

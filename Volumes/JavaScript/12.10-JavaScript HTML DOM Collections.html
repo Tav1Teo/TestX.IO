@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript HTML DOM Collections</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/12.10-JavaScript HTML DOM Collections.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript HTML DOM Collections</h1>
+<h2>The HTMLCollection Object</h2>
+<p>The getElementsByTagName() method returns a <b>HTMLCollection</b> object. A 
+    HTMLCollection object is an array-like list (collection) of HTML elements. 
+    The following code selects all &ltp&gt elements in a document:</p>
+
+<div class="example">
+<p>Hello World!</p>
+<p>Hello Norway!</p>
+<p id="demo1"></p>
+
+<script>
+    var myCollection = document.getElementsByTagName("p");
+    document.getElementById("demo1").innerHTML =
+        "The innerHTML of the second paragraph is: " +
+        myCollection[1].innerHTML;
+</script>
+
+<p>The elements in the collection can be accessed by an index number. To 
+    access the second &ltp&gt element you can write:</p>
+
+<div class="bb">y = x[1];</div>
+</div>
+
+<div class="note"><b>Note:</b> The index starts at 0.</div>
+
+<h2>HTML HTMLCollection Length</h2>
+<p>The length property defines the number of elements in an HTMLCollection:</p>
+<p>Hello World!</p>
+<p>Hello Norway!</p>
+<p id="demo2"></p>
+
+<script>
+    var myCollection = document.getElementsByTagName("p");
+    document.getElementById("demo2").innerHTML =
+        "This document contains " + myCollection.length + " paragraphs.";
+</script>
+
+<h3>Example explained:</h3>
+<ol>
+    <li>Create a collection of all &ltp&gt elements</li>
+    <li>Display the length of the collection</li>
+</ol>
+
+<p>The length property is useful when you want to loop through the elements 
+    in a collection:</p>
+<p>Hello World!</p>
+<p>Hello Norway!</p>
+<p>Click the button to change the color of all p elements.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+    function myFunction() {
+        var myCollection = document.getElementsByTagName("p");
+        var i;
+        for (i = 0; i < myCollection.length; i++) {
+            myCollection[i].style.color = "red";
+        }
+    }
+</script>
+
+<div class="note"><b>A HTMLCollection is NOT an array!</b> A HTMLCollection 
+    may look like an array, but it is not. You can loop through the list and 
+    refer to the elements with a number (just like an array). However, you 
+    cannot use array methods like valueOf(), pop(), push(), or join() on a 
+    HTMLCollection.</div>
+
+</body>
+</html>

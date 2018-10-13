@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>JavaScript HTML DOM Elements (Nodes)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, SQL">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/12.10-JavaScript HTML DOM Elements (Nodes).css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">JavaScript HTML DOM Elements (Nodes)</h1>
+<p>Adding and Removing Nodes (HTML Elements)</p>
+
+<h2>Creating New HTML Elements (Nodes)</h2>
+<p>To add a new element to the HTML DOM, you must create the element (element 
+    node) first, and then append it to an existing element.</p>
+
+<div id="div1">
+    <p id="p1">This is a paragraph.</p>
+    <p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
+    var element = document.getElementById("div1");
+    element.appendChild(para);
+</script>
+
+<h3>Example Explained</h3>
+<p>This code creates a new &ltp&gt element:</p>
+
+<div class="bb">var para = document.createElement("p");</div>
+
+<p>To add text to the &ltp&gt element, you must create a text node first. 
+    This code creates a text node:</p>
+
+<div class="bb">var node = document.createTextNode("This is a new 
+    paragraph.");</div>
+
+<p>Then you must append the text node to the &ltp&gt element:</p>
+
+<div class="bb">para.appendChild(node);</div>
+
+<p>Finally you must append the new element to an existing element. This code 
+    finds an existing element:</p>
+
+<div class="bb">var element = document.getElementById("div1");</div>
+
+<p>This code appends the new element to the existing element:</p>
+
+<div class="bb">element.appendChild(para);</div>
+
+<h2>Creating new HTML Elements - insertBefore()</h2>
+<p>The appendChild() method in the previous example, appended the new element 
+    as the last child of the parent. If you don't want that you can use the 
+    insertBefore() method:</p>
+
+<div id="div2">
+    <p id="p3">This is a paragraph.</p>
+    <p id="p4">This is another paragraph.</p>
+</div>
+
+<script>
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
+
+    var element = document.getElementById("div2");
+    var child = document.getElementById("p3");
+    element.insertBefore(para, child);
+</script>
+
+<h2>Removing Existing HTML Elements</h2>
+<p>To remove an HTML element, you must know the parent of the element:</p>
+
+<div id="div3">
+    <p id="p5">This is a paragraph.</p>
+    <p id="p6">This is another paragraph.</p>
+</div>
+
+<script>
+    var parent = document.getElementById("div3");
+    var child = document.getElementById("p5");
+    parent.removeChild(child);
+</script>
+
+<div class="warning">The node.remove() method does not work in any versions 
+    of the Internet Explorer browser.</div>
+
+<h3>Example Explained</h3>
+<p>This HTML document contains a &ltdiv&gt element with two child nodes (two 
+    &ltp&gt elements):</p>
+
+<div class="bb">
+&ltdiv id="div1"&gt<br>
+    &ltp id="p1"&gtThis is a paragraph.&lt/p&gt<br>
+    &ltp id="p2"&gtThis is another paragraph.&lt/p&gt<br>
+&lt/div&gt
+</div>
+
+<p>Find the element with id="div1":</p>
+
+<div class="bb">var parent = document.getElementById("div1");</div>
+
+<p>Find the &ltp&gt element with id="p1":</p>
+
+<div class="bb">var child = document.getElementById("p1");</div>
+
+<p>Remove the child from the parent:</p>
+
+<div class="bb">parent.removeChild(child);</div>
+
+<div class="note">It would be nice to be able to remove an element without 
+    referring to the parent, but it's not possible. The DOM needs to know 
+    both the element you want to remove and its parent.</div>
+
+<p>Here is a common workaround: Find the child you want to remove, and use 
+    its parentNode property to find the parent:</p>
+
+<div class="bb">var child = document.getElementById("p1");<br>
+child.parentNode.removeChild(child);</div>
+
+<h2>Replacing HTML Elements</h2>
+<p>To replace an element to the HTML DOM, use the replaceChild() method:</p>
+
+<div id="div4">
+    <p id="p7">This is a paragraph.</p>
+    <p id="p8">This is another paragraph.</p>
+</div>
+
+<script>
+    var parent = document.getElementById("div4");
+    var child = document.getElementById("p7");
+    var para = document.createElement("p");
+    var node = document.createTextNode("This is new.");
+    para.appendChild(node);
+    parent.replaceChild(para, child);
+</script>
+
+</body>
+</html>
