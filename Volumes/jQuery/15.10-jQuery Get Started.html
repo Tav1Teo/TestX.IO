@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Introduction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/15.10-jQuery Introduction.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">jQuery Get Started</h1>
+<h2>Adding jQuery to Your Web Pages</h2>
+<p>There are several ways to start using jQuery on your web site. You can:</p>
+<ul>
+    <li>Download the jQuery library from jQuery.com</li>
+    <li>Include jQuery from a CDN, like Google</li>
+</ul>
+
+<h2>Downloading jQuery</h2>
+<p>There are two versions of jQuery available for downloading:</p>
+<ul>
+    <li>Production version - this is for your live website because it has been 
+        minified and compressed</li>
+    <li>Development version - this is for testing and development 
+        (uncompressed and readable code)</li>
+</ul>
+<p>Both versions can be downloaded from <a href="http://jquery.com/download/">
+    jQuery.com</a>.</p>
+<p>The jQuery library is a single JavaScript file, and you reference it with 
+    the HTML &ltscript&gt tag (notice that the &ltscript&gt tag should be 
+    inside the &lthead&gt section).</p>
+
+<div class="bb">
+<p>&lthead&gt<br>
+&ltscript src="jquery-3.3.1.min.js"&gt&lt/script&gt<br>
+&lt/head&gt</p>
+</div>
+
+<p><b>Tip:</b> Place the downloaded file in the same directory as the pages 
+    where you wish to use it.</p>
+
+<div class="note"><p><b>Do you wonder why we do not have 
+    type="text/javascript" inside the &ltscript&gt tag?</b></p>
+<p>This is not required in HTML5. JavaScript is the default scripting language 
+    in HTML5 and in all modern browsers!</p></div>
+
+<h2>jQuery CDN</h2>
+<p>If you don't want to download and host jQuery yourself, you can include it 
+    from a CDN (Content Delivery Network). Both Google and Microsoft host 
+    jQuery. To use jQuery from Google or Microsoft, use one of the 
+    following:</p>
+
+<p>&lthead<br>
+    &ltscript 
+    src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt<br>
+    &lt/script&gt<br>
+    &ltscript&gt<br>
+        $(document).ready(function () {<br>
+            $("button").click(function () {<br>
+                $("p").hide();<br>
+            });<br>
+        });<br>
+    &lt/script&gt<br>
+&lt/head&gt<br>
+<br>
+&lthead&gt<br>
+    &ltscript 
+    src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"&gt<br>
+    &lt/script&gt<br>
+    &ltscript&gt<br>
+        $(document).ready(function () {<br>
+            $("button").click(function () {<br>
+                $("p").hide();<br>
+            });<br>
+        });<br>
+    &lt/script&gt<br>
+&lt/head&gt
+</p>
+
+<div class="note"><p><b>One big advantage of using the hosted jQuery from 
+    Google or Microsoft:</b></p>
+<p>Many users already have downloaded jQuery from Google or Microsoft when 
+    visiting another site. As a result, it will be loaded from cache when 
+    they visit your site, which leads to faster loading time. Also, most 
+    CDN's will make sure that once a user requests a file from it, it will be 
+    served from the server closest to them, which also leads to faster 
+    loading time.</p></div>
+
+
+</body>
+</html>

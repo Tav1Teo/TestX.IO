@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Introduction</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/15.10-jQuery Introduction.css" />
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">jQuery Syntax</h1>
+<p>With jQuery you select (query) HTML elements and perform "actions" on 
+    them.</p>
+
+<h2>jQuery Syntax</h2>
+<p>The jQuery syntax is tailor-made for <b>selecting</b> HTML elements and 
+    performing some <b>action</b> on the element(s). Basic syntax is: 
+    <b>$(<em>selector</em>).<em>action</em>()</b></p>
+<ul>
+    <li>A $ sign to define/access jQuery</li>
+    <li>A (<em>selector</em>) to "query (or find)" HTML elements</li>
+    <li>A jQuery <em>action</em>() to be performed on the element(s)</li>
+</ul>
+<p>Examples:</p>
+<p>$(this).hide() - hides the current element.</p>
+<p>$("p").hide() - hides all &ltp&gt elements.</p>
+<p>$(".test").hide() - hides all elements with class="test".</p>
+<p>$("#test").hide() - hides the element with id="test".</p>
+
+<div class="note"><p><b>Are you familiar with CSS selectors?</b></p>
+<p>jQuery uses CSS syntax to select elements. You will learn more about the 
+    selector syntax in the next chapter of this tutorial.</p></div>
+
+<h2>The Document Ready Event</h2>
+<p>You might have noticed that all jQuery methods in our examples, are inside 
+    a document ready event:</p>
+
+<div class="bb">$(document).ready(function(){<br>
+<br>
+// jQuery methods go here...<br>
+<br>
+});</div>
+
+<p>This is to prevent any jQuery code from running before the document is 
+    finished loading (is ready). It is good practice to wait for the document 
+    to be fully loaded and ready before working with it. This also allows you 
+    to have your JavaScript code before the body of your document, in the 
+    head section. Here are some examples of actions that can fail if methods 
+    are run before the document is fully loaded:</p>
+<ul>
+    <li>Trying to hide an element that is not created yet</li>
+    <li>Trying to get the size of an image that is not loaded yet</li>
+</ul>
+<p><b>Tip:</b> The jQuery team has also created an even shorter method for 
+    the document ready event:</p>
+
+<div class="bb">$(function(){<br>
+<br>
+// jQuery methods go here...<br>
+<br>
+});</div>
+
+<p>Use the syntax you prefer. We think that the document ready event is 
+    easier to understand when reading the code.</p>
+
+</body>
+</html>
