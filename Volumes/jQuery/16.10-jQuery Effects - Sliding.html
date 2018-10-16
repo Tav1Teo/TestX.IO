@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Effects - Sliding</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/16.10-jQuery Effects - Sliding.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("#flip").click(function () {
+            $("#panel").slideDown("slow");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#flip2").click(function () {
+            $("#panel2").slideUp("slow");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#flip3").click(function () {
+            $("#panel3").slideToggle("slow");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#div1").slideUp();
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#div2").slideUp("slow");
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#div3").slideDown(3000);
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#div4").slideToggle(1000);
+        });
+    });
+</script>
+
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">jQuery Effects - Sliding</h1>
+<p>The jQuery slide methods slide elements up and down.</p>
+
+<div class="example"><p><a href=
+    "https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_down">
+    jQuery slideDown()</a> Demonstrates the jQuery slideDown() method.</p>
+</div>
+
+<div class="example"><p><a href=
+    "https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_up">
+    jQuery slideUp()</a> Demonstrates the jQuery slideUp() method.</p></div>
+
+<div class="example"><p><a 
+href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_toggle">
+jQuery slideToggle()</a> Demonstrates the jQuery slideToggle() method.</p>
+</div>
+
+<h2>jQuery Sliding Methods</h2>
+<p>With jQuery you can create a sliding effect on elements. jQuery has the 
+    following slide methods:</p>
+<ul>
+    <li>slideDown()</li>
+    <li>slideUp()</li>
+    <li>slideToggle()</li>
+</ul>
+
+<h2>jQuery slideDown() Method</h2>
+<p>The jQuery slideDown() method is used to slide down an element. Syntax:</p>
+
+<div class="bb"><p>$(<em>selector</em>).slideDown(<em>speed,callback</em>);
+</p></div>
+
+<p>The optional speed parameter specifies the duration of the effect. It can 
+    take the following values: "slow", "fast", or milliseconds. The optional 
+    callback parameter is a function to be executed after the sliding 
+    completes. The following example demonstrates the slideDown() method:</p>
+
+<div id="flip">Click to slide down panel</div>
+<div id="panel">Hello world!</div>
+
+<h2>jQuery slideUp() Method</h2>
+<p>The jQuery slideUp() method is used to slide up an element. Syntax:</p>
+
+<div class="bb"><p>$(<em>selector</em>).slideUp(<em>speed,callback</em>);
+</p></div>
+
+<p>The optional speed parameter specifies the duration of the effect. It can 
+    take the following values: "slow", "fast", or milliseconds. The optional 
+    callback parameter is a function to be executed after the sliding 
+    completes. The following example demonstrates the slideUp() method:</p>
+
+<div id="flip2">Click to slide up panel</div>
+<div id="panel2">Hello world!</div>
+
+<h2>jQuery slideToggle() Method</h2>
+<p>The jQuery slideToggle() method toggles between the slideDown() and 
+    slideUp() methods. If the elements have been slid down, slideToggle() 
+    will slide them up. If the elements have been slid up, slideToggle() will 
+    slide them down.</p>
+
+<div class="bb"><p>$(<em>selector</em>).slideToggle(<em>speed,callback</em>);
+</p></div>
+
+<p>The optional speed parameter can take the following values: "slow", 
+    "fast", milliseconds. The optional callback parameter is a function to be 
+    executed after the sliding completes. The following example demonstrates 
+    the slideToggle() method:</p>
+
+<div id="flip3">Click to slide the panel down or up</div>
+<div id="panel3">Hello world!</div>
+
+<p class="exe"><b>Exercise 1:</b> Use a jQuery method to slide up the 
+    &ltdiv&gt element.</p>
+
+<div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+
+<p class="exe"><b>Exercise 2:</b> Use a jQuery method to slide up the 
+    &ltdiv&gt element. The duration of the effect should be "slow".</p>
+
+<div id="div2" style="width:80px;height:80px;background-color:red;"></div>
+
+<p class="exe"><b>Exercise 3:</b> Use a jQuery method to slide down the 
+    &ltdiv&gt element. The duration of the effect should be 3000 
+    milliseconds.</p>
+
+<div id="div3" 
+style="width:80px;height:80px;display:none;background-color:red;"></div>
+
+<p class="exe"><b>Exercise 4:</b> Use a jQuery method to toggle between 
+    sliding up and down the &ltdiv&gt element, when clicking the button. The 
+    duration of the effect should be 1000 milliseconds.</p>
+
+<button>Click to slide up/down div</button><br><br>
+
+<div id="div4" style="width:80px;height:80px;background-color:red;"></div>
+
+<h2>jQuery Effects Reference</h2>
+<p>For a complete overview of all jQuery effects, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_effects.asp">jQuery 
+    Effect Reference</a>.</p>
+
+</body>
+</html>

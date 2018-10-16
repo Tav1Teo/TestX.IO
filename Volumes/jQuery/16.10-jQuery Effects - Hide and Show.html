@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Effects - Hide and Show</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/16.10-jQuery Effects - Hide and Show.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $(".ex .hide").click(function () {
+            $(this).parents(".ex").hide("slow");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#hide").click(function () {
+            $("p").hide();
+        });
+        $("#show").click(function () {
+            $("p").show();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#p2").hide(1000);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#p3").toggle();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p4").click(function () {
+            $(this).hide();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p5").click(function () {
+            $(this).hide("slow");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("p").hide();
+
+        $("button").click(function () {
+            $("p").show();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#p6").toggle();
+        });
+    });
+</script>
+<style>
+div.ex {
+    background-color: #e5eecc;
+    padding: 7px;
+    border: solid 1px #c3c3c3;
+}
+</style>
+</head>
+
+<body>
+<h1 class="chapters">jQuery Effects - Hide and Show</h1>
+
+<div class="example"><p><a 
+    href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_hide">
+    jQuery hide()</a> Demonstrates a simple jQuery hide() method.</p>
+<p><a href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_hide_explanations">
+    jQuery hide()</a> Another hide() demonstration. How to hide parts of 
+    text.</p></div>
+
+<h3>Island Trading</h3>
+
+<div class="ex">
+    <button class="hide">Hide me</button>
+    <p>Contact: Helen Bennett<br>
+        Garden House Crowther Way<br>
+        London</p>
+</div>
+
+<h3>Paris Specialities</h3>
+
+<div class="ex">
+    <button class="hide">Hide me</button>
+    <p>Contact: Marie Bertrand<br>
+        265, Boulevard Charonne<br>
+        Paris</p>
+</div>
+
+<h2>jQuery hide() and show()</h2>
+<p>With jQuery, you can hide and show HTML elements with the hide() and 
+    show() methods:</p>
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+<p>Syntax:</p>
+
+<div class="bb">
+<p>
+$(<em>selector</em>).hide(<em>speed, callback</em>);<br>
+$(<em>selector</em>).show(<em>speed, callback</em>);
+</p>
+</div>
+
+<p>The optional speed parameter specifies the speed of the hiding/showing and 
+    can take the following values: "slow", "fast", or milliseconds. The 
+    optional callback parameter is a function to be executed after the hide() 
+    or show() method completes (you will learn more about callback functions 
+    in a later chapter). The following example demonstrates the speed 
+    parameter with hide():</p>
+
+<button>Hide</button>
+
+<p id="p2">This is a paragraph with little content.</p>
+<p id="p2">This is another small paragraph.</p>
+
+<h2>jQuery toggle()</h2>
+<p>With jQuery, you can toggle between the hide() and show() methods with the 
+    toggle() method. Shown elements are hidden and hidden elements are 
+    shown:</p>
+
+<button>Toggle between hiding and showing the paragraphs</button>
+
+<p id="p3">This is a paragraph with little content.</p>
+<p id="p3">This is another small paragraph.</p>
+
+<p><b>Syntax:</b></p>
+
+<div class="bb"><p>$(<em>selector</em>).toggle(<em>speed,callback</em>);</p>
+</div>
+
+<p>The optional speed parameter can take the following values: "slow", "fast" 
+    or milliseconds. The optional callback parameter is a function to be 
+    executed after toggle() completes.</p>
+
+<p class="exe"><b>Exercise 1:</b> Use a jQuery method to hide the &ltp&gt 
+    element when it is clicked on.</p>
+<p id="p4">If you click on me, I will disappear.</p>
+
+<p class="exe"><b>Exercise 2:</b> Use a jQuery method to hide the &ltp&gt 
+    element when it is clicked on. The speed should be "slow".</p>
+<p id="p5">If you click on me, I will disappear.</p>
+
+<p class="exe"><b>Exercise 3:</b> There is a hidden &ltp&gt element in the 
+    document. Use a jQuery method to show the &ltp&gt element with a click of 
+    a button.</p>
+<p>This is a paragraph.</p>
+
+<button>Show</button>
+
+<p class="exe"><b>Exercise 4:</b> Toggle between hiding and showing the 
+    &ltp&gt element when you click on the "Toggle" button.</p>
+
+<button>Toggle</button>
+
+<p id="p6">This is a paragraph.</p>
+
+<h2>jQuery Effects Reference</h2>
+<p>For a complete overview of all jQuery effects, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_effects.asp">jQuery 
+    Effect Reference</a>.</p>
+
+</body>
+</html>

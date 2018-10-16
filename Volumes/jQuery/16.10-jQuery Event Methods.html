@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Event Methods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/16.10-jQuery Event Methods.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("p").click(function () {
+            $(this).hide();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("p").dblclick(function () {
+            $(this).hide();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p1").mouseenter(function () {
+            alert("You entered p1!");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p2").mouseleave(function () {
+            alert("Bye! You now leave p2!");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p3").mousedown(function () {
+            alert("Mouse down over p3!");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p4").mouseup(function () {
+            alert("Mouse up over p4!");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p5").hover(function () {
+            alert("You entered p5!");
+        },
+            function () {
+                alert("Bye! You now leave p5!");
+            });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("input").focus(function () {
+            $(this).css("background-color", "#cccccc");
+        });
+        $("input").blur(function () {
+            $(this).css("background-color", "#ffffff");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p6").on({
+            mouseenter: function () {
+                $(this).css("background-color", "lightgray");
+            },
+            mouseleave: function () {
+                $(this).css("background-color", "lightblue");
+            },
+            click: function () {
+                $(this).css("background-color", "yellow");
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("span").mouseenter(function () {
+            $(this).hide();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("input").keypress(function () {
+            $(this).hide();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("p").on("click", function () {
+            $(this).hide();
+        });
+    });
+</script>
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">jQuery Event Methods</h1>
+<p>jQuery is tailor-made to respond to events in a HTML page.</p>
+
+<h2>What are Events?</h2>
+<p>All the different visitor's actions that a web page can respond to are 
+    called events. An event represents the precise moment when something 
+    happens. Examples:</p>
+<ul>
+    <li>moving a mouse over an element</li>
+    <li>selecting a radio button</li>
+    <li>clicking on an element</li>
+</ul>
+<p>The term <b>"fires/fired"</b> is often used with events. Example: "The 
+    keypress event is fired the moment you press a key". Here are some common 
+    DOM events:</p>
+<table class="properties">
+    <tr>
+        <th>Mouse Events</th>
+        <th>Keyboard Events</th>
+        <th>Form Events</th>
+        <th>Document/Window Events</th>
+    </tr>
+    <tr>
+        <td>click</td>
+        <td>keypress</td>
+        <td>submit</td>
+        <td>load</td>
+    </tr>
+    <tr>
+        <td>dblclick</td>
+        <td>keydown</td>
+        <td>change</td>
+        <td>resize</td>
+    </tr>
+    <tr>
+        <td>mouseenter</td>
+        <td>keyup</td>
+        <td>focus</td>
+        <td>scroll</td>
+    </tr>
+    <tr>
+        <td>mouseleave</td>
+        <td></td>
+        <td>blur</td>
+        <td>unload</td>
+    </tr>
+</table>
+
+<h2>jQuery Syntax For Event Methods</h2>
+<p>In jQuery, most DOM events have an equivalent jQuery method. To assign a 
+    click event to all paragraphs on a page, you can do this:</p>
+
+<div class="bb">$("p").click();</div>
+
+<p>The next step is to define what should happen when the event fires. You 
+    must pass a function to the event:</p>
+
+<div class="bb">
+<p>$("p").click(function(){<br>
+// action goes here!!<br>
+});</p>
+</div>
+
+<h2>Commonly Used jQuery Event Methods</h2>
+<p><b>$(document).ready()</b></p>
+<p>The $(document).ready() method allows us to execute a function when the 
+    document is fully loaded. This event is already explained in the 
+    <a href="https://www.w3schools.com/jquery/jquery_syntax.asp">jQuery 
+    Syntax</a> chapter.</p>
+<p><b>click()</b></p>
+<p>The click() method attaches an event handler function to a HTML element. 
+    The function is executed when the user clicks on the HTML element. The 
+    following example says: When a click event fires on a &ltp&gt element, 
+    hide the current &ltp&gt element:</p>
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+<p><b>dblclick()</b></p>
+<p>The dblclick() method attaches an event handler function to a HTML element.
+    The function is executed when the user double-clicks on the HTML 
+    element:</p>
+<p><b>mouseenter()</b></p>
+<p>The mouseenter() method attaches an event handler function to a HTML 
+    element. The function is executed when the mouse pointer enters the HTML 
+    element:</p>
+<p id="p1">Enter this paragraph.</p>
+<p><b>mouseleave()</b></p>
+<p>The mouseleave() method attaches an event handler function to a HTML 
+    element. The function is executed when the mouse pointer leaves the HTML 
+    element:</p>
+<p id="p2">This is a paragraph.</p>
+<p><b>mousedown()</b></p>
+<p>The mousedown() method attaches an event handler function to a HTML 
+    element. The function is executed, when the left, middle or right mouse 
+    button is pressed down, while the mouse is over the HTML element:</p>
+<p id="p3">This is a paragraph.</p>
+<p><b>mouseup()</b></p>
+<p>The mouseup() method attaches an event handler function to a HTML element.
+    The function is executed, when the left, middle or right mouse button is 
+    released, while the mouse is over the HTML element:</p>
+<p id="p4">This is a paragraph.</p>
+<p><b>hover()</b></p>
+<p>The hover() method takes two functions and is a combination of the 
+    mouseenter() and mouseleave() methods. The first function is executed 
+    when the mouse enters the HTML element, and the second function is 
+    executed when the mouse leaves the HTML element:</p>
+<p id="p5">This is a paragraph.</p>
+<p><b>focus()</b></p>
+<p>The focus() method attaches an event handler function to a HTML form 
+    field. The function is executed when the form field gets focus:</p>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
+<p><b>blur()</b></p>
+<p>The blur() method attaches an event handler function to an HTML form field.
+    The function is executed when the form field loses focus:</p>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
+
+<h2>The on() Method</h2>
+<p>The on() method attaches one or more event handlers for the selected 
+    elements. Attach a click event to a &ltp&gt element:</p>
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+<p>Attach multiple event handlers to a &ltp&gt element:</p>
+<p id="p6">Click or move the mouse pointer over this paragraph.</p>
+
+<p class="exe"><b>Exercise 1:</b> If you click on a &ltp&gt element, it 
+    should be hidden. Use the correct event to do so.</p>
+
+<div class="bb">
+&ltsscript&gt<br>
+    $(document).ready(function () {<br>
+        $("p").click(function () {<br>
+            $(this).hide();<br>
+        });<br>
+    });<br>
+&lts/script&gt
+</div>
+
+<p class="exe"><b>Exercise 2:</b> If you double-click on a &ltp&gt element, 
+    it should be hidden. Use the correct event to do so.</p>
+
+<div class="bb">
+&ltsscript&gt<br>
+    $(document).ready(function () {<br>
+        $("p").dblclick(function () {<br>
+            $(this).hide();<br>
+        });<br>
+    });
+&lts/script&gt<br>
+</div>
+
+<p class="exe"><b>Exercise 3:</b> When the mouse pointer enters the 
+    &ltspan&gt element, it should be hidden. Use the correct event to do 
+    so.</p>
+
+<span>If you mouse over me, I will disappear.</span><br>
+<span>If you mouse over me, I will disappear.</span>
+
+<p class="exe"><b>Exercise 4:</b> If you press a keyboard key inside the 
+    &ltinput&gt element, it should be hidden. Use the correct event to do 
+    so.</p>
+<input type="text" value="Press any key inside me to hide me" size="40">
+
+<p class="exe"><b>Exercise 5:</b> Use the on() method to attach a click event 
+    handler to all &ltp&gt elements.</p>
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+
+<h2>jQuery Event Methods</h2>
+<p>For a full jQuery event reference, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_events.asp">jQuery 
+    Events Reference</a>.</p>
+
+</body>
+</html>
