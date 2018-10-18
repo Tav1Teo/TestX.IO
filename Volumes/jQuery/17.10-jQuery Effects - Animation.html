@@ -76,6 +76,31 @@ href="../../css/16.10-jQuery Effects - Sliding.css" />
         });
     });
 </script>
+<script>
+    $(document).ready(function () {
+        $(".div7").animate({ left: '250px' });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".div8").animate({ height: '500px' });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".div9").animate({
+            opacity: '0.4',
+            height: '500px',
+            width: '500px'
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        var div = $(".div10");
+        div.animate({ fontSize: '100px' }, "slow");
+    });
+</script>
 
 <style></style>
 </head>
@@ -184,8 +209,31 @@ position:absolute;"></div>
 <div class="div6" style="background:#98bf21;height:100px;width:200px;
 position:absolute;">HELLO</div>
 
+<p style="margin-top:120px" class="exe"><b>Exercise 1:</b> Use the animate() 
+    method to move the &ltdiv&gt element 250 pixels to the right.</p>
 
+<div class="div7" style="background:#98bf21;height:100px;width:100px;
+position:absolute;"></div>
 
+<p style="margin-top:120px" class="exe"><b>Exercise 2:</b> Use the animate() 
+    method to set the height of &ltdiv&gt to 500 pixels.</p>
+
+<div class="div8" style="background:#98bf21;height:100px;width:100px;
+position:absolute;"></div>
+
+<p style="margin-top:520px" class="exe"><b>Exercise 3:</b> Use the animate() 
+    method to set the following CSS properties for &ltdiv&gt: opacity: 0.4, 
+    height: 500px, width: 500px.</p>
+
+<div class="div9" style="background:#98bf21;height:100px;width:100px;
+position:absolute;"></div>
+
+<p style="margin-top:520px" class="exe"><b>Exercise 4:</b> Use the animate() 
+    method to set the font-size of &ltdiv&gt to 100 pixels. The duration of 
+    the effect should be "slow".</p>
+
+<div class="div10" style="background:#98bf21;height:200px;width:600px;">
+    Hello World</div>
 
 </body>
 </html>

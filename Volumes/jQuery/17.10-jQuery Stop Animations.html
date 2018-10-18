@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Stop Animations</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/17.10-jQuery Stop Animations.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("#flip").click(function () {
+            $("#panel").slideDown(5000);
+        });
+        $("#stop").click(function () {
+            $("#panel").stop();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#start").click(function () {
+            $(".div1").animate({ left: '100px' }, 5000);
+            $(".div1").animate({ fontSize: '3em' }, 5000);
+        });
+
+        $("#stop1").click(function () {
+            $(".div1").stop();
+        });
+
+        $("#stop2").click(function () {
+            $(".div1").stop(true);
+        });
+
+        $("#stop3").click(function () {
+            $(".div1").stop(true, true);
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#flip2").click(function () {
+            $("#panel2").slideDown(5000);
+        });
+        $("#stop2").click(function () {
+            $("#panel2").stop();
+        });
+    });
+</script>
+
+<style></style>
+</head>
+
+<body>
+<h1 class="chapters">jQuery Stop Animations</h1>
+<p>The jQuery stop() method is used to stop animations or effects before it 
+    is finished.</p>
+
+<div class="example"><p><a 
+href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_stop_slide">
+jQuery stop() sliding</a> Demonstrates the jQuery stop() method.</p></div>
+
+<button id="stop">Stop sliding</button>
+
+<div id="flip">Click to slide down panel</div>
+<div id="panel">Hello world!</div>
+
+<div class="example"><p><a 
+href="https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_stop_params">
+jQuery stop() animation (with parameters)</a> Demonstrates the jQuery stop() 
+method.</p></div>
+
+<button id="start">Start</button>
+<button id="stop1">Stop</button>
+<button id="stop2">Stop all</button>
+<button id="stop3">Stop but finish</button>
+
+<p>The "Start" button starts the animation.</p>
+<p>The "Stop" button stops the current active animation, but allows the 
+    queued animations to be performed afterwards.</p>
+<p>The "Stop all" button stops the current active animation and clears the
+    animation queue; so all animations on the element is stopped.</p>
+<p>The "Stop but finish" rushes through the current active animation, then it 
+    stops.</p>
+
+<div class="div1" style="background:#98bf21;height:100px;width:200px;position:absolute;">
+    HELLO</div>
+
+<h2 style="margin-top:110px">jQuery stop() Method</h2>
+<p>The jQuery stop() method is used to stop an animation or effect before it 
+    is finished. The stop() method works for all jQuery effect functions, 
+    including sliding, fading and custom animations. Syntax:</p>
+
+<div class="bb">$(<em>selector</em>).stop(<em>stopAll,goToEnd</em>);</div>
+
+<p>The optional stopAll parameter specifies whether also the animation queue 
+    should be cleared or not. Default is false, which means that only the 
+    active animation will be stopped, allowing any queued animations to be 
+    performed afterwards. The optional goToEnd parameter specifies whether or 
+    not to complete the current animation immediately. Default is false. So, 
+    by default, the stop() method kills the current animation being performed 
+    on the selected element. The following example demonstrates the stop() 
+    method, with no parameters:</p>
+
+<button id="stop2">Stop sliding</button>
+
+<div id="flip2">Click to slide down panel</div>
+<div id="panel2">Hello world!</div>
+
+<h2>jQuery Effects Reference</h2>
+<p>For a complete overview of all jQuery effects, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_effects.asp">jQuery 
+    Effect Reference</a>.</p>
+
+</body>
+</html>
