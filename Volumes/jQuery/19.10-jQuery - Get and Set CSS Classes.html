@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery - Get and Set CSS Classes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/19.10-jQuery - Get and Set CSS Classes.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("h1, h2, p").addClass("blue");
+            $("div").addClass("important");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("#div1").addClass("important blue");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("h1, h2, p").removeClass("blue");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $("h1, h2, p").toggleClass("blue");
+        });
+    });
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery - Get and Set CSS Classes</h1>
+<h2>jQuery Manipulating CSS</h2>
+<p>jQuery has several methods for CSS manipulation. We will look at the 
+    following methods:</p>
+<ul>
+    <li>addClass() - Adds one or more classes to the selected elements</li>
+    <li>removeClass() - Removes one or more classes from the selected 
+        elements</li>
+    <li>toggleClass() - Toggles between adding/removing classes from the 
+        selected elements</li>
+    <li>css() - Sets or returns the style attribute</li>
+</ul>
+<p>The following stylesheet will be used for all the examples on this page:</p>
+
+<div class="bb">
+.important {<br>
+font-weight: bold;<br>
+font-size: xx-large;<br>
+}<br>
+<br>
+.blue {<br>
+color: blue;<br>
+}
+</div>
+
+<h2>jQuery addClass() Method</h2>
+<p>The following example shows how to add class attributes to different 
+    elements. Of course you can select multiple elements, when adding 
+    classes:</p>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<div>This is some important text!</div><br>
+
+<button>Add classes to elements</button>
+
+<p>You can also specify multiple classes within the addClass() method:</p>
+
+<div id="div1">This is some text.</div>
+<div id="div2">This is some text.</div>
+<br>
+
+<button>Add classes to first div element</button>
+
+<h2>jQuery removeClass() Method</h2>
+<p>The following example shows how to remove a specific class attribute from 
+    different elements:</p>
+
+<h2>jQuery toggleClass() Method</h2>
+<p>The following example will show how to use the jQuery toggleClass() 
+    method. This method toggles between adding/removing classes from the 
+    selected elements:</p>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+
+<button>Toggle class</button>
+
+</body>
+</html>

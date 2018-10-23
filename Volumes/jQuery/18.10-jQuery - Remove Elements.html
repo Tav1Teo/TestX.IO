@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery - Remove Elements</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/18.10-jQuery - Remove Elements.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("#button1").click(function () {
+            $("#div1").remove();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#button2").click(function () {
+            $("#div2").empty();
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#button3").click(function () {
+            $("p").remove(".test");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#button4").click(function () {
+            $("p").remove(".test2, .demo");
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#div3").remove();
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#div4").empty();
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("p").remove(".test3");
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("p").remove(".test4, .demo4");
+    });
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery - Remove Elements</h1>
+<h2>Remove Elements/Content</h2>
+<p>To remove elements and content, there are mainly two jQuery methods:</p>
+
+<ul>
+    <li>remove() - Removes the selected element (and its child elements)</li>
+    <li>empty() - Removes the child elements from the selected element</li>
+</ul>
+
+<h2>jQuery remove() Method</h2>
+<p>The jQuery remove() method removes the selected element(s) and its child 
+    elements.</p>
+
+<div id="div1" style="height:100px;width:300px;border:1px solid black;
+background-color:yellow;">
+
+    This is some text in the div.
+    <p>This is a paragraph in the div.</p>
+    <p>This is another paragraph in the div.</p>
+
+</div>
+<br>
+
+<button>Remove div element</button>
+
+<h2>jQuery empty() Method</h2>
+<p>The jQuery empty() method removes the child elements of the selected 
+    element(s).</p>
+
+<div id="div2" style="height:100px;width:300px;border:1px solid black;
+background-color:yellow;">
+
+    This is some text in the div.
+    <p>This is a paragraph in the div.</p>
+    <p>This is another paragraph in the div.</p>
+
+</div>
+<br>
+
+<button id="button2">Empty the div element</button>
+
+<h2>Filter the Elements to be Removed</h2>
+<p>The jQuery remove() method also accepts one parameter, which allows you to 
+    filter the elements to be removed. The parameter can be any of the jQuery 
+    selector syntaxes. The following example removes all &ltp&gt elements 
+    with class="test":</p>
+
+<p>This is a paragraph.</p>
+<p class="test">This is another paragraph.</p>
+<p class="test">This is another paragraph.</p>
+
+<button id="button3">Remove all p elements with class="test"</button>
+
+<p>This example removes all &ltp&gt elements with class="test" or 
+    class="demo":</p>
+
+<p>This is a paragraph.</p>
+<p class="test2">This is p element with class="test".</p>
+<p class="test2">This is p element with class="test".</p>
+<p class="demo">This is p element with class="demo".</p>
+
+<button id="button4">Remove all p elements with class="test" and 
+    class="demo"</button><br><br>
+
+<p class="exe"><b>Exercise 1:</b> Use a jQuery method to remove the &ltdiv&gt 
+    element.</p>
+
+<div id="div3" style="height:100px;width:300px;border:1px solid black;
+background-color:yellow;">
+    This is some text in the div.
+    <p>This is a paragraph in the div.</p>
+    <p>This is another paragraph in the div.</p>
+</div>
+
+<p class="exe"><b>Exercise 2:</b> Use a jQuery method to only remove the 
+    child elements of &ltdiv&gt.</p>
+<div id="div4" style="height:100px;width:300px;border:1px solid black;
+background-color:yellow;">
+    This is some text in the div.
+    <p>This is a paragraph in the div.</p>
+    <p>This is another paragraph in the div.</p>
+</div>
+
+<p class="exe"><b>Exercise 3:</b> Use a jQuery method to remove all &ltp&gt 
+    elements with class="test3".</p>
+
+<p>This is a paragraph.</p>
+<p class="test3">This is another paragraph.</p>
+<p class="test3">This is another paragraph.</p>
+
+<p class="exe"><b>Exercise 4:</b> Use a jQuery method to remove all &ltp&gt 
+    elements with class="test4" and class="demo4".</p>
+
+<p>This is a paragraph.</p>
+<p class="test4">This is p element with class="test".</p>
+<p class="test4">This is p element with class="test".</p>
+<p class="demo4">This is p element with class="demo".</p>
+
+<h2>jQuery HTML Reference</h2>
+<p>For a complete overview of all jQuery HTML methods, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_html.asp">jQuery 
+    HTML/CSS Reference</a>.</p>
+
+</body>
+</html>

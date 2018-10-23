@@ -73,6 +73,31 @@ href="../../css/18.10-jQuery - Set Content and Attributes.css" />
         });
     });
 </script>
+<script>
+    $(document).ready(function () {
+        $("#p1").text("Hello world!");
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#p2").html("<b>Hello world!</b>");
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("input").val("Dolly Duck");
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("img").attr("src", "../../images/img_pulpitrock.jpg");
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#a1").attr("href", "www.w3schools.com");
+    });
+</script>
 
 <style></style>
 </head>
@@ -147,7 +172,32 @@ href="../../css/18.10-jQuery - Set Content and Attributes.css" />
 <p>Mouse over the link (or click on it) to see that the value of the href 
     attribute has changed.</p>
 
+<p class="exe"><b>Exercise 1:</b> Use a jQuery method to change the text of 
+    the &ltp&gt element to "Hello World!".</p>
+<p id="p1">This is some text.</p>
 
+<p class="exe"><b>Exercise 2:</b> Use a jQuery method to change the text of 
+    the &ltp&gt element to "Hello World!" in <b>bold</b>.</p>
+<p id="p2">This is some text.</p>
+
+<p class="exe"><b>Exercise 3:</b> Use a jQuery method to change the text of
+    the &ltp&gt element to "Hello World!" in <b>bold</b>.</p>
+Name: <input type="text" value="Mickey Mouse">
+
+<p class="exe"><b>Exercise 4:</b> Use a jQuery method to change the value of 
+    the image's src attribute to "img_pulpitrock.jpg".</p>
+<img id="image" src="../../images/img_moustiers-sainte-marie.jpg" width="284" 
+height="213">
+
+<p class="exe"><b>Exercise 5:</b> Use jQuery to change the text of the link 
+    to "W3Schools Home" and change the value of href's attribute value to 
+    "www.w3schools.com".</p>
+<a id="a1" href="https://www.w3schools.com/jquery/">Learn jquery here</a>
+
+<h2>jQuery HTML Reference</h2>
+<p>For a complete overview of all jQuery HTML methods, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_html.asp">jQuery 
+    HTML/CSS Reference</a>.</p>
 
 </body>
 </html>
