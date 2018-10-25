@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Traversing - Ancestors</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/22.10-jQuery Traversing - Ancestors.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("span").parent().css({ "color": "red", "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".span2").parentsUntil(".ancestors2").css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".span3").parentsUntil(".ancestors3").css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".span4").parentsUntil(".ancestors4").css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".span5").parent().css({ "color": "red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".span6").parents(".ul6").css({ "color": "red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".span7").parentsUntil(".ancestors7").css({ "color": "red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".span8").parentsUntil(".div8").css({ "color": "red" });
+    });
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery Traversing - Ancestors</h1>
+<p>An ancestor is a parent, grandparent, great-grandparent, and so on. With 
+    jQuery you can traverse up the DOM tree to find ancestors of an 
+    element.</p>
+
+<h2>Traversing Up the DOM Tree</h2>
+<p>Three useful jQuery methods for traversing up the DOM tree are:</p>
+<ul>
+    <li>parent()</li>
+    <li>parents()</li>
+    <li>parentsUntil()</li>
+</ul>
+
+<h2>jQuery parent() Method</h2>
+<p>The parent() method returns the direct parent element of the selected 
+    element. This method only traverse a single level up the DOM tree. The 
+    following example returns the direct parent element of each &ltspan&gt 
+    elements:</p>
+
+<div class="ancestors">
+    <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (direct parent)
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+
+    <div style="width:500px;">div (grandparent)
+        <p>p (direct parent)
+            <span>span</span>
+        </p>
+    </div>
+</div>
+
+<h2>jQuery parents() Method</h2>
+<p>The parents() method returns all ancestor elements of the selected element, 
+    all the way up to the document's root element (&lthtml&gt). The following 
+    example returns all ancestors of all &ltspan&gt elements:</p>
+
+<div class="ancestors2" style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)
+        <li>li (direct parent)
+            <span class="span2">span</span>
+        </li>
+    </ul>
+</div>
+
+<p>You can also use an optional parameter to filter the search for ancestors. 
+    The following example returns all ancestors of all &ltspan&gt elements 
+    that are &ltul&gt elements:</p>
+
+<div class="ancestors3" style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)
+        <li>li (direct parent)
+            <span class="span3">span</span>
+        </li>
+    </ul>
+</div>
+
+<h2>jQuery parentsUntil() Method</h2>
+<p>The parentsUntil() method returns all ancestor elements between two given 
+    arguments. The following example returns all ancestor elements between a 
+    &ltspan&gt and a &ltdiv&gt element:</p>
+
+<div class="ancestors4" style="width:500px;">div (great-grandparent)
+    <ul>ul (grandparent)
+        <li>li (direct parent)
+            <span class="span4">span</span>
+        </li>
+    </ul>
+</div>
+
+<p class="exe"><b>Exercise 1:</b> Add a red color to the direct parent of 
+    &ltspan&gt.</p>
+
+<div class="ancestors5">
+    <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (direct parent)
+                <span class="span5">span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 2:</b> Add a red color to the grandparent of
+    &ltspan&gt.</p>
+
+<div class="ancestors6">
+    <div style="width:500px;">div (great-grandparent)
+        <ul class="ul6">ul (grandparent)
+            <li>li (direct parent)
+                <span class="span6">span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 3:</b> Add a red color to all ancestors of 
+    &ltspan&gt.</p>
+
+<div class="ancestors7">
+    <div style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (direct parent)
+                <span class="span7">span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 4:</b> Add a red color to the direct parent AND 
+    grandparent of &ltspan&gt.</p>
+
+<div class="ancestors8">
+    <div class="div8" style="width:500px;">div (great-grandparent)
+        <ul>ul (grandparent)
+            <li>li (direct parent)
+                <span class="span8">span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<h2>jQuery Traversing Reference</h2>
+<p>For a complete overview of all jQuery Traversing methods, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_traversing.asp">
+    jQuery Traversing Reference</a>.</p>
+
+</body>
+</html>

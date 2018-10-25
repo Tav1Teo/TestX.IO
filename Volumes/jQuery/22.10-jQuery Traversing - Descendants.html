@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Traversing - Descendants</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/22.10-jQuery Traversing - Descendants.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $(".descendants1").children().css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".descendants2").children("p.first").css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".descendants3").find(".span3").css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".descendants4").find("*").css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".ul1").children().css({ "color": "red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".ul2").find(".span2").css({ "color": "red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".ul3").find("*").css({ "color": "red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".descendants5").children(".demo").css({ "color": "red" });
+    });
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery Traversing - Descendants</h1>
+<p>A descendant is a child, grandchild, great-grandchild and so on. With 
+    jQuery you can traverse down the DOM tree to find descendants of an 
+    element.</p>
+
+<h2>Traversing Down the DOM Tree</h2>
+<p>Two useful jQuery methods for traversing down the DOM tree are:</p>
+<ul>
+    <li>children()</li>
+    <li>find()</li>
+</ul>
+
+<h2>jQuery children() Method</h2>
+<p>The children() method returns all direct children of the selected element. 
+    This method only traverses a single level down the DOM tree. The 
+    following example returns all elements that are direct children of each 
+    &ltdiv&gt elements:</p>
+
+<div class="descendants1" style="width:500px;">div (current element)
+    <p>p (child)
+        <span>span (grandchild)</span>
+    </p>
+    <p>p (child)
+        <span>span (grandchild)</span>
+    </p>
+</div>
+
+<p>You can also use an optional parameter to filter the search for children. 
+    The following example returns all &ltp&gt elements with the class name 
+    "first", that are direct children of &ltdiv&gt:</p>
+
+<div class="descendants2" style="width:500px;">div (current element)
+    <p class="first">p (child)
+        <span>span (grandchild)</span>
+    </p>
+    <p class="second">p (child)
+        <span>span (grandchild)</span>
+    </p>
+</div>
+
+<h2>jQuery find() Method</h2>
+<p>The find() method returns descendant elements of the selected element, all 
+    the way down to the last descendant. The following example returns all 
+    &ltspan&gt elements that are descendants of &ltdiv&gt:</p>
+
+<div class="descendants3" style="width:500px;">div (current element)
+    <p>p (child)
+        <span class="span3">span (grandchild)</span>
+    </p>
+    <p>p (child)
+        <span class="span3">span (grandchild)</span>
+    </p>
+</div>
+
+<p>The following example returns all descendants of &ltdiv&gt:</p>
+
+<div class="descendants4" style="width:500px;">div (current element)
+    <p>p (child)
+        <span>span (grandchild)</span>
+    </p>
+    <p>p (child)
+        <span>span (grandchild)</span>
+    </p>
+</div>
+
+<p class="exe"><b>Exercise 1:</b> Add a red color to the direct child of 
+    &ltul&gt.</p>
+
+<div class="ancestors1">
+    <div style="width:500px;">div
+        <ul class="ul1">ul
+            <li>li
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 2:</b> Add a red color to the &ltspan&gt element 
+    that is the descendant of &ltul&gt.</p>
+
+<div class="ancestors2">
+    <div style="width:500px;">div
+        <ul class="ul2">ul
+            <li>li
+                <span class="span2">span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 3:</b> Add a red color to all descendants of 
+    &ltul&gt.</p>
+
+<div class="ancestors3">
+    <div style="width:500px;">div
+        <ul class="ul3">ul
+            <li>li
+                <span>span</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 4:</b> Use the children() method to add a red 
+    color to the element with class="demo" inside &ltdiv&gt.</p>
+
+<div class="descendants5" style="width:500px;">div (parent)
+    <p class="demo">paragraph 1</p>
+    <p>paragraph 2</p>
+</div>
+
+<h2>jQuery Traversing Reference</h2>
+<p>For a complete overview of all jQuery Traversing methods, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_traversing.asp">
+    jQuery Traversing Reference</a>.</p>
+
+</body>
+</html>

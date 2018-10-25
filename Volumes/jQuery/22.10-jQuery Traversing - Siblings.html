@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Traversing - Siblings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/22.10-jQuery Traversing - Siblings.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h21").siblings().css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h22").siblings("p").css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h23").next().css({ "color": "red", "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h24").nextAll().css({ "color": "red", "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h25").nextUntil(".h65").css({ "color": "red", 
+        "border": "2px solid red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h26").siblings().css({ "color": "red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h27").siblings("p").css({ "color": "red" });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h28").prev().css({ "color": "red" })
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h29").next().css({ "color": "red" })
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h210").prevAll().css({ "color": "red" })
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".h211").nextUntil(".h611").css({ "color": "red" });
+    });
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery Traversing - Siblings</h1>
+<p>With jQuery you can traverse sideways in the DOM tree to find siblings of 
+    an element. Siblings share the same parent.</p>
+
+<h2>Traversing Sideways in The DOM Tree</h2>
+<p>There are many useful jQuery methods for traversing sideways in the DOM 
+    tree:</p>
+<ul>
+    <li>siblings()</li>
+    <li>next()</li>
+    <li>nextAll()</li>
+    <li>nextUntil()</li>
+    <li>prev()</li>
+    <li>prevAll()</li>
+    <li>prevUntil()</li>
+</ul>
+
+<h2>jQuery siblings() Method</h2>
+<p>The siblings() method returns all sibling elements of the selected element.
+    The following example returns all sibling elements of &lth2&gt:</p>
+
+<div class="siblings1">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h21">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<p>You can also use an optional parameter to filter the search for siblings. 
+    The following example returns all sibling elements of &lth2&gt that are 
+    &ltp&gt elements:</p>
+
+<div class="siblings2">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h22">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<h2>jQuery next() Method</h2>
+<p>The next() method returns the next sibling element of the selected element.
+    The following example returns the next sibling of &lth2&gt:</p>
+
+<div class="siblings3">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h23">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<h2>jQuery nextAll() Method</h2>
+<p>The nextAll() method returns all next sibling elements of the selected 
+    element. The following example returns all next sibling elements of 
+    &lth2&gt:</p>
+
+<div class="siblings4">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h24">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<h2>jQuery nextUntil() Method</h2>
+<p>The nextUntil() method returns all next sibling elements between two given 
+    arguments. The following example returns all sibling elements between a 
+    &lth2&gt and a &lth6&gt element:</p>
+
+<div class="siblings5">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h25">h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6 class="h65">h6</h6>
+        <p>p</p>
+    </div>
+</div>
+
+<h2>jQuery prev(), prevAll() & prevUntil() Methods</h2>
+<p>The prev(), prevAll() and prevUntil() methods work just like the methods 
+    above but with reverse functionality: they return previous sibling 
+    elements (traverse backwards along sibling elements in the DOM tree, 
+    instead of forward).</p>
+
+<p class="exe"><b>Exercise 1:</b> Add a red color to all sibling elements of 
+    &lth2&gt.</p>
+
+<div class="siblings6">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h26">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 2:</b> Add a red color to all sibling elements of 
+    &lth2&gt that are &ltp&gt elements.</p>
+
+<div class="siblings7">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h27">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 3:</b> Add a red color to the previous sibling of 
+    &lth2&gt.</p>
+
+<div class="siblings8">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h28">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 4:</b> Add a red color to all next sibling 
+    elements of &lth2&gt.</p>
+
+<div class="siblings9">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h29">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 5:</b> Add a red color to all previous sibling 
+    elements of &lth2&gt.</p>
+
+<div class="siblings10">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h210">h2</h2>
+        <h3>h3</h3>
+        <p>p</p>
+    </div>
+</div>
+
+<p class="exe"><b>Exercise 6:</b> Add a red color to all sibling elements 
+    between &lth2&gt and &lth6&gt.</p>
+
+<div class="siblings11">
+    <div>div (parent)
+        <p>p</p>
+        <span>span</span>
+        <h2 class="h211">h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6 class="h611">h6</h6>
+        <p>p</p>
+    </div>
+</div>
+
+<h2>jQuery Traversing Reference</h2>
+<p>For a complete overview of all jQuery Traversing methods, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_traversing.asp">
+    jQuery Traversing Reference</a>.</p>
+
+</body>
+</html>
