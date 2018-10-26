@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery - AJAX get() and post() Methods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/23.10-jQuery - AJAX get() and post() Methods.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("demo_test.asp", function (data, status) {
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".button2").click(function () {
+            $.post("demo_test_post.asp",
+                {
+                    name: "Donald Duck",
+                    city: "Duckburg"
+                },
+                function (data, status) {
+                    alert("Data: " + data + "\nStatus: " + status);
+                });
+        });
+    });
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery - AJAX get() and post() Methods</h1>
+<p>The jQuery get() and post() methods are used to request data from the 
+    server with a HTTP GET or POST request.</p>
+
+<h2>HTTP Request: GET vs. POST</h2>
+<p>Two commonly used methods for a request-response between a client and 
+    server are: GET and POST.</p>
+<ul>
+    <li><b>GET</b> - Requests data from a specified resource</li>
+    <li><b>POST</b> - Submits data to be processed to a specified resource</li>
+</ul>
+<p>GET is basically used for just getting (retrieving) some data from the 
+    server. <b>Note:</b> The GET method may return cached data. POST can also 
+    be used to get some data from the server. However, the POST method NEVER 
+    caches data, and is often used to send data along with the request. To 
+    learn more about GET and POST, and the differences between the two 
+    methods, please read our 
+    <a href="https://www.w3schools.com/tags/ref_httpmethods.asp">HTTP Methods 
+    GET vs POST</a> chapter.</p>
+
+<h2>jQuery $.get() Method</h2>
+<p>The $.get() method requests data from the server with an HTTP GET request. 
+    Syntax:</p>
+
+<div class="bb">$.get(<em>URL,callback</em>);</div>
+
+<p>The required URL parameter specifies the URL you wish to request. The 
+    optional callback parameter is the name of a function to be executed if 
+    the request succeeds. The following example uses the $.get() method to 
+    retrieve data from a file on the server:</p>
+
+<button>Send an HTTP GET request to a page and get the result back</button>
+
+<p>The first parameter of $.get() is the URL we wish to request 
+    ("demo_test.asp"). The second parameter is a callback function. The first 
+    callback parameter holds the content of the page requested, and the 
+    second callback parameter holds the status of the request. <b>Tip:</b> 
+    Here is how the ASP file looks like ("demo_test.asp"):</p>
+
+<div class="bb">
+&lt%<br>
+response.write("This is some text from an external ASP file.")<br>
+%&gt
+</div>
+
+<h2>jQuery $.post() Method</h2>
+<p>The $.post() method requests data from the server using an HTTP POST 
+    request. Syntax:</p>
+
+<div class="bb"><div class="bb">$.post(<em>URL,callback</em>);</div></div>
+
+<p>The required URL parameter specifies the URL you wish to request. The 
+    optional data parameter specifies some data to send along with the 
+    request. The optional callback parameter is the name of a function to be 
+    executed if the request succeeds. The following example uses the $.post() 
+    method to send some data along with the request:</p>
+
+<button class="button2">Send an HTTP POST request to a page and get the 
+    result back</button>
+
+<p>The first parameter of $.post() is the URL we wish to request 
+    ("demo_test_post.asp"). Then we pass in some data to send along with the 
+    request (name and city). The ASP script in "demo_test_post.asp" reads the 
+    parameters, processes them and returns a result. The third parameter is a 
+    callback function. The first callback parameter holds the content of the 
+    page requested, and the second callback parameter holds the status of the 
+    request. <b>Tip:</b> Here is how the ASP file looks like 
+    ("demo_test_post.asp"):</p>
+
+<div class="bb">
+&lt%<br>
+dim fname,city<br>
+fname=Request.Form("name")<br>
+city=Request.Form("city")<br>
+Response.Write("Dear " & fname & ". ")<br>
+Response.Write("Hope you live well in " & city & ".")<br>
+%&gt
+</div>
+
+<h2>jQuery AJAX Reference</h2>
+<p>For a complete overview of all jQuery AJAX methods, please go to our 
+    <a href="https://www.w3schools.com/jquery/jquery_ref_ajax.asp">jQuery 
+    AJAX Reference</a>.</p>
+
+</body>
+</html>

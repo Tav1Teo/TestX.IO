@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery - Filters</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/24.10-jQuery - Filters.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+               $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#myInput2").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myList li").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#myInput3").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myDIV *").filter(function () {
+               $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery - Filters</h1>
+<h2>Filter Tables</h2>
+<p>Perform a case-insensitive search for items in a table:</p>
+
+<h2>Filterable Table</h2>
+<p>Type something in the input field to search the table for first names, 
+    last names or emails:</p>
+<input id="myInput" type="text" placeholder="Search..">
+<br><br>
+
+<table class="properties">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+        </tr>
+        <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@mail.com</td>
+        </tr>
+        <tr>
+            <td>July</td>
+            <td>Dooley</td>
+            <td>july@greatstuff.com</td>
+        </tr>
+        <tr>
+            <td>Anja</td>
+            <td>Ravendale</td>
+            <td>a_r@test.com</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Note that we start the search in tbody, to prevent filtering the table 
+    headers.</p>
+
+<p><b>Example explained:</b> We use jQuery to loop through each table rows to 
+    check if there are any text values that matches the value of the input 
+    field. The <mark>toggle</mark> method hides the row 
+    (<mark>display:none</mark>) that does not match the search. We use the 
+    <mark>toLowerCase()</mark> DOM method to convert the text to lower case, 
+    which makes the search case insensitive (allows "john", "John", and even 
+    "JOHN" on search).</p>
+
+<h2>Filter Lists</h2>
+<p>Perform a case-insensitive search for items in a list:</p>
+
+<h2>Filterable List</h2>
+<p>Type something in the input field to search the list for specific items:</p>
+<input id="myInput2" type="text" placeholder="Search..">
+<br>
+
+<ul id="myList">
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+    <li>Fourth</li>
+</ul>
+
+<h2>Filter Anything</h2>
+<p>Perform a case-insensitive search for text inside a div element:</p>
+
+<h2>Filter Anything</h2>
+<p>Type something in the input field to search for a specific text inside the 
+    div element with id="myDIV":</p>
+<input id="myInput3" type="text" placeholder="Search..">
+<div id="myDIV">
+    <p>I am a paragraph.</p>
+    <div>I am a div element inside div.</div>
+    <button>I am a button</button>
+    <button>Another button</button>
+    <p>Another paragraph.</p>
+</div>
+
+</body>
+</html>
