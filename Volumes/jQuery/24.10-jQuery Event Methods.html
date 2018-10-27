@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Event Methods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/24.10-jQuery Event Methods.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery Event Methods</h1>
+<p>Event methods trigger or attach a function to an event handler for the 
+    selected elements. The following table lists all the jQuery methods used 
+    to handle events.</p>
+<table class="properties">
+    <tr>
+        <th>Method / Property</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_blur.asp">
+            blur()</a></td>
+        <td>Attaches/Triggers the blur event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_change.asp">
+            change()</a></td>
+        <td>Attaches/Triggers the change event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_click.asp">
+            click()</a></td>
+        <td>Attaches/Triggers the click event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_dblclick.asp">
+            dblclick()</a></td>
+        <td>Attaches/Triggers the double click event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_currenttarget.asp">
+            event.currentTarget</a></td>
+        <td>The current DOM element within the event bubbling phase</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_data.asp">
+            event.data</a></td>
+        <td>Contains the optional data passed to an event method when the 
+            current executing handler is bound</td>
+    </tr>
+    <tr>
+       <td><a href="https://www.w3schools.com/jquery/event_delegatetarget.asp">
+            event.delegateTarget</a></td>
+        <td>Returns the element where the currently-called jQuery event 
+            handler was attached</td>
+    </tr>
+    <tr>
+        <td><a 
+        href="https://www.w3schools.com/jquery/event_isdefaultprevented.asp">
+        event.isDefaultPrevented()</a></td>
+        <td>Returns whether event.preventDefault() was called for the event 
+            object</td>
+    </tr>
+    <tr>
+        <td><a 
+href="https://www.w3schools.com/jquery/event_isimmediatepropagationstopped.asp">
+        event.isImmediatePropagationStopped()</a></td>
+        <td>Returns whether event.stopImmediatePropagation() was called for 
+            the event object</td>
+    </tr>
+    <tr>
+        <td><a 
+        href="https://www.w3schools.com/jquery/event_ispropagationstopped.asp">
+        event.isPropagationStopped()</a></td>
+        <td>Returns whether event.stopPropagation() was called for the event 
+            object</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_namespace.asp">
+            event.namespace</a></td>
+        <td>Returns the namespace specified when the event was triggered</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_pagex.asp">
+            event.pageX</a></td>
+        <td>Returns the mouse position relative to the left edge of the 
+            document</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_pagey.asp">
+            event.pageY</a></td>
+        <td>Returns the mouse position relative to the top edge of the 
+            document</td>
+    </tr>
+    <tr>
+       <td><a href="https://www.w3schools.com/jquery/event_preventdefault.asp">
+        event.preventDefault()</a></td>
+        <td>Prevents the default action of the event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_relatedtarget.asp">
+            event.relatedTarget</a></td>
+        <td>Returns which element being entered or exited on mouse 
+            movement.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_result.asp">
+            event.result</a></td>
+        <td>Contains the last/previous value returned by an event handler 
+            triggered by the specified event</td>
+    </tr>
+    <tr>
+        <td><a 
+    href="https://www.w3schools.com/jquery/event_stopimmediatepropagation.asp">
+            event.stopImmediatePropagation()</a></td>
+        <td>Prevents other event handlers from being called</td>
+    </tr>
+    <tr>
+        <td><a 
+            href="https://www.w3schools.com/jquery/event_stoppropagation.asp">
+            event.stopPropagation()</a></td>
+        <td>Prevents the event from bubbling up the DOM tree, preventing any 
+            parent handlers from being notified of the event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_target.asp">
+            event.target</a></td>
+        <td>Returns which DOM element triggered the event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_timestamp.asp">
+            event.timeStamp</a></td>
+        <td>Returns the number of milliseconds since January 1, 1970, when 
+            the event is triggered</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_type.asp">
+            event.type</a></td>
+        <td>Returns which event type was triggered</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_which.asp">
+            event.which</a></td>
+        <td>Returns which keyboard key or mouse button was pressed for the 
+            event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_focus.asp">
+            focus()</a></td>
+        <td>Attaches/Triggers the focus event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_focusin.asp">
+            focusin()</a></td>
+        <td>Attaches an event handler to the focusin event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_focusout.asp">
+            focusout()</a></td>
+        <td>Attaches an event handler to the focusout event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_hover.asp">
+            hover()</a></td>
+        <td>Attaches two event handlers to the hover event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_keydown.asp">
+            keydown()</a></td>
+        <td>Attaches/Triggers the keydown event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_keypress.asp">
+            keypress()</a></td>
+        <td>Attaches/Triggers the keypress event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_keyup.asp">
+            keyup()</a></td>
+        <td>Attaches/Triggers the keyup event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_mousedown.asp">
+            mousedown()</a></td>
+        <td>Attaches/Triggers the mousedown event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_mouseenter.asp">
+            mouseenter()</a></td>
+        <td>Attaches/Triggers the mouseenter event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_mouseleave.asp">
+            mouseleave()</a></td>
+        <td>Attaches/Triggers the mouseleave event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_mousemove.asp">
+            mousemove()</a></td>
+        <td>Attaches/Triggers the mousemove event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_mouseout.asp">
+            mouseout()</a></td>
+        <td>Attaches/Triggers the mouseout event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_mouseover.asp">
+            mouseover()</a></td>
+        <td>Attaches/Triggers the mouseover event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_mouseup.asp">
+            mouseup()</a></td>
+        <td>Attaches/Triggers the mouseup event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_off.asp">
+            off()</a></td>
+        <td>Removes event handlers attached with the on() method</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_on.asp">
+            on()</a></td>
+        <td>Attaches event handlers to elements</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_one.asp">
+            one()</a></td>
+        <td>Adds one or more event handlers to selected elements. This 
+            handler can only be triggered once per element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_proxy.asp">
+            $.proxy()</a></td>
+        <td>Takes an existing function and returns a new one with a 
+            particular context</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_ready.asp">
+            ready()</a></td>
+        <td>Specifies a function to execute when the DOM is fully loaded</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_resize.asp">
+            resize()</a></td>
+        <td>Attaches/Triggers the resize event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_scroll.asp">
+            scroll()</a></td>
+        <td>Attaches/Triggers the scroll event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_select.asp">
+            select()</a></td>
+        <td>Attaches/Triggers the select event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_submit.asp">
+            submit()</a></td>
+        <td>Attaches/Triggers the submit event</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_trigger.asp">
+            trigger()</a></td>
+        <td>Triggers all events bound to the selected elements</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/event_triggerhandler.asp">
+            triggerHandler()</a></td>
+        <td>Triggers all functions bound to a specified event for the 
+            selected elements</td>
+    </tr>
+</table>
+
+</body>
+</html>
