@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>jQuery Traversing Methods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"
+charset="UTF-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML, CSS, jQuery">
+<meta name="author" content="John Doe">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet"
+href="../../css/25.10-jQuery Traversing Methods.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+
+<style></style>
+</head>
+<body>
+
+<h1 class="chapters">jQuery Traversing Methods</h1>
+<table class="properties">
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_add.asp">
+            add()</a></td>
+        <td>Adds elements to the set of matched elements</td>
+    </tr>
+    <tr>
+        <td>addBack()</td>
+        <td>Adds the previous set of elements to the current set</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_children.asp">
+            children()</a></td>
+        <td>Returns all direct children of the selected element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_closest.asp">
+            closest()</a></td>
+        <td>Returns the first ancestor of the selected element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_contents.asp">
+            contents()</a></td>
+        <td>Returns all direct children of the selected element (including 
+            text and comment nodes)</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_each.asp">
+            each()</a></td>
+        <td>Executes a function for each matched element</td>
+    </tr>
+    <tr>
+        <td>end()</td>
+        <td>Ends the most recent filtering operation in the current chain and 
+            return the set of matched elements to its previous state</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_eq.asp">
+            eq()</a></td>
+        <td>Returns an element with a specific index number of the selected 
+            elements</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_filter.asp">
+            filter()</a></td>
+        <td>Reduce the set of matched elements to those that match the 
+            selector or pass the function's test</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_find.asp">
+            find()</a></td>
+        <td>Returns descendant elements of the selected element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_first.asp">
+            first()</a></td>
+        <td>Returns the first element of the selected elements</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_has.asp">
+            has()</a></td>
+        <td>Returns all elements that have one or more elements inside of 
+            them</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_is.asp">
+            is()</a></td>
+        <td>Checks the set of matched elements against a 
+            selector/element/jQuery object, and return true if at least one 
+            of these elements matches the given arguments</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_last.asp">
+            last()</a></td>
+        <td>Returns the last element of the selected elements</td>
+    </tr>
+    <tr>
+        <td>map()</td>
+        <td>Passes each element in the matched set through a function, 
+            producing a new jQuery object containing the return values</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_next.asp">
+            next()</a></td>
+        <td>Returns the next sibling element of the selected element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_nextall.asp">
+            nextAll()</a></td>
+        <td>Returns all next sibling elements of the selected element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_nextuntil.asp">
+            nextUntil()</a></td>
+        <td>Returns all next sibling elements between two given arguments</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_not.asp">
+            not()</a></td>
+        <td>Returns elements that do not match a certain criteria</td>
+    </tr>
+    <tr>
+        <td><a 
+           href="https://www.w3schools.com/jquery/traversing_offsetparent.asp">
+           offsetParent()</a></td>
+        <td>Returns the first positioned parent element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_parent.asp">
+            parent()</a></td>
+        <td>Returns the direct parent element of the selected element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_parents.asp">
+            parents()</a></td>
+        <td>Returns all ancestor elements of the selected element</td>
+    </tr>
+    <tr>
+        <td><a 
+        href="https://www.w3schools.com/jquery/traversing_parentsuntil.asp">
+        parentsUntil()</a></td>
+        <td>Returns all ancestor elements between two given arguments</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_prev.asp">
+            prev()</a></td>
+        <td>Returns the previous sibling element of the selected element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_prevall.asp">
+            prevAll()</a></td>
+        <td>Returns all previous sibling elements of the selected element</td>
+    </tr>
+    <tr>
+        <td><a 
+            href="https://www.w3schools.com/jquery/traversing_prevuntil.asp">
+            prevUntil()</a></td>
+        <td>Returns all previous sibling elements between two given 
+            arguments</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_siblings.asp">
+            siblings()</a></td>
+        <td>Returns all sibling elements of the selected element</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.w3schools.com/jquery/traversing_slice.asp">
+            slice()</a></td>
+        <td>Reduces the set of matched elements to a subset specified by a 
+            range of indices</td>
+    </tr>
+</table>
+
+
+</body>
+</html>
